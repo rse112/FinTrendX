@@ -7,6 +7,15 @@ from trend import trend_maincode
 import time
 from pytz import timezone
 import select_keyword
+import asyncio
+import pandas as pd
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+import utils
+from trend import trend_maincode
+import time
+from pytz import timezone
+import select_keyword
 
 class analysis:
     def __init__(self):
@@ -25,8 +34,12 @@ class analysis:
         self.start_index = (self.today - relativedelta(days=1)).strftime("%Y-%m-%d")
         self.end_index = (self.today - relativedelta(years=3) - relativedelta(days=1)).strftime("%Y-%m-%d")
         self.clients = utils.get_secret("clients")
+        
 
-
+        self.api_request_data_dataname = {
+                'api_request_data': [],
+                'keyname': []
+        }
 
         # 데이터프레임 초기화
         self.trends_dataframes = {
@@ -125,13 +138,9 @@ class analysis:
                     return self.handle_api_call(keywordName, currentRequestCount, df_table)
                 
     # 연관 검색어의 trend 데이터
-    def analyze_trend_data(self, keywordName):
-        unique_api_request_data = self.api_request_data.drop_duplicates(subset=['search_keywords'])
-            # 딕셔너리 데이터로 변환
-
-        unique_api_request_data_dict = unique_api_request_data.to_dict(orient='list')
+    def analyze_trend_data(self, uniq):
         params = {
-            "search_keywords": unique_api_request_data_dict["search_keywords"],  # search_keywords 값을 search_words 키로 사용합니다.
+            "search_keywords": uniq["api_request_data"],  
             "id": self.clients['id_1']["client_id"],
             "pw": self.clients['id_1']["client_secret"],
             "api_url": self.api_url
@@ -141,38 +150,25 @@ class analysis:
     
     # 연관검색어의 급상승, 지속상승 로직 적용
     def select_keywords(self, trend_data):
-        '''
-        monthly_rule 에 대한 특별 처리
-        result : review_settings,tmp, tmp_gph, tmp_info, rising_month
-
-        이외 에 대한 처리
-        result : review_settings,tmp, tmp_gph, tmp_info
-        '''
-
-
-        # 먼저 모든 review_key를 처리할 준비 
         review_settings = {key: [] for key in self.review_types.keys()}
-        for df in trend_data:
-            column_name = df.columns[0]
+        for i, (index, row) in enumerate(trend_data.iterrows()):
+            # 각 행의 첫 번째 열과 두 번째 열의 값 참조
+            first_column_value = row['trend_data']
+            second_column_value = row['keyname']
+            
             for review_key, settings in self.review_types.items():
                 if review_key == 'monthly_rule':
                     # monthly_rule에 대한 특별 처리
-                    trend_analysis_df, graph_data_df, analysis_info, rising_month = settings['function'](df, self.day, settings['time_period'])
+                    trend_analysis_df, graph_data_df, analysis_info, rising_month = settings['function'](first_column_value, self.day, settings['time_period'])
                     if trend_analysis_df is not None:
-                        print('column_name', column_name)    
-                    review_settings[review_key].append((trend_analysis_df, graph_data_df, analysis_info, rising_month,column_name))
-                    
-
+                        review_settings[review_key].append((trend_analysis_df, graph_data_df, analysis_info, rising_month, second_column_value,first_column_value.columns[0]))
                 else:
                     # 기타 경우 처리
-                    trend_analysis_df, graph_data_df, analysis_info = settings['function'](df, self.day, settings['time_period'])
-                    review_settings[review_key].append((trend_analysis_df, graph_data_df, analysis_info,column_name))
-                    
+                    trend_analysis_df, graph_data_df, analysis_info = settings['function'](first_column_value, self.day, settings['time_period'])
                     if trend_analysis_df is not None:
-                        print('column_name', column_name)    
-                        
+                        review_settings[review_key].append((trend_analysis_df, graph_data_df, analysis_info, second_column_value,first_column_value.columns[0]))
         return review_settings
-                        # tmp 랑 tmp_gph, tmp_info 얘네를 딕셔너리에 집어넣는 함수
+                            # tmp 랑 tmp_gph, tmp_info 얘네를 딕셔너리에 집어넣는 함수
 
     #     #딕셔너리에 데이터를 넣는 함수
     def insert_data_into_dict(self):
@@ -181,18 +177,19 @@ class analysis:
 
 
 
-    def collect_and_analyze_keyword_trends(self):
+    def collect_and_analyze_keyword_trends(self,keyword_grouped_dfs):
         total_keywords = len(self.keywords)
         api_request_data_list = []  # DataFrame 대신 사용할 리스트
-
+        
         for keywordIndex, keywordName in enumerate(self.keywords[self.keyword_index:], start=self.keyword_index):
+            
             df_table = pd.read_csv(f'./data/rl_srch/{self.day}/{keywordName}.csv', encoding='euc-kr')
             print(f'################################################ {keywordName} ({keywordIndex+1}/{total_keywords}) ################################################')
             maxKeyword = min(50, len(df_table))
 
             for currentRequestCount in range(self.state['currentRequestCount_index'], maxKeyword):
                 request_data, self.apiCallCount, self.current_client_index = self.handle_api_call(keywordName, df_table, currentRequestCount)
-
+                self.api_request_data_dataname['keyname'].append(keywordName)
                 # API 요청 예외 처리 (한도 초과 시 클라이언트 인덱스 업데이트)
                 if request_data is not None:
                     api_request_data_list.append(request_data)  # 리스트에 데이터 추가
@@ -206,17 +203,20 @@ class analysis:
             self.keyword_index += 1
 
         # 리스트를 DataFrame으로 변환
+            
         if api_request_data_list:
             self.api_request_data = pd.DataFrame(api_request_data_list)
+            api_data_list = self.api_request_data['search_keywords'].tolist()
 
+            self.api_request_data_dataname['api_request_data'] = api_data_list
         print(f'API 요청 데이터 수: {len(self.api_request_data)}')
-        # self.trends_dataframes, self.graph_tables, self.keyword_data = self.analyze_trend_data(self.api_request_data)
 
-        trend_data=self.analyze_trend_data(keywordName)
 
+        uniq=utils.merge_keys_for_unique_names(self.api_request_data_dataname)
+        trend_data = pd.DataFrame({'trend_data': self.analyze_trend_data(uniq), 'keyname': uniq['keyname']})
         return trend_data
         # 실시간 급상승 이런거 들어가는 함수부분
-        # self.select_keywords(trend_data)
+  
 if __name__ == "__main__":
     start=time.time()
     analysis_instance = analysis()

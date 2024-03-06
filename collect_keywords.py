@@ -1,14 +1,21 @@
 import utils
 import pandas as pd
-import time
+import asyncio
 from utils import get_secret 
 from api_set import APIClient
 from datetime import datetime
 from pytz import timezone
-import os
-from datetime import datetime
-from pytz import timezone
+import time
+
+
+import pandas as pd
 import asyncio
+from utils import get_secret, load_keywords
+from api_set import APIClient
+
+import asyncio
+from utils import get_secret, load_keywords
+from api_set import APIClient
 
 async def collect_keywords(srch_keyword, day):
     BASE_URL = get_secret("BASE_URL")
@@ -18,41 +25,46 @@ async def collect_keywords(srch_keyword, day):
     URI = get_secret("URI")
     METHOD = get_secret("METHOD")
     api_client = APIClient(BASE_URL, CUSTOMER_ID, API_KEY, SECRET_KEY, URI, METHOD)
-    main_keyword = utils.load_keywords('main_keyword.json') 
+    main_keyword = load_keywords('main_keyword.json')
 
-    tasks = []
-    
+    all_keywords_data = pd.DataFrame()
+    retry_delay = 5  # 재시도 전 대기 시간 (초)
+    max_retries = 3  # 최대 재시도 횟수
+
     for word in srch_keyword:
         if word in main_keyword:
             for keyword in main_keyword[word]:
-                query = {
-                    'siteld': '',
-                    'bixtpld': '',
-                    'event': '',
-                    'month': '',
-                    'showDetail': '1',
-                    'hintKeywords': keyword
-                }
-                task = asyncio.create_task(api_client.get_data(query))
-                tasks.append(task)
-    
-    responses = await asyncio.gather(*tasks)
-
-    all_keywords_data = pd.DataFrame()
-    for response in responses:
-        if 'keywordList' in response:
-            df = pd.DataFrame(response['keywordList'])
-            df.replace('< 10', '9', inplace=True)
-            columns_to_convert = ['monthlyPcQcCnt', 'monthlyMobileQcCnt']
-            for column in columns_to_convert:
-                df[column] = df[column].astype('float64')
-            df['monthlyTotalCnt'] = df['monthlyPcQcCnt'] + df['monthlyMobileQcCnt']
-            df = df[['relKeyword', 'monthlyTotalCnt']]  # 관심 있는 컬럼만 선택
-            df.rename(columns={'relKeyword': '연관키워드', 'monthlyTotalCnt': '월간검색수_합계'}, inplace=True)  # 컬럼명 변경
-            all_keywords_data = pd.concat([all_keywords_data, df], ignore_index=True)
+                attempts = 0
+                while attempts < max_retries:
+                    query = {
+                        'hintKeywords': keyword
+                    }
+                    try:
+                        response = await api_client.get_data(query)
+                        if 'keywordList' in response and isinstance(response['keywordList'], list):
+                            df = pd.DataFrame(response['keywordList'])
+                            df.replace('< 10', '9', inplace=True)
+                            columns_to_convert = ['monthlyPcQcCnt', 'monthlyMobileQcCnt']
+                            for column in columns_to_convert:
+                                df[column] = df[column].astype('float64')
+                            df['monthlyTotalCnt'] = df['monthlyPcQcCnt'] + df['monthlyMobileQcCnt']
+                            df = df[['relKeyword', 'monthlyTotalCnt']]
+                            df.rename(columns={'relKeyword': '연관키워드', 'monthlyTotalCnt': '월간검색수_합계'}, inplace=True)
+                            df['검색어'] = keyword
+                            all_keywords_data = pd.concat([all_keywords_data, df], ignore_index=True)
+                            break  # 성공적으로 데이터를 받았으니 반복문 종료
+                        else:
+                            print(f"Unexpected response structure for keyword '{keyword}': {response}")
+                            attempts += 1
+                            await asyncio.sleep(retry_delay)  # 재시도 전 대기
+                    except Exception as e:
+                        print(f"Error fetching data for keyword '{keyword}': {e}")
+                        attempts += 1
+                        await asyncio.sleep(retry_delay)  # 재시도 전 대기
+                if attempts == max_retries:
+                    print(f"Failed to fetch data for keyword '{keyword}' after {max_retries} attempts")
 
     return all_keywords_data
-
 
 
 async def main():
@@ -63,7 +75,6 @@ async def main():
     print(collected_data)
 
 if __name__ == "__main__":
-    import time
     start = time.time()
     asyncio.run(main())
     end = time.time()
