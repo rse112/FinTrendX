@@ -28,10 +28,16 @@ def create_result_graph(result_tmp, result_tmp_gph, today, mode):
     Returns:
     - result_graph: 생성된 결과 데이터 프레임.
     """
+    if mode == 'daily':
+        mode_str = "일별"
+    elif mode == 'weekly':
+        mode_str = "주별"
+    else:
+        mode_str = "월별"
     result_graph = pd.DataFrame()
     result_graph['검색일자'] = result_tmp_gph.index
     result_graph['기준일자'] = formatted_today
-    result_graph['유형'] = f'{mode}급상승'
+    result_graph['유형'] = f'{mode_str}급상승'
     result_graph['연관검색어'] = result_tmp_gph.columns[0]
     result_graph['검색량'] = result_tmp_gph.values
     result_graph = result_graph[['기준일자','유형', '연관검색어', '검색일자', '검색량']]
@@ -98,7 +104,7 @@ def set_analysis_period(table, today, days=0, year=0, years=0):
         end_time_str = end_time.strftime("%Y-%m-%d")
         start_time_str = start_time.strftime("%Y-%m-%d")
         start_before_str = start_before.strftime("%Y-%m-%d")
-        
+ 
         # 분석 기간 설정
         table.index = pd.to_datetime(table.index)
         
@@ -147,8 +153,7 @@ def preprocess_data(end_time,table_tmp, table_graph, mode, missing_data, period,
     """
     # 데이터 포인트 충분 여부 확인
     if len(table_tmp.index) != missing_data:
-        print(len(table_tmp.index))
-        print(missing_data)
+
         return None, None
     
     if mode == 'daily':
@@ -230,7 +235,7 @@ def prepare_data(table, today, mode,days=None, year=None, years=None):
         Gap=28
         days=1
         year=3
-        years=0
+        years=1
 
     else:
         pass
@@ -249,6 +254,7 @@ def prepare_data(table, today, mode,days=None, year=None, years=None):
                                                  missing_data=missing_data, 
                                                  period=period, 
                                                  Gap=Gap)
+
         return result_tmp, result_tmp_gph,table_graph
     
 ################################################################################
@@ -466,7 +472,7 @@ if __name__ == "__main__":
     # 검색 기준일
     standard_time = datetime.now()
     params = {
-    "search_keywords": ["디도스", "클라우드 보안", "사이버 공격", "주식", "비트코인", "테슬라", "삼성전자", "네이버", "카카오"],
+    "search_keywords": ["디도스", "클라우드 보안", "사이버 공격", "주식", "비트코인", "테슬라", "삼성전자", "네이버", "배당주"],
     "id": utils.get_secret("clients")["id_1"]["client_id"],
     "pw": utils.get_secret("clients")["id_1"]["client_secret"],
     "api_url": "https://openapi.naver.com/v1/datalab/search",
@@ -481,18 +487,19 @@ if __name__ == "__main__":
     start=time.time()
     clients=utils.get_secret("clients")
     results = asyncio.run(trend_maincode(params,clients, api_url))
-    kk = 'weekly'
-    print(results)
+    kk = 'month'
+
     
     for df in results:
         month_a,month_b,month_c,month_d=monthly_rule(df,day,kk)
-        print(month_a)
+
+
     #     a,b,c,d=monthly_rule(df,day,kk)
         d,e,f=rising_keyword_analysis(df, day, kk)
-        print(d)
+
         
         a,b,c=select_keyword(df,day,kk)
-        print(a)
+
     print(time.time()-start)
     #0.94
     #a,b,c=select_keyword(trend_data,day,a)

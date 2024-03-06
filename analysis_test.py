@@ -157,17 +157,29 @@ class analysis:
                 if review_key == 'monthly_rule':
                     # monthly_rule에 대한 특별 처리
                     tmp, tmp_gph, tmp_info, rising_month = settings['function'](df, self.day, settings['time_period'])
+                    print('tmp_gph : ', tmp_gph)
+                    print('tmp_info : ', tmp_info)
+                    print('rising_month : ', rising_month)
+                    print('tmp : ', tmp)
+                    
                     review_settings[review_key].append((tmp, tmp_gph, tmp_info, rising_month))
+                    
 
                 else:
                     # 기타 경우 처리
                     tmp, tmp_gph, tmp_info = settings['function'](df, self.day, settings['time_period'])
                     review_settings[review_key].append((tmp, tmp_gph, tmp_info))
+                    print('tmp_gph : ', tmp_gph)
+                    print('tmp_info : ', tmp_info)
+                    print('tmp : ', tmp)
+                    
+        return review_settings
                         # tmp 랑 tmp_gph, tmp_info 얘네를 딕셔너리에 집어넣는 함수
 
     #     #딕셔너리에 데이터를 넣는 함수
-    # def aa():
-    #     pass
+    def data_insert(self):
+        
+        pass
 
 
 
