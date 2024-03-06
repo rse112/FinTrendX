@@ -153,31 +153,29 @@ class analysis:
         # 먼저 모든 review_key를 처리할 준비 
         review_settings = {key: [] for key in self.review_types.keys()}
         for df in trend_data:
+            column_name = df.columns[0]
             for review_key, settings in self.review_types.items():
                 if review_key == 'monthly_rule':
                     # monthly_rule에 대한 특별 처리
-                    tmp, tmp_gph, tmp_info, rising_month = settings['function'](df, self.day, settings['time_period'])
-                    print('tmp_gph : ', tmp_gph)
-                    print('tmp_info : ', tmp_info)
-                    print('rising_month : ', rising_month)
-                    print('tmp : ', tmp)
-                    
-                    review_settings[review_key].append((tmp, tmp_gph, tmp_info, rising_month))
+                    trend_analysis_df, graph_data_df, analysis_info, rising_month = settings['function'](df, self.day, settings['time_period'])
+                    if trend_analysis_df is not None:
+                        print('column_name', column_name)    
+                    review_settings[review_key].append((trend_analysis_df, graph_data_df, analysis_info, rising_month,column_name))
                     
 
                 else:
                     # 기타 경우 처리
-                    tmp, tmp_gph, tmp_info = settings['function'](df, self.day, settings['time_period'])
-                    review_settings[review_key].append((tmp, tmp_gph, tmp_info))
-                    print('tmp_gph : ', tmp_gph)
-                    print('tmp_info : ', tmp_info)
-                    print('tmp : ', tmp)
+                    trend_analysis_df, graph_data_df, analysis_info = settings['function'](df, self.day, settings['time_period'])
+                    review_settings[review_key].append((trend_analysis_df, graph_data_df, analysis_info,column_name))
                     
+                    if trend_analysis_df is not None:
+                        print('column_name', column_name)    
+                        
         return review_settings
                         # tmp 랑 tmp_gph, tmp_info 얘네를 딕셔너리에 집어넣는 함수
 
     #     #딕셔너리에 데이터를 넣는 함수
-    def data_insert(self):
+    def insert_data_into_dict(self):
         
         pass
 

@@ -9,6 +9,30 @@ import pandas as pd
 BASE_DIR = Path(__file__).resolve().parent
 from typing import Optional
 
+from collections import defaultdict
+
+def merge_keys_for_unique_names(a):
+    '''
+    a : dict
+
+    return : dict
+    '''
+    # 중복된 'name'에 대응되는 'key' 값을 합치기 위한 준비
+    accumulated_keys = defaultdict(list)
+
+    # 주어진 딕셔너리 a에서 각 'name'에 대응하는 'key' 값 합치기
+    for name, key in zip(a['api_request_data'], a['keyname']):
+        accumulated_keys[name].append(key)
+
+    # 중복 제거된 'name'을 기준으로 새로운 딕셔너리 생성, 이때 'key'는 리스트의 합집합으로 저장
+    uniq_a = {
+        'api_request_data': list(accumulated_keys.keys()),  # 중복 제거된 name 리스트
+        'keyname': [sorted(set(keys), key=keys.index) for keys in accumulated_keys.values()]  # 중복된 name에 해당하는 key 값의 합집합
+    }
+
+    return uniq_a
+
+
 def get_secret(key: str, 
                default_value: Optional[str] = None, 
                json_path: str = "secrets.json") -> str:
