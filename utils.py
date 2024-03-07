@@ -11,30 +11,33 @@ from typing import Optional
 
 from collections import defaultdict
 
-def merge_keys_for_unique_names(a):
-    ''' 
-    a : dict
-
-    return : dict
-    '''
-    print("함수 실행")
-    # 중복된 'name'에 대응되는 'key' 값을 합치기 위한 준비
-    accumulated_keys = defaultdict(list)
-
-    # 주어진 딕셔너리 a에서 각 'name'에 대응하는 'key' 값 합치기
-    for name, key in zip(a['api_request_data'], a['keyname']):
-        print("반복문 실행")
-        print('name',name)
-        print('key',key)
-        accumulated_keys[name].append(key)
-        print('accumulated_keys',accumulated_keys)
-    # 중복 제거된 'name'을 기준으로 새로운 딕셔너리 생성, 이때 'key'는 리스트의 합집합으로 저장
-    uniq_a = {
-        'api_request_data': list(accumulated_keys.keys()),  # 중복 제거된 name 리스트
-        'keyname': [sorted(set(keys), key=keys.index) for keys in accumulated_keys.values()]  # 중복된 name에 해당하는 key 값의 합집합
-    }
-
-    return uniq_a
+def merge_and_mark_duplicates_limited(df_list):
+    """
+    여러 DataFrame을 병합하고, '연관키워드'가 중복되는 경우 '중복검색어' 컬럼에 해당하는 모든 '검색어'를 마킹합니다.
+    이 함수는 df_list에서 제공된 모든 DataFrame의 처음 50개 행에 대해 이 작업을 수행합니다.
+    
+    Parameters:
+    - df_list: DataFrame 객체의 리스트
+    
+    Returns:
+    - DataFrame: 병합 및 처리된 데이터프레임의 처음 50개 행
+    """
+    # 각 DataFrame의 처음 50개 행만 사용
+    limited_dfs = [df.head(50) for df in df_list]
+    
+    # 제한된 DataFrame들을 합침
+    df_combined = pd.concat(limited_dfs)
+    
+    # '연관키워드'로 그룹화 후, 각 그룹의 '검색어'를 합쳐서 '중복검색어' 컬럼 생성
+    df_combined['중복검색어'] = df_combined.groupby('연관키워드')['검색어'].transform(lambda x: ','.join(x.unique()))
+    
+    # 중복 제거 (첫 번째 등장을 제외한 동일 '연관키워드' 삭제)
+    df_combined.drop_duplicates(subset='연관키워드', inplace=True)
+    
+    # 인덱스 리셋
+    df_combined.reset_index(drop=True, inplace=True)
+    
+    return df_combined
 
 
 def get_secret(key: str, 
