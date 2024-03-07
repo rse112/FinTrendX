@@ -12,18 +12,22 @@ from typing import Optional
 from collections import defaultdict
 
 def merge_keys_for_unique_names(a):
-    '''
+    ''' 
     a : dict
 
     return : dict
     '''
+    print("함수 실행")
     # 중복된 'name'에 대응되는 'key' 값을 합치기 위한 준비
     accumulated_keys = defaultdict(list)
 
     # 주어진 딕셔너리 a에서 각 'name'에 대응하는 'key' 값 합치기
     for name, key in zip(a['api_request_data'], a['keyname']):
+        print("반복문 실행")
+        print('name',name)
+        print('key',key)
         accumulated_keys[name].append(key)
-
+        print('accumulated_keys',accumulated_keys)
     # 중복 제거된 'name'을 기준으로 새로운 딕셔너리 생성, 이때 'key'는 리스트의 합집합으로 저장
     uniq_a = {
         'api_request_data': list(accumulated_keys.keys()),  # 중복 제거된 name 리스트
