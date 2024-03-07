@@ -1,0 +1,708 @@
+{
+    "display": 100,
+    "items": [
+        {
+            "description": "&quot;지난해 악성 웹 트랜잭션은 605%, 애플리케이션 공격 빈도는 60%, <b>디도스</b> 공격은 120% 증가했다. 깃허브에는 L7... 웹방화벽, 클라이언트 사이드 보호, API 방어, 봇 방어, 웹 <b>디도스</b> 방어 기능이 통합돼 있는 이 솔루션은... ",
+            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191551",
+            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191551",
+            "pubDate": "Thu, 07 Mar 2024 15:32:00 +0900",
+            "title": "[NGSV2024] 라드웨어 &quot;파괴적인 앱 공격, AI로 막는다&quot;"
+        },
+        {
+            "description": "스트리머들은 <b>디도스</b>(Ddos, 분산서비스거부) 공격에 많은 피해를 받고 있다. 사진은 SKT가 '2020 LCK 스프링... 스트리머들은 <b>디도스</b>(Ddos, 분산서비스거부) 공격에 많은 피해를 받고 있다. 인터넷 방송 뿐만 아니라... ",
+            "link": "https://www.cwn.kr/news/articleView.html?idxno=29477",
+            "originallink": "https://www.cwn.kr/news/articleView.html?idxno=29477",
+            "pubDate": "Thu, 07 Mar 2024 14:50:00 +0900",
+            "title": "스트리머부터 LCK까지 계속되는 <b>디도스</b> 공격… 페이커 &quot;안타깝다&quot;"
+        },
+        {
+            "description": "발생한 '<b>디도스</b>(DDoS, 분산 서비스 거부 공격)'가 e스포츠 대회까지 번지면서 사태가 심각해지고 있다. 이에... 그러나 최근 발생하고 있는 신종 <b>디도스</b> 공격에 이렇다 할 방안을 내지 못하고 있다. <b>디도스</b>, 게임 이용자들... ",
+            "link": "https://www.smartfn.co.kr/article/view/sfn202403070012",
+            "originallink": "https://www.smartfn.co.kr/article/view/sfn202403070012",
+            "pubDate": "Thu, 07 Mar 2024 10:24:00 +0900",
+            "title": "게임업계 번지고 있는 '<b>디도스</b>' 공격에 골머리"
+        },
+        {
+            "description": "레이어7 <b>디도스</b>(DDoS) 완화 기능을 통합한 개선된 엔터프라이즈급 보안 솔루션을 제공한다는 계획이다.... 지코어의 이러한 접근 방식은 지연 시간을 줄여 성능을 향상시키고, 대규모 <b>디도스</b> 공격에 대비해 원활하게... ",
+            "link": "http://www.itdaily.kr/news/articleView.html?idxno=221041",
+            "originallink": "http://www.itdaily.kr/news/articleView.html?idxno=221041",
+            "pubDate": "Thu, 07 Mar 2024 09:46:00 +0900",
+            "title": "지코어, 스택패스 WAAP 솔루션 인수…보안 포트폴리오 강화"
+        },
+        {
+            "description": "지난달 가해진 <b>디도스</b>(DDoS∙분산서비스거부) 공격으로 인해 원활한 대회 진행이 어려워졌고, 급기야는... 지난달 25일 오후 3시에 시작한 디플러스 기아와 DRX의 경기는 <b>디도스</b> 공격으로 8차례 중단과 재개를 반복했다가... ",
+            "link": "https://n.news.naver.com/mnews/article/138/0002168320?sid=105",
+            "originallink": "https://www.ddaily.co.kr/page/view/2024030619273669473",
+            "pubDate": "Thu, 07 Mar 2024 09:18:00 +0900",
+            "title": "[취재수첩] 프로 중의 프로 LCK, 아마추어 운영은 그만"
+        },
+        {
+            "description": "이상혁이 <b>디도스</b>(DDos, 분산 서비스 거부 공격) 공격자들을 겨냥한 쓴소리다. 그 역시 최근 발생한 <b>디도스</b> 공격의 피해자 중 한 명이다. 그는 최근 인터넷 방송에서 '<b>디도스</b>'라는 범법 행위를 반복하고 있는 이들에게... ",
+            "link": "https://n.news.naver.com/mnews/article/003/0012411513?sid=105",
+            "originallink": "http://www.newsis.com/view/?id=NISX20240305_0002649335&cID=13008&pID=13100",
+            "pubDate": "Thu, 07 Mar 2024 06:00:00 +0900",
+            "title": "게임 스트리머도, 롤 리그도 속수무책 당했다…<b>디도스</b> 미스터리 &quot;누구냐, 넌!..."
+        },
+        {
+            "description": "예를 들어 AI 센트럴 엔진이 웹사이트 비즈니스를 위협할 수 있는 애플리케이션 계층 <b>디도스</b>(DDoS·분산 서비스 거부) 공격을 탐지할 경우, AI는 자동으로 공격 특성에 맞는 정확한 보안 규칙을 생성하고 해당 보안 전략을... ",
+            "link": "https://www.dailysecu.com/news/articleView.html?idxno=154106",
+            "originallink": "https://www.dailysecu.com/news/articleView.html?idxno=154106",
+            "pubDate": "Wed, 06 Mar 2024 18:50:00 +0900",
+            "title": "씨디네트웍스, 클라우드 시큐리티 2.0 플랫폼 및 WAAP 솔루션 업그레이드"
+        },
+        {
+            "description": "예를 들어, AI 센트럴 엔진이 웹사이트 비즈니스를 위협할 수 있는 애플리케이션 계층 <b>디도스</b> 공격을 탐지할 경우, AI는 자동으로 공격 특성에 맞는 정확한 보안 규칙을 생성하고 해당 보안 전략을 에지에 배포해 지속적인... ",
+            "link": "https://n.news.naver.com/mnews/article/092/0002323633?sid=105",
+            "originallink": "https://zdnet.co.kr/view/?no=20240306172910",
+            "pubDate": "Wed, 06 Mar 2024 17:53:00 +0900",
+            "title": "씨디네트웍스, 클라우드 플랫폼으로 보안 솔루션 업그레이드"
+        },
+        {
+            "description": "지난주의 경우, 현재 <b>디도스</b> 공격 사태로 녹화 중계 방송된 광동과 농심의 1경기와 T1과 브리온 경기를 보기 위해서 많은 이용자들이 치지직을 찾았다. 경기 시간이 녹화 중계로 전환되면서 오후 9시에 시작됐고, 연휴... ",
+            "link": "http://www.gamevu.co.kr/news/articleView.html?idxno=31550",
+            "originallink": "http://www.gamevu.co.kr/news/articleView.html?idxno=31550",
+            "pubDate": "Wed, 06 Mar 2024 17:30:00 +0900",
+            "title": "트위치 철수 일주일, '치지직' 기존 이용자 완벽 흡수"
+        },
+        {
+            "description": "kr 최근 인터넷 방송 및 e스포츠업계가 <b>디도스</b> 공격(분산 서비스 거부 공격)으로 몸살을 앓고 있다. 6일 업계에 따르면 'LOL 챔피언스 코리아(LCK)'는 현재 생중계 경기를 비공개 녹화로 전환한 상태다. 지난달 29일 <b>디도스</b>... ",
+            "link": "http://theviewers.co.kr/View.aspx?No=3151497",
+            "originallink": "http://theviewers.co.kr/View.aspx?No=3151497",
+            "pubDate": "Wed, 06 Mar 2024 17:06:00 +0900",
+            "title": "치지직·아프리카TV 괴롭힌 <b>디도스</b> 공격, LCK마저 멈췄다"
+        },
+        {
+            "description": "예를 들어 AI 센트럴 엔진이 웹사이트 비즈니스를 위협할 수 있는 애플리케이션 계층 <b>디도스</b> 공격을 탐지할 경우, AI는 자동으로 공격 특성에 맞는 정확한 보안 규칙을 생성하고 해당 보안 전략을 에지에 배포해... ",
+            "link": "http://www.technoa.co.kr/news/articleView.html?idxno=96783",
+            "originallink": "http://www.technoa.co.kr/news/articleView.html?idxno=96783",
+            "pubDate": "Wed, 06 Mar 2024 16:54:00 +0900",
+            "title": "씨디네트웍스, 클라우드 시큐리티 2.0 플랫폼 및 WAAP 솔루션 업그레이드"
+        },
+        {
+            "description": "리그오브레전드로 치러지는 LCK가 <b>디도스</b> 공격을 받은 것이 영향을 미친 것으로 보인다. ◆ '리니지' '디아블로2' 선전 10~20위권에서는 게임별로 이용시간에 극명한 차이를 보이며 순위가 나눠지는 것이 확인됐다.... ",
+            "link": "https://dealsite.co.kr/articles/119126",
+            "originallink": "https://dealsite.co.kr/articles/119126",
+            "pubDate": "Wed, 06 Mar 2024 16:32:00 +0900",
+            "title": "[게임산책] [온라인게임순위] FC온라인·리니지·디아블로 무서운 상승세"
+        },
+        {
+            "description": "지난 6주차 LCK는 ‘<b>디도스</b>’로 인한 사이버테러로 전반적인 분위기는 매우 흉흉한 상황입니다. 6주차의 경우 긴급 조치로 도입됐던 녹화 중계 방송이 늦은 방송 송출로 인해 익일까지 경기가 진행돼 방송을 시청하는... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=109&aid=0005030565",
+            "originallink": "http://www.osen.co.kr/article/G1112288394",
+            "pubDate": "Wed, 06 Mar 2024 15:43:00 +0900",
+            "title": "[꼬꼬갓의 롤챔스 엿보기 ②] 고수진 해설, “T1 조합 고점 점수는 120점, 젠..."
+        },
+        {
+            "description": "히샤를리송과 에메르송 로얄은 최근 공개된 브라질 유튜브 채널 '데스임페<b>디도스</b>' 영상에 출연했다. 에메르송은 &quot;히샤를리송이 경기 당일 회의에 늦은 적이 있다&quot;며 콘테 감독 시절 비화를 전했다. 에메르송은 &quot;콘테... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=436&aid=0000083441",
+            "originallink": "http://www.footballist.co.kr/news/articleView.html?idxno=180571",
+            "pubDate": "Wed, 06 Mar 2024 14:43:00 +0900",
+            "title": "&quot;콘테 감독님, 포메이션이 별로입니다&quot; 오해해서 뜻밖에 작심 발언한 히샤를리..."
+        },
+        {
+            "description": "① <b>디도스</b>(DDoS) 공격 대응훈련(3~5월) : 기관 시스템 및 정보보안 관련자를 대상으로 <b>디도스</b> 공격 탐지·차단 등 보안정책 적정성 여부 점검 ② 블라인드 훈련(3~7월) : 대학 우수인력 주도로 사이버 안전센터 및 소속... ",
+            "link": "http://www.boannews.com/media/view.asp?idx=127423&kind=",
+            "originallink": "http://www.boannews.com/media/view.asp?idx=127423&kind=",
+            "pubDate": "Wed, 06 Mar 2024 13:56:00 +0900",
+            "title": "과기정통부, 모의해킹 훈련에 참여할 화이트해커 선발"
+        },
+        {
+            "description": "지난 6주차 LCK는 ‘<b>디도스</b>’로 인한 사이버테러로 전반적인 분위기는 매우 흉흉한 상황입니다. 6주차의 경우 긴급 조치로 도입됐던 녹화 중계 방송이 늦은 방송 송출로 인해 익일까지 경기가 진행돼 방송을 시청하는... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=109&aid=0005030496",
+            "originallink": "http://www.osen.co.kr/article/G1112288316",
+            "pubDate": "Wed, 06 Mar 2024 13:10:00 +0900",
+            "title": "[꼬꼬갓의 롤챔스 엿보기 ①] 너무나 좋은 세나, 원거리 챔프 탑 등장 배경은"
+        },
+        {
+            "description": "과기정통부는 3월부터 11월까지 공공기관 본부 및 소속 산하기관 65개를 대상으로 △<b>디도스</b>공격 대응훈련, 블라인드 훈련 △사이버 모의침투 대응훈련 △해킹메일 대응훈련 △장애대응 훈련 등 5가지 종류의 사이버... ",
+            "link": "https://n.news.naver.com/mnews/article/029/0002859309?sid=105",
+            "originallink": "https://www.dt.co.kr/contents.html?article_no=2024030602109931065004&ref=naver",
+            "pubDate": "Wed, 06 Mar 2024 12:00:00 +0900",
+            "title": "과기정통부 &quot;기업·대학생 화이트해커와 사이버 위기대응 훈련&quot;"
+        },
+        {
+            "description": "도중 <b>디도스</b> 공격을 받은지 열흘이 지났지만 여전히 대응책을 내놓지 못하고 있다. 보안업계에서는 이번 사태가 예방체계 미흡이 불러온 '인재'라는 지적이 나온다. 사전에 <b>디도스</b> 공격을 막을 수 있는 전용 솔루션을... ",
+            "link": "https://www.techm.kr/news/articleView.html?idxno=121225",
+            "originallink": "https://www.techm.kr/news/articleView.html?idxno=121225",
+            "pubDate": "Wed, 06 Mar 2024 10:48:00 +0900",
+            "title": "&quot;열흘째 해결 못한 LCK <b>디도스</b> 사태, 예방체계 미흡이 불러온 인재&quot;...보안 전..."
+        },
+        {
+            "description": "한편 <b>디도스</b> 공격으로 전 경기가 녹화방송으로 진행하고 있는 LCK는 어느 정도 안정화 단계에 들어갔다고 판단, 4시간 지연 방송에서 2시간 지연 방송으로 변경했습니다. 오후 3시에 1경기가 시작하기 때문에 평일과... ",
+            "link": "https://www.techm.kr/news/articleView.html?idxno=121219",
+            "originallink": "https://www.techm.kr/news/articleView.html?idxno=121219",
+            "pubDate": "Wed, 06 Mar 2024 10:34:00 +0900",
+            "title": "[LCK 브리핑] PO 진출 확정지은 T1-젠지-한화생명...이제는 1위 쟁탈전 '시작..."
+        },
+        {
+            "description": "LCK에 불어닥친 <b>디도스</b> 공격으로 혼란스러운 상황이 지속됐지만, 각 팀들은 6주차 경기에서 최선을 다했다. 그 과정에서 T1과 젠지, 한화생명이 플레이오프 티켓을 확정 지었으며, 이제 남은 3주간의 경기를 통해 7팀 중... ",
+            "link": "http://www.gamevu.co.kr/news/articleView.html?idxno=31531",
+            "originallink": "http://www.gamevu.co.kr/news/articleView.html?idxno=31531",
+            "pubDate": "Wed, 06 Mar 2024 10:30:00 +0900",
+            "title": "남은 LCK 스프링 플레이오프 티켓은 3장, 마지막에 웃을 팀은?"
+        },
+        {
+            "description": "정지당한 줄 알고 놀랐다&quot;, &quot;카카오톡 터졌을 때만큼은 아니지만 순간 상실감만큼은 비슷했던 것 같다&quot;, &quot;유튜브 쇼츠도 잠깐 터졌었다는 얘기를 들었는데 <b>디도스</b> 공격이 원인인 거냐&quot;는 의견을 남겼다. /황수영 기자",
+            "link": "https://www.asiatime.co.kr/article/20240306500015",
+            "originallink": "https://www.asiatime.co.kr/article/20240306500015",
+            "pubDate": "Wed, 06 Mar 2024 09:16:00 +0900",
+            "title": "[e와글] 인스타∙페북 2시간 동안 '먹통'⋯ 누리꾼들 &quot;카톡 사태와 비슷한 상..."
+        },
+        {
+            "description": "‘탑 소라카’ 등 변칙적인 카드를 꺼낼 가능성은 여전히 존재한다. 한편 LCK는 여전한 <b>디도스</b> 위협으로 인해 이번 주차 경기도 무관중 녹화 중계로 진행한다. 방송 송출 시간은 평일과 주말 모두 오후 5시로 통일했다.",
+            "link": "https://sports.news.naver.com/news.nhn?oid=015&aid=0004956217",
+            "originallink": "https://www.hankyung.com/article/202403059184i",
+            "pubDate": "Wed, 06 Mar 2024 07:02:00 +0900",
+            "title": "&quot;젠지에 복수&quot;…한화생명 ‘LCK 3황’ 증명 나선다"
+        },
+        {
+            "description": "이는 히샬리송이 팀 동료 에메르송 로얄과 최근 브라질 유튜브 채널 '데심페<b>디도스</b>'에 출연해 유튜버 프레드와 대화를 나누던 중 직접 밝혔다. 히샬리송은 콘테 감독이 영입한 선수다. 에버턴에서 활약하다 2022년 여름... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=076&aid=0004117360",
+            "originallink": "http://sports.chosun.com/news/ntype.htm?id=202403060100034950003407&servicedate=20240306",
+            "pubDate": "Wed, 06 Mar 2024 05:48:00 +0900",
+            "title": "사과하랬더니… 말귀 못 알아먹은 '사오정' 히샬리송, 콘테 감독 앞에서 전술..."
+        },
+        {
+            "description": "국내 ‘리그 오브 레전드’ e스포츠 프로 대회인 ‘LoL 챔피언스 코리아(LCK)’가 출처를 알 수 없는 <b>디도스</b>... 경기는 <b>디도스</b> 공격 때문에 7시간 가까이 중단과 재개를 반복한 끝에야 마무리됐다. 이후 LCK는 온라인 방벽을... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=005&aid=0001678858",
+            "originallink": "https://www.kmib.co.kr/article/view.asp?arcid=1709612680&code=12230001&cp=nv",
+            "pubDate": "Wed, 06 Mar 2024 04:05:00 +0900",
+            "title": "4시간 지연 중계 “자정에 시작… 얼마나 보겠나”"
+        },
+        {
+            "description": "국내 ‘리그 오브 레전드’의 프로 리그 대회인 ‘LoL 챔피언스 코리아(LCK)’가 무차별적인 <b>디도스</b>... 보안 및 법조계 관계자는 “내부망 구축이 최우선” “<b>디도스</b> 공격은 명백한 범죄 행위”라고 입을 모은다. <b>디도스</b>... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=005&aid=0001678859",
+            "originallink": "https://www.kmib.co.kr/article/view.asp?arcid=1709612688&code=12230001&cp=nv",
+            "pubDate": "Wed, 06 Mar 2024 04:05:00 +0900",
+            "title": "<b>디도스</b>에 함락된 LCK, 피해 커지는데 대책은 ‘고심 중’"
+        },
+        {
+            "description": "앞당긴다 -<b>디도스</b>에 맥 못추는 e스포츠 -앤트로픽 AI챗봇, GPT-4보다 똑똑하네 -상온 초전도체 또 가짜?…과학계 “달라진 게 없다” △소비자생활 -신세계푸드, ‘식물성 순대’로 대안식품 확장 -지난해 유통가... ",
+            "link": "https://n.news.naver.com/mnews/article/018/0005686056?sid=102",
+            "originallink": "http://www.edaily.co.kr/news/newspath.asp?newsid=03794966638820368",
+            "pubDate": "Tue, 05 Mar 2024 21:45:00 +0900",
+            "title": "[미리보는 이데일리] 191명 전세사기도 15년형, 판사마저 한탄"
+        },
+        {
+            "description": "국내 최대 e스포츠 대회 ‘리그 오브 레전드 챔피언스 코리아(LCK)’가 분산서비스거부(<b>디도스</b>, DDoS) 공격에... 망 분리, <b>디도스</b> 방어 장비 구축 등 기술적 대비가 미흡하다는 의미다. 지난 4일 이정훈 LCK 사무총장은... ",
+            "link": "https://n.news.naver.com/mnews/article/018/0005685894?sid=105",
+            "originallink": "http://www.edaily.co.kr/news/newspath.asp?newsid=03302966638820368",
+            "pubDate": "Tue, 05 Mar 2024 16:34:00 +0900",
+            "title": "'<b>디도스</b> 늪'에 빠진 LCK…보안전문가들 &quot;대회 준비 미흡했다&quot;"
+        },
+        {
+            "description": "사상 초유의 사태인 '<b>디도스</b> 공격'에 'LOL 챔피언스 코리아(이하 LCK)'가 크게 위협받고 있다. 최근 녹화... 리그 운영 주체인 LCK는 4일 이정훈 사무총장이 직접 입장문을 발표하는 등 '<b>디도스</b> 공격'의 대응에 대한 강한... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=311&aid=0001698712",
+            "originallink": "https://www.xportsnews.com/article/1831207",
+            "pubDate": "Tue, 05 Mar 2024 15:46:00 +0900",
+            "title": "'<b>디도스</b> 공격'에 흔들리는 LCK... 안정성 높인 시스템, 롤파크 도입 예정 [엑..."
+        },
+        {
+            "description": "경기를 지연시킨 건 ‘분산서비스거부(<b>디도스</b>) 공격’이었다. <b>디도스</b> 공격은 특정 서버가 소화할 수 없는 규모의 접속 통신량(트래픽)을 한 번에 일으켜 서버를 마비시키는 것이다. ‘리그오브레전드 챔피언스 코리아’는... ",
+            "link": "https://n.news.naver.com/mnews/article/028/0002679551?sid=102",
+            "originallink": "https://www.hani.co.kr/arti/society/society_general/1130965.html",
+            "pubDate": "Tue, 05 Mar 2024 14:43:00 +0900",
+            "title": "LoL 챔피언십 ‘<b>디도스</b> 공격’에 서버마비…잇단 중단"
+        },
+        {
+            "description": "최근 '리그 오브 레전드' e스포츠 한국 프로 리그 '리그 오브 레전드 챔피언스 코리아(이하 LCK)'가 <b>디도스</b> 공격으로 몸살을 앓고 있다. 지난 2월 25일 2024 LCK 스프링, DRX와 Dplus KIA의 정규시즌 49경기에서 <b>디도스</b> 공격이... ",
+            "link": "https://www.gamechosun.co.kr/webzine/article/view.php?no=203352",
+            "originallink": "https://www.gamechosun.co.kr/webzine/article/view.php?no=203352",
+            "pubDate": "Tue, 05 Mar 2024 14:16:00 +0900",
+            "title": "<b>디도스</b> 공격에 몸살 앓는 2024 LCK 스프링, &quot;팬분들의 지지와 성원 부탁드린다..."
+        },
+        {
+            "description": "LCK 이정훈 사무총장이 리그를 강타한 <b>디도스</b>(DDoS, 분산 서비스 거부) 공격 사태에 대해 사과했다. 또, 이후... 또한 그는 &quot;LCK는 <b>디도스</b> 공격에 대한 대항력을 확보해 가며 단계적으로 정상화를 향해 나아가려는 계획을 갖고... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=347&aid=0000178652",
+            "originallink": "http://www.dailyesports.com/view.php?ud=202403050943528619a7594bcb2f_27",
+            "pubDate": "Tue, 05 Mar 2024 11:43:00 +0900",
+            "title": "LCK 이정훈 사무총장, &quot;정상화 계획 실행 중…6일부터 오후 5시 녹화중계&quot;"
+        },
+        {
+            "description": "LCK의 이정훈 사무총장은 금일(5일) 공식 커뮤니티 공지를 통해 &quot;<b>디도스</b> 공격으로 LCK 대회가 심대한 타격을... 그에 따르면 지난 1월부터 논란이 된 유명 스트리머와 프로게이머를 대상으로 한 <b>디도스</b> 공격과 최근 LCK를... ",
+            "link": "http://gamefocus.co.kr/detail.php?number=149962",
+            "originallink": "http://gamefocus.co.kr/detail.php?number=149962",
+            "pubDate": "Tue, 05 Mar 2024 10:30:00 +0900",
+            "title": "LCK 녹화 중계 평일 9시, 주말 7시 방송 방침 철회... 평일, 주말 모두 오후 ..."
+        },
+        {
+            "description": "<b>디도스</b> 공격 사태로 홍역을 앓고 있는 LCK가 6주차에 이어 7주차에도 녹화 방송으로 진행된다. 앞으로... 현재 2024 리그오브레전드 챔피언스 코리아(LCK) 스프링 경기는 <b>디도스</b> 공격 영향을 받아 녹화 중계로 진행 중이다.... ",
+            "link": "http://www.gamevu.co.kr/news/articleView.html?idxno=31508",
+            "originallink": "http://www.gamevu.co.kr/news/articleView.html?idxno=31508",
+            "pubDate": "Tue, 05 Mar 2024 10:20:00 +0900",
+            "title": "이정훈 사무총장 &quot;LCK <b>디도스</b> 공격은 명백한 범죄 행위&quot;"
+        },
+        {
+            "description": "한편, LCK는 최근 <b>디도스</b>(분산서비스거부) 공격으로 곤혹을 치렀다. LCK는 2월 29일 공식 채널을 통해 “계속되는 <b>디도스</b> 공격의 영향을 최소화하고자 비공개 녹화 방송으로 전환한다”고 밝혔다. 김명근... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=382&aid=0001110373",
+            "originallink": "https://sports.donga.com/article/all/20240304/123810395/4",
+            "pubDate": "Tue, 05 Mar 2024 10:01:00 +0900",
+            "title": "LCK 플레이오프 진출 티켓 거머쥔 ‘T1·젠지·한화생명’"
+        },
+        {
+            "description": "거듭되는 <b>디도스</b>(DDos‧분산서비스거부) 공격으로 인해 대회를 녹화방송으로 진행하고 있는... LCK 이정훈 사무총장은 4일 낸 공식 입장문에서 “지난 2월25일부터 시작된 <b>디도스</b> 공격으로 대회가 심대한 타격을 입었다”... ",
+            "link": "https://n.news.naver.com/mnews/article/138/0002168097?sid=105",
+            "originallink": "https://www.ddaily.co.kr/page/view/2024030509295651598",
+            "pubDate": "Tue, 05 Mar 2024 09:41:00 +0900",
+            "title": "LCK 이정훈 사무총장 “<b>디도스</b> 공격 후 롤파크 추가 조치… 해결책 찾을 것”"
+        },
+        {
+            "description": "국내 최대 규모의 e스포츠 리그 'LCK'(리그오브레전드 챔피언스 코리아)가 <b>디도스</b>(DDoS·분산 서비스 거부)에... 4일 보안전문기업 티오리(Theori)는 최근 자사의 유튜브 채널에 '롤 <b>디도스</b>, 해커에게 더 자세히 물어봤습니다.... ",
+            "link": "https://n.news.naver.com/mnews/article/421/0007389940?sid=105",
+            "originallink": "https://www.news1.kr/articles/5339266",
+            "pubDate": "Tue, 05 Mar 2024 07:30:00 +0900",
+            "title": "<b>디도스</b> 공격 롤 리그 &quot;파행 가능성은 낮아&quot;…봄 시즌 내 복구 전망"
+        },
+        {
+            "description": "이정훈 LCK 사무총장/사진-이소라 기자 '<b>디도스</b>'(DDoS·분산 서비스 거부) 공격에 생중계가 중단되는 초유의... 이정훈 LCK 사무총장은 4일 입장문을 통해 <b>디도스</b> 공격 대응에 대한 부족한 부분을 인정하고, 리그를 정상화... ",
+            "link": "https://www.techm.kr/news/articleView.html?idxno=121137",
+            "originallink": "https://www.techm.kr/news/articleView.html?idxno=121137",
+            "pubDate": "Mon, 04 Mar 2024 23:16:00 +0900",
+            "title": "<b>디도스</b> 공격 대응 부족함 인정한 LCK...&quot;리그 정상화 위해 반드시 해결책 찾겠..."
+        },
+        {
+            "description": "사상 초유의 <b>디도스</b>(DDoS·분산서비스거부) 피해에 녹화 중계로 전환한 리그 오브 레전드(LoL) 국내 프로리그... 그러면서 “LCK를 대상으로 한 <b>디도스</b> 공격은 명백한 범죄 행위라고 판단해 상황 발생 직후 관계기관과... ",
+            "link": "https://n.news.naver.com/mnews/article/366/0000975045?sid=105",
+            "originallink": "https://biz.chosun.com/it-science/ict/2024/03/04/5LG5FB6LRRGJDFGYFHOHB47Q74/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+            "pubDate": "Mon, 04 Mar 2024 21:20:00 +0900",
+            "title": "<b>디도스</b> 공격받은 LCK “녹화 중계에 추가 보호 조치…단계적 정상화 하겠다”"
+        },
+        {
+            "description": "<b>디도스</b>(DDoS·분산 서비스 거부) 공격에 생중계를 중단한 국내 e스포츠 리그 '리그오브레전드 챔피언스... 이 총장은 &quot;LCK는 <b>디도스</b> 공격 관련 대항력을 확보해 나가며 단계적으로 정상화를 향해 나아가려는 계획을 갖고... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=421&aid=0007389758",
+            "originallink": "https://www.news1.kr/articles/5339613",
+            "pubDate": "Mon, 04 Mar 2024 20:14:00 +0900",
+            "title": "LCK &quot;점진 정상화 단계 밟을 것…어떤 경우든 해결책 찾아내겠다&quot;"
+        },
+        {
+            "description": "최근 <b>디도스</b>(DDos, Distributed Denial of Service) 공격으로 몸살을 앓고 있는 LCK(LoL 챔피언스 코리아) 측이 4일 SNS를... 이정훈 LCK 사무총장은 &quot;지난 2월 25일부터 시작된 <b>디도스</b> 공격으로 LCK 대회가 심대한 타격을 입었다&quot;라며... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=031&aid=0000817502",
+            "originallink": "http://www.inews24.com/view/1693513",
+            "pubDate": "Mon, 04 Mar 2024 19:51:00 +0900",
+            "title": "이정훈 LCK 사무총장 &quot;롤파크 보호조치 효과적...녹화 중계 오후 5시로 변경&quot;"
+        },
+        {
+            "description": "T1은 <b>디도스</b> 공격 직전 두 개 매치에서 국내 스트리밍 채널 기준 45만 동시 시청자 수를 기록했다. 하지만 <b>디도스</b> 공격 직후 피어엑스(FOX)와 OK저축은행브리온(BRO)과의 연전에서 최고 시청 기록 33만 명을 기록. 약 26... ",
+            "link": "https://www.gameple.co.kr/news/articleView.html?idxno=208823",
+            "originallink": "https://www.gameple.co.kr/news/articleView.html?idxno=208823",
+            "pubDate": "Mon, 04 Mar 2024 19:24:00 +0900",
+            "title": "LCK &quot;녹화경기 송출 시간 원래대로... 여러분 성원 절실&quot;"
+        },
+        {
+            "description": "최근 <b>디도스</b> 공격으로 비공개 녹화 중계로 진행되고 있는 LCK가 방송 송출 시간을 기존과 같은 평일 오후 5시로 변경한다. LCK는 <b>디도스</b> 공격으로 인해 비공개 녹화 중계를 결정하면서 송출 시간을 미리 고지하지 않다가... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=442&aid=0000170363",
+            "originallink": "http://www.inven.co.kr/webzine/news/?news=293654&iskin=esports",
+            "pubDate": "Mon, 04 Mar 2024 18:38:00 +0900",
+            "title": "LCK, 부족했던 운영 죄송... 녹화 중계 오후 5시 송출 변경"
+        },
+        {
+            "description": "<b>디도스</b>(DDoS·분산서비스거부) 피해에 녹화 중계로 전환한 리그 오브 레전드(LoL) 국내 프로리그 LCK가... 앞서 LCK는 지난달 말 스프링 정규리그 진행 도중 <b>디도스</b> 공격으로 추정되는 네트워크 장애가 잇따라 발생하며... ",
+            "link": "https://n.news.naver.com/mnews/article/374/0000373002?sid=101",
+            "originallink": "https://biz.sbs.co.kr/article_hub/20000159730?division=NAVER",
+            "pubDate": "Mon, 04 Mar 2024 18:38:00 +0900",
+            "title": "생중계 멈춘 LCK &quot;팬들께 죄송…녹화방송, 오후 5시 송출&quot;"
+        },
+        {
+            "description": "LCK 이정훈 사무총장이 최근 <b>디도스</b> 공격으로 인한 현장 중계 중단과 관련해 입장문을 표명했다. 해당 입장문에서 이 사무총장은 LCK 팬들에게 대한 사과와 함께 <b>디도스</b> 공격에 대한 대항력을 단계적으로 확보해 나가는... ",
+            "link": "https://www.khgames.co.kr/news/articleView.html?idxno=225263",
+            "originallink": "https://www.khgames.co.kr/news/articleView.html?idxno=225263",
+            "pubDate": "Mon, 04 Mar 2024 18:26:00 +0900",
+            "title": "LCK 이정훈 사무총장, &quot;리그 파행 송구 ... 6일부터 오후 5시 중계 송출&quot;"
+        },
+        {
+            "description": "이정훈 사무총장 &quot;진심으로 사과…사태 수습 후 대응 과정 재점검&quot; 사상 초유의 <b>디도스</b>(DDoS... 앞서 LCK는 지난달 말 스프링 정규리그 진행 도중 <b>디도스</b> 공격으로 추정되는 네트워크 장애가 잇따라 발생하며 현장... ",
+            "link": "https://n.news.naver.com/mnews/article/001/0014542197?sid=105",
+            "originallink": "https://www.yna.co.kr/view/AKR20240304144700017?input=1195m",
+            "pubDate": "Mon, 04 Mar 2024 18:21:00 +0900",
+            "title": "'<b>디도스</b> 피해' LCK &quot;녹화 중계에 추가 보호조치…단계적 정상화&quot;"
+        },
+        {
+            "description": "국내 대표 e스포츠 리그 리그오브레전드 챔피언스 코리아(LCK)가 최근 <b>디도스</b>(DDos, 분산 서비스 거부)... 시작된 <b>디도스</b> 공격으로 LCK 대회가 심대한 타격을 입었다. 일부 경기가 생중계 직전 갑작스럽게 연기됐고, 임시... ",
+            "link": "https://n.news.naver.com/mnews/article/003/0012405953?sid=105",
+            "originallink": "http://www.newsis.com/view/?id=NISX20240304_0002647843&cID=13008&pID=13100",
+            "pubDate": "Mon, 04 Mar 2024 18:21:00 +0900",
+            "title": "LCK, <b>디도스</b> 공격에 공식 사과…&quot;수사기관 신고&quot;"
+        },
+        {
+            "description": "발생한 <b>디도스</b>(DDoS, 분산 서비스 거부) 사태에 대한 입장문을 4일 내놨다. LCK는 “위상에 못 미치는 대응과 운영으로 불편을 겪은 팬 분들께 사과드린다”라며 “<b>디도스</b> 공격에 대한 항력을 확보해가며 단계적으로... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=015&aid=0004955496",
+            "originallink": "https://www.hankyung.com/article/202403046318i",
+            "pubDate": "Mon, 04 Mar 2024 18:19:00 +0900",
+            "title": "LCK “<b>디도스</b> 사태 죄송…녹화방송, 오후 5시 송출”"
+        },
+        {
+            "description": "▲ LCK 2월 26일 경기 공지 (자료출처: LCK 공식 인스타그램) 최근 <b>디도스</b> 공격(분산 서비스 거부 공격, Distributed Denial of Service)이 연일 화제다. <b>디도스</b>는 특정 서버나 개인 PC에 접속량을 갑작스럽게 늘려 네트워크 이용... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=356&aid=0000065356",
+            "originallink": "https://www.gamemeca.com/mv.php?inflow=naver_s&gid=1746402",
+            "pubDate": "Mon, 04 Mar 2024 18:19:00 +0900",
+            "title": "게임계에 암처럼 퍼져가는 '<b>디도스</b>' 테러"
+        },
+        {
+            "description": "‘LoL 챔피언스 코리아(LCK)’ 이정훈 사무총장이 최근 리그를 덮친 <b>디도스</b> 공격과 관련한 입장문을 발표했다.... LCK는 지난달 25일 디플러스 기아와 DRX의 경기부터 출처를 알 수 없는 <b>디도스</b> 공격을 당하고 있다. 경기 중인... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=005&aid=0001678474",
+            "originallink": "https://www.kmib.co.kr/article/view.asp?arcid=0019856844&code=61162012&cp=nv",
+            "pubDate": "Mon, 04 Mar 2024 18:18:00 +0900",
+            "title": "LCK 사무총장 “<b>디도스</b> 공격, 어떤 경우든 해결책 찾아낼 것”"
+        },
+        {
+            "description": "LCK가 최근 이어진 <b>디도스</b> 공격에 대한 대응책을 밝히며 팬들에게 사과했다. 4일, LCK 이정훈 사무총장은 '현... 현재 LCK는 <b>디도스</b> 공격을 명백한 범죄 행위라고 판단, 관계기관 및 수사기관에 신고한 후 롤파크에 추가적인... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=439&aid=0000028051",
+            "originallink": "https://www.thisisgame.com/webzine/news/nboard/4/?n=185446",
+            "pubDate": "Mon, 04 Mar 2024 18:13:00 +0900",
+            "title": "<b>디도스</b> 공격에 대응책 밝힌 LCK &quot;강화된 시스템 도입 예정&quot;"
+        },
+        {
+            "description": "<b>디도스</b> 공격으로 비공개 녹화 방송에 들어갔던 LCK가 정상화 수순을 위한 플랜을 공개했다. 4일 LCK는 이정훈 사무총장 명의로 '현 상황과 관련해 LCK 팬들에게 드리는 말씀' 글을 공개했다. 이에 따르면 가장 먼저 <b>디도스</b>... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=236&aid=0000241109",
+            "originallink": "https://www.fomos.kr/redirect/news_view?news_cate_id=39&entry_id=130007",
+            "pubDate": "Mon, 04 Mar 2024 18:08:00 +0900",
+            "title": "LCK, 6일부터 방송 시간 정상화... 녹화 중계-무관중 생중계-정상화 수순 진행"
+        },
+        {
+            "description": "LCK)'가 <b>디도스</b> 공격 영향으로 파행 운영되고 있는 영향을 받은 것으로 분석됩니다. 'LoL'은 2024년... 라이엇은 퍼즈 발생 사유에 대해 &quot;외부 <b>디도스</b> 공격 의심 정황이 확인됐다&quot;고 밝혔으나 그 배후는 여러 추측만... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=347&aid=0000178642",
+            "originallink": "http://game.dailyesports.com/view.php?ud=202403041724201577da2c546b3a_26",
+            "pubDate": "Mon, 04 Mar 2024 17:27:00 +0900",
+            "title": "[PC방순위] 'LCK' <b>디도스</b> 공격 여파? 'LoL', 40% 선 무너져"
+        },
+        {
+            "description": "e스포츠 스타 ‘페이커’도 경기 중단 LCK, 잇단 <b>디도스</b> 공격에 몸살 재미·돈 위해 <b>디도스</b> 공격…잡히면 ‘감옥행’ 법조계 “기술 보완하고, 수사 역량 키워야” “20여 년 넘게 중계를 해왔지만, 이런 초유의 사태는... ",
+            "link": "https://n.news.naver.com/mnews/article/366/0000974992?sid=102",
+            "originallink": "https://biz.chosun.com/topics/law_firm/2024/03/04/JSIEEEZWLFBMZCQ3HELKNVC5VE/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+            "pubDate": "Mon, 04 Mar 2024 16:24:00 +0900",
+            "title": "시청자 4억명 ‘롤드컵’ 우승국에 덮친 <b>디도스</b>…잡히면 최대 5년 감옥살이"
+        },
+        {
+            "description": "이재완이 <b>디도스</b> 공격을 당한 리그 오브 레전드 챔피언스 코리아(LCK) 중계방송 덕분입니다. LCK 리그, <b>디도스</b> 중계라는 외부적인 요인이 동시 시청자 수 증가에 영향을 준 것이죠. 반면, 아프리카TV의 경우는 외부 영향이... ",
+            "link": "https://www.techm.kr/news/articleView.html?idxno=121111",
+            "originallink": "https://www.techm.kr/news/articleView.html?idxno=121111",
+            "pubDate": "Mon, 04 Mar 2024 15:52:00 +0900",
+            "title": "아프리카TV 동시 접속자 수 40만 돌파, '치지직의 2배'...승승장구 비결은?"
+        },
+        {
+            "description": "이번 주 LCK는 <b>디도스</b> 테러에 발칵 뒤집혔습니다. 테러를 가한 당사자에도 잘못이 있으나, 제대로 된 대응책을 마련하지 못한 라이엇게임즈, LCK 주최 측 역시 책임을 피할 수 없는 상황입니다. 라이엇게임즈... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=356&aid=0000065343",
+            "originallink": "https://www.gamemeca.com/mv.php?inflow=naver_s&gid=1746390",
+            "pubDate": "Mon, 04 Mar 2024 15:43:00 +0900",
+            "title": "[롤짤] LCK 스프링 노답 삼형제"
+        },
+        {
+            "description": "조상 격인 모리스 웜은 인터넷으로 퍼진 최초의 컴퓨터 웜들 중 하나다. 이는 한번 감염에 성공하면 프로세스 이름과 임시 파일들을 삭제해 눈에 띄지 않도록 해 <b>디도스</b> 공격과 비슷한 효과라고 평가받기도 했다.",
+            "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=508045",
+            "originallink": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=508045",
+            "pubDate": "Mon, 04 Mar 2024 15:20:00 +0900",
+            "title": "AI 챗봇 조작하는 웜, '모리스II' 개발 성공…보안 우려 지적"
+        },
+        {
+            "description": "계속된 <b>디도스</b>(DDos, Distributed Denial of Service) 공격으로 e스포츠 LCK(LoL 챔피언스 코리아)의 생중계를... 최근 LCK는 사상 초유의 <b>디도스</b> 공격에 비공개 녹화 방송으로 리그를 진행하고 있다. 지난달 29일 LCK는 공지를 통해... ",
+            "link": "https://n.news.naver.com/mnews/article/031/0000817382?sid=105",
+            "originallink": "http://www.inews24.com/view/1693198",
+            "pubDate": "Mon, 04 Mar 2024 14:51:00 +0900",
+            "title": "<b>디도스</b>에 혼쭐 LCK &quot;이르면 3월 중 생중계 재개&quot;...팬들 &quot;밤늦게 녹화 중계 웬..."
+        },
+        {
+            "description": "한편, 연일 <b>디도스</b>공격으로 방송이 중단됐던 LCK의 '오프라인 경기' 원상복귀 가능성은 아직 낮은 것으로 파악됐다. LCK측은 &quot;별도 공지를 통해 경기가 정상화되는대로 안내드릴 예정&quot;이라고 전했다.",
+            "link": "https://sports.news.naver.com/news.nhn?oid=445&aid=0000175784",
+            "originallink": "https://www.mhnse.com/news/articleView.html?idxno=256878",
+            "pubDate": "Mon, 04 Mar 2024 14:31:00 +0900",
+            "title": "[LCK] 한화생명, 'T1-젠지' 양강 구도 부술까?"
+        },
+        {
+            "description": "운영사인 라이엇게임즈가 <b>디도스</b> 공격에 대처하지 못하고 결국 리그가 녹화 중계로 전환되며 큰 타격이... LCK가 녹화 중계로 전환된 이유는 이전부터 문제가 됐던 <b>디도스</b> 공격이다. 25일 치러진 디플러스 기아와 DK의... ",
+            "link": "https://www.skyedaily.com/news/news_view.html?ID=223423",
+            "originallink": "https://www.skyedaily.com/news/news_view.html?ID=223423",
+            "pubDate": "Mon, 04 Mar 2024 14:26:00 +0900",
+            "title": "<b>디도스</b> 피해 비밀경기? LCK 생태계 무너진다"
+        },
+        {
+            "description": "앞서 LG유플러스는 지난해 초 <b>디도스</b>(분산서비스거부) 공격 등 사이버 공격을 받아 29만명의 개인정보가 유출 되는 등 초유의 사태를 겪었다. 이로 인해 황 대표가 고개를 숙이며 사과한 것을 시작으로 LG유플러스는... ",
+            "link": "https://www.topdaily.kr/articles/96664",
+            "originallink": "https://www.topdaily.kr/articles/96664",
+            "pubDate": "Mon, 04 Mar 2024 14:07:00 +0900",
+            "title": "'연임' 황현식號 LGU+, 변화 대신 안정 승부수"
+        },
+        {
+            "description": "게임업계가 <b>디도스</b> 공격 피해로 지속적인 진통을 앓고 있다. 지난 2월 28일 서울 중구 롤파크 아레나에서 진행된 리그오브레전드챔피언스코리아(LCK)가 T1과 피어엑스의 경기 도중 <b>디도스</b> 공격의 영향으로 7시간 이상... ",
+            "link": "https://sateconomy.co.kr/news/view/1065588506363667",
+            "originallink": "https://sateconomy.co.kr/news/view/1065588506363667",
+            "pubDate": "Mon, 04 Mar 2024 14:00:00 +0900",
+            "title": "<b>디도스</b> 공격 판치는 게임업계… “수사기관 적극 나서야”"
+        },
+        {
+            "description": "평일 9시·주말 7시 송출 최근 <b>디도스</b> 공격으로 생중계가 두 차례 중단된 ‘리그오브레전드 챔피언스 코리아(LCK)’가 잔여 일정을 모두 비공개 녹화 방송으로 진행한다. LCK는 최근 공지를 통해 계속되는 <b>디도스</b>... ",
+            "link": "https://n.news.naver.com/mnews/article/009/0005266833?sid=105",
+            "originallink": "https://www.mk.co.kr/article/10955773",
+            "pubDate": "Mon, 04 Mar 2024 10:32:00 +0900",
+            "title": "LCK, <b>디도스</b> 공격에 비공개 녹화 방송"
+        },
+        {
+            "description": "국내외에서 인기 높은 e스포츠 리그 ‘LCK’(LoL 챔피언스 코리아)가 <b>디도스</b>(DDoS·분산 서비스 거부) 공격을... 결국 <b>디도스</b> 공격이 원인으로 밝혀졌고, LCK는 온라인 방화벽을 강화했지만 28일 T1-피어엑스의 2세트에서 또... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=144&aid=0000946744",
+            "originallink": "http://sports.khan.co.kr/news/sk_index.html?art_id=202403040600013&sec_id=560201&pt=nv",
+            "pubDate": "Mon, 04 Mar 2024 06:06:00 +0900",
+            "title": "LCK 덮친 <b>디도스</b>…해결책에 글로벌 e스포츠계 주목"
+        },
+        {
+            "description": "'페이커' 이상혁/사진=이소라 기자 '<b>디도스</b>'(DDoS·분산 서비스 거부) 공격에 리그 오브 레전드 챔피언스... 신종 코로나 바이러스 감염증(코로나19) 때문에 한번 닫혔던 LCK 아레나가, 이번에는 <b>디도스</b> 공격 때문에 또다시... ",
+            "link": "https://www.techm.kr/news/articleView.html?idxno=121081",
+            "originallink": "https://www.techm.kr/news/articleView.html?idxno=121081",
+            "pubDate": "Mon, 04 Mar 2024 00:44:00 +0900",
+            "title": "[e스포츠人] <b>디도스</b> 공격자에 일침 가한 T1 '페이커' 이상혁 &quot;나쁜 것 넘어 안..."
+        },
+        {
+            "description": "한편, '<b>디도스</b>'(DDoS·분산 서비스 거부) 공격을 당한 LCK는 당분간 경기를 녹화 방송으로 진행합니다. <b>디도스</b> 공격으로 녹화방송 '초유의 사태' 지난 주 가장 큰 이슈는 <b>디도스</b> 공격이었습니다. 지난 2월 25일 DK와 DRX... ",
+            "link": "https://www.techm.kr/news/articleView.html?idxno=121082",
+            "originallink": "https://www.techm.kr/news/articleView.html?idxno=121082",
+            "pubDate": "Mon, 04 Mar 2024 00:44:00 +0900",
+            "title": "[LCK 브리핑] 11연승 내달린 T1-연패 빠진 KT...통신사 라이벌 엇갈린 행보"
+        },
+        {
+            "description": "<b>디도스</b>(DDoS·분산서비스거부) 공격으로 경기 생중계에 차질을 빚은 리그오브레전드챔피언스코리아(LCK)가... LCK는 지난달 25일부터 시작된 <b>디도스</b> 사이버 테러로 인해 대회 진행에 큰 어려움을 겪고 있다. 25일 DRX와... ",
+            "link": "https://n.news.naver.com/mnews/article/366/0000974746?sid=105",
+            "originallink": "https://biz.chosun.com/it-science/ict/2024/03/03/RHPXD2TGLVEXRLK5FGKQNWOWJA/?utm_source=naver&utm_medium=original&utm_campaign=biz",
+            "pubDate": "Sun, 03 Mar 2024 17:12:00 +0900",
+            "title": "<b>디도스</b> 공격받은 LCK, 평일 9시·오후 7시 녹화 중계"
+        },
+        {
+            "description": "전문가들과 <b>디도스</b> 공격, 우회 침투 북한·중국 사이버 댓글에 대한 방어 심리전을 수행한 유능한 심리전 요원들을 정치 보복성 적폐몰이의 희생양으로 만드는 악행을 저질렀다. 급기야는 오랜 북한의 대남전략의 하나인... ",
+            "link": "http://monthly.chosun.com/client/mdaily/daily_view.asp?idx=19290&Newsnumb=20240319290",
+            "originallink": "http://monthly.chosun.com/client/mdaily/daily_view.asp?idx=19290&Newsnumb=20240319290",
+            "pubDate": "Sun, 03 Mar 2024 16:50:00 +0900",
+            "title": "민주당, 총선 앞두고 전직 국정원 요원들로 국정원 감시팀 구성 | 공당이 전직..."
+        },
+        {
+            "description": "국내뿐 아니라 글로벌에서도 인기가 높은 e스포츠 리그 LCK(리그 오브 레전드 챔피언스 코리아)가 <b>디도스</b>(DDoS... 결국 이 문제는 <b>디도스</b> 공격의 영향으로 밝혀졌고, LCK는 온라인 방화벽을 강화했다고 했지만 28일 T1과... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=076&aid=0004116244",
+            "originallink": "http://sports.chosun.com/news/ntype.htm?id=202403030100012810001086&servicedate=20240303",
+            "pubDate": "Sun, 03 Mar 2024 15:18:00 +0900",
+            "title": "'<b>디도스</b> 공격'에 흔들리는 LCK, e스포츠에 어떤 영향 미칠까?"
+        },
+        {
+            "description": "&quot; 한 e스포츠 업계 관계자가 최근 연이어 <b>디도스</b>(DDoS, 분산형 서비스 거부) 공격으로 인한 경기 중단을 겪은... LCK 사무국은 &quot;지속적으로 <b>디도스</b>에 의해 의심되는 공격을 받고 있다&quot;며 두 경기의 입장권을 전액 환불... ",
+            "link": "http://www.g-enews.com/ko-kr/news/article/news_all/202403022244255005c5fa75ef86_1/article.html",
+            "originallink": "http://www.g-enews.com/ko-kr/news/article/news_all/202403022244255005c5fa75ef86_1/article.html",
+            "pubDate": "Sun, 03 Mar 2024 14:02:00 +0900",
+            "title": "생방송에서도 활개 치는 '<b>디도스</b>'…e스포츠 &quot;이러다 다 죽어&quot;"
+        },
+        {
+            "description": "잇단 분산서비스거부(DDoS·<b>디도스</b>) 공격으로 경기 생중계에 차질을 빚은 리그오브레전드챔피언스코리아(LCK)... 지난달 28일 서울 중구 롤파크 아레나에서 진행된 T1과 피어엑스 경기 중 <b>디도스</b> 공격 영향으로 추정되는... ",
+            "link": "https://n.news.naver.com/mnews/article/030/0003185612?sid=105",
+            "originallink": "https://www.etnews.com/20240303000009",
+            "pubDate": "Sun, 03 Mar 2024 08:41:00 +0900",
+            "title": "<b>디도스</b> 공격 받은 LCK, 평일 오후 9시·주말 오후 7시 녹화 중계"
+        },
+        {
+            "description": "이날 경기는 지난달 말부터 시작된 <b>디도스</b> 피해 여파로 사전 녹화 후 오후 7시부터 중계됐다. LCK는 <b>디도스</b> 피해 대책이 마련될 때까지 평일에는 오후 9시, 주말에는 오후 7시부터 녹화 중계한다고 1일 SNS를 통해... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=005&aid=0001678060",
+            "originallink": "https://www.kmib.co.kr/article/view.asp?arcid=0019851176&code=61162012&cp=nv",
+            "pubDate": "Sat, 02 Mar 2024 21:42:00 +0900",
+            "title": "광동, ‘동병상련’ 농심 잡고 3연패 탈출"
+        },
+        {
+            "description": "이날 경기는 <b>디도스</b> 피해 여파로 사전 녹화 후 중계될 예정이다. LCK는 <b>디도스</b> 피해 대책이 마련될 때까지 평일에는 오후 9시, 주말에는 오후 7시부터 녹화 중계한다고 1일 SNS를 통해 밝혔다.",
+            "link": "https://sports.news.naver.com/news.nhn?oid=005&aid=0001678059",
+            "originallink": "https://www.kmib.co.kr/article/view.asp?arcid=0019851123&code=61162012&cp=nv",
+            "pubDate": "Sat, 02 Mar 2024 20:19:00 +0900",
+            "title": "‘오너’ 문현준, 건강 문제로 OK 저축은행전 결장"
+        },
+        {
+            "description": "관련해 라이엇 게임즈 관계자는 “현재 리그 경기 정상화에 힘을 쓰고 있으며 방벽 강화 등을 통해 <b>디도스</b> 공격을 막기 위한 최선의 노력 다하고 있다”고 말했다. 한편, LCK의 이번 결정에 팬들은 대체로 부정적인... ",
+            "link": "http://gamefocus.co.kr/detail.php?number=149921",
+            "originallink": "http://gamefocus.co.kr/detail.php?number=149921",
+            "pubDate": "Sat, 02 Mar 2024 19:28:00 +0900",
+            "title": "<b>디도스</b> 공격 여파 'LCK 스프링' 평일 9시에 본다.... 팬들 &quot;리그 편의적 결정..."
+        },
+        {
+            "description": "LCK(리그오브레전드 챌린저스 코리아)가 <b>디도스</b> 공격 영향을 줄이고자 지난달 29일부터 비공개 녹화... LCK 측이 경기를 비공개 녹화 방송으로 진행하는 이유는 지난달 25일부터 불거진 <b>디도스</b> 공격 영향을 최소화하기... ",
+            "link": "http://www.jnilbo.com/72896296814",
+            "originallink": "http://www.jnilbo.com/72896296814",
+            "pubDate": "Sat, 02 Mar 2024 19:22:00 +0900",
+            "title": "[전남일보] ‘<b>디도스</b> 공격’ LCK, 방송 시간 변경한다"
+        },
+        {
+            "description": "또한 고객 웹 사이트를 정기적으로 방문해 악성코드 감염 여부를 진단하고 대응하는 'WMS(Website Malware Scanner)', 네트워크 인프라를 보호하는 <b>디도스</b> 완화, 오리진 서버의 트래픽 부하를 줄이고 클라이언트의... ",
+            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191401",
+            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191401",
+            "pubDate": "Sat, 02 Mar 2024 18:22:00 +0900",
+            "title": "[NGSV2024 솔루션 프리뷰] 모니터랩 '아이온클라우드(AIONCLOUD)'"
+        },
+        {
+            "description": "▲ 2024 LCK 스프링 녹화 방송 시간 공지 (자료출처: LCK 공식 유튜브 채널) <b>디도스</b> 공격 영향을 줄이고자... LCK 측이 경기를 비공개 녹화 방송으로 진행하는 이유는 25일부터 불거진 <b>디도스</b> 공격 영향을 최소화하기... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=356&aid=0000065331",
+            "originallink": "https://www.gamemeca.com/mv.php?inflow=naver_s&gid=1746369",
+            "pubDate": "Sat, 02 Mar 2024 15:09:00 +0900",
+            "title": "평일 저녁 9시·주말 저녁 7시, LCK 방송시간 공개"
+        },
+        {
+            "description": "연초부터 우리나라 공공기관 공격을 독려해온 중국 해커 니옌이나 이스라엘을 지원하는 우리나라에 대한 핵티비즘 공격을 선언하며 정부부처를 타깃으로 한 <b>디도스</b> 공격 등을 감행하고 있는 동남아 해커들, 그리고... ",
+            "link": "http://www.boannews.com/media/view.asp?idx=125787&kind=",
+            "originallink": "http://www.boannews.com/media/view.asp?idx=125787&kind=",
+            "pubDate": "Sat, 02 Mar 2024 10:18:00 +0900",
+            "title": "[텔레그램 긴급진단-1] 사이버 범죄의 온상이 된 텔레그램, 그것이 알고 싶다"
+        },
+        {
+            "description": "<b>디도스</b>(DDoS, Distributed Denial of Service) 공격으로 인해 리그 운영에 큰 차질을 빚고 있는 것이다. <b>디도스</b>란 웹사이트 또는 네트워크 리소스 운영이 불가능하도록 악성 트래픽을 대량으로 보내는 사이버 공격으로 ‘분산... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=015&aid=0004954768",
+            "originallink": "https://www.hankyung.com/article/202403011770i",
+            "pubDate": "Sat, 02 Mar 2024 09:02:00 +0900",
+            "title": "LCK '<b>디도스</b> 늪' 벗어날 비책은 내부망? [이주현의 로그인 e스포츠]"
+        },
+        {
+            "description": "한편 이날 경기는 지난달 말부터 시작된 <b>디도스</b> 피해 여파로 사전 녹화 후 오후 9시부터 중계됐다. LCK는 <b>디도스</b> 피해 대책이 마련될 때까지 평일에는 오후 9시, 주말에는 오후 7시부터 녹화 중계한다고 SNS를 통해... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=005&aid=0001677997",
+            "originallink": "https://www.kmib.co.kr/article/view.asp?arcid=0019849683&code=61162012&cp=nv",
+            "pubDate": "Sat, 02 Mar 2024 01:49:00 +0900",
+            "title": "‘11승’ 젠지, KT에 1R 패배 설욕"
+        },
+        {
+            "description": "한편 이날 경기는 지난달 말부터 시작된 <b>디도스</b> 피해 여파로 사전 녹화 후 오후 9시부터 중계됐다. LCK는 <b>디도스</b> 피해 대책이 마련될 때까지 평일에는 오후 9시, 주말에는 오후 7시부터 녹화 중계한다고 SNS를 통해... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=005&aid=0001677994",
+            "originallink": "https://www.kmib.co.kr/article/view.asp?arcid=0019849537&code=61162012&cp=nv",
+            "pubDate": "Fri, 01 Mar 2024 23:49:00 +0900",
+            "title": "‘제카 아칼리’ 한화생명, 피어엑스 꺾고 3연승"
+        },
+        {
+            "description": "지속적인 '<b>디도스</b> 공격'의 영향 최소화를 위해 비공개 녹화 중계를 선택한 'LOL 챔피언스 코리아(이하 LCK)... 앞서 라이엇 게임즈는 지난 2월 25일부터 LCK에 본격적으로 시도된 '<b>디도스</b> 공격'의 영향으로 인해 비공개... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=311&aid=0001697588",
+            "originallink": "https://www.xportsnews.com/article/1830054",
+            "pubDate": "Fri, 01 Mar 2024 21:54:00 +0900",
+            "title": "'<b>디도스</b> 공격' 여파에... LCK, 평일 오후 9시-주말 오후 7시 송출 결정 [LCK]"
+        },
+        {
+            "description": "<b>디도스</b> 공격으로 당분간 녹화 방송으로 진행되는 LCK의 송출 시간이 평일은 오후 9시, 주말 오후 19시로 정해졌다. LCK는 지난 주말부터 이어진 <b>디도스</b> 공격으로 인해 리그 진행이 원활하게 이뤄지지 않았으며, 수요일 T1과... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=442&aid=0000170320",
+            "originallink": "http://www.inven.co.kr/webzine/news/?news=293611&iskin=esports",
+            "pubDate": "Fri, 01 Mar 2024 19:11:00 +0900",
+            "title": "LCK, <b>디도스</b> 공격으로 인한 녹화 방송.. 평일 21시, 주말 19시 송출"
+        },
+        {
+            "description": "계속되는 <b>디도스</b>(DDoS, 분산서비스거부) 공격을 받은 LCK가 스프링 잔여 경기를 당분간 비공개 녹화... 이후 28일 <b>디도스</b> 공격에 대비해 프로토콜을 만들었으나 T1과 피어엑스와의 1세트부터 <b>디도스</b> 공격이 시작됐고... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=347&aid=0000178611",
+            "originallink": "http://www.dailyesports.com/view.php?ud=202403011736315056b91e133c1f_27",
+            "pubDate": "Fri, 01 Mar 2024 17:38:00 +0900",
+            "title": "<b>디도스</b> 공격 받은 LCK, 녹화 방송 평일 9시-주말 5시 송출"
+        },
+        {
+            "description": "국내 리그오브레전드 프로 리그를 운영 중인 LCK(리그오브레전드 챔피언스 코리아)가 <b>디도스</b>(DDoS, 분산... LCK는 지난달 25일부터 시작된 <b>디도스</b> 사이버 테러로 인해 대회 진행에 큰 어려움을 겪고 있다. 25일 DRX와... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=015&aid=0004954650",
+            "originallink": "https://www.hankyung.com/article/202403011581i",
+            "pubDate": "Fri, 01 Mar 2024 17:06:00 +0900",
+            "title": "LCK 녹화 방송, '평일 오후 9시·휴일은 7시' 송출"
+        },
+        {
+            "description": "지속적인 <b>디도스</b> 공격 여파로 날벼락을 맞은 LCK가 '<b>디도스</b> 공격 여파'로 녹화 중계로 선회한 상황에서 비공개 녹화 방송 송출 시간을 발표했다. 평일은 오후 9시부터, 주말은 오후 7시부터다. LCK는 1일 계속되는 <b>디도스</b>... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=109&aid=0005027878",
+            "originallink": "http://www.osen.co.kr/article/G1112285671",
+            "pubDate": "Fri, 01 Mar 2024 16:55:00 +0900",
+            "title": "'<b>디도스</b> 공격 여파' LCK, 녹화중계 평일 오후 9시-주말 오후 7시 송출"
+        },
+        {
+            "description": "분산 서비스 거부(DDoS·<b>디도스</b>) 공격에 생중계를 중단한 리그 오브 레전드 챔피언스 코리아(LCK)가... LCK는 이러한 끊김 현상의 원인을 <b>디도스</b> 공격으로 추정하고 있다. <b>디도스</b> 공격은 통신 요청 및 데이터(트래픽)를... ",
+            "link": "https://n.news.naver.com/mnews/article/421/0007385391?sid=105",
+            "originallink": "https://www.news1.kr/articles/5337412",
+            "pubDate": "Fri, 01 Mar 2024 16:34:00 +0900",
+            "title": "<b>디도스</b>에 생중계 포기한 LCK, 녹화로 중계 재개…평일 9시·주말 7시"
+        },
+        {
+            "description": "최근 LCK는 <b>디도스</b> 공격 여파로 의심되는 네트워크 끊김 현상으로 인해 경기 진행에 어려움을 겪고 있다. 처음으로 <b>디도스</b> 의심 현상이 발생한 지난달 25일 디플러스 기아와 DRX의 경기는 경기 중단과 재개를 반복한... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=005&aid=0001677974",
+            "originallink": "https://www.kmib.co.kr/article/view.asp?arcid=0019849088&code=61162012&cp=nv",
+            "pubDate": "Fri, 01 Mar 2024 16:28:00 +0900",
+            "title": "‘<b>디도스</b> 피해’ LCK, 평일 9시·오후 7시 녹화 중계"
+        },
+        {
+            "description": "<b>디도스</b>로 녹화 중계 중인 LCK가 방송 송출 시간을 평일 오후 9시, 주말 오후 7시로 결정했다. 다만 경기 상황에 따라 지연 가능하다. 1일 LCK는 SNS 및 기타 매체를 통해 계속되는 <b>디도스</b> 공격의 영향을 최소화하고자... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=236&aid=0000241092",
+            "originallink": "https://www.fomos.kr/redirect/news_view?news_cate_id=39&entry_id=129954",
+            "pubDate": "Fri, 01 Mar 2024 16:12:00 +0900",
+            "title": "LCK, <b>디도스</b> 공격으로 비공개 진행 녹화 방송 시간 평일 오후 9시-휴일 오후 ..."
+        },
+        {
+            "description": "최근 '리그 오브 레전드' e스포츠 대회가 <b>디도스</b> 공격으로 인해 어려움을 겪고 있다. 이러한 가운데 대회에 <b>디도스</b> 공격을 펼치는 배후가 누군지 다양한 추측이 오가고 있다고. 일부 유저들은 불법 스포츠 토토 세력을... ",
+            "link": "https://www.tgdaily.co.kr/news/articleView.html?idxno=331128",
+            "originallink": "https://www.tgdaily.co.kr/news/articleView.html?idxno=331128",
+            "pubDate": "Fri, 01 Mar 2024 15:18:00 +0900",
+            "title": "[X파일] '리그 오브 레전드' <b>디도스</b> 배후 추측 무성"
+        },
+        {
+            "description": "지난 25일과 28일 <b>디도스</b> 사건 이후 LCK는 결국 현재로서는 방법이 없음을 인지하고 29일 경기부터 녹화 방송을... 해결 방법이라는 것도 <b>디도스</b> 공격자를 피해 랜덤한 시간에 경기를 진행하는 매우 원시적인 것이다. 지난... ",
+            "link": "http://www.gameshot.net/common/con_view.php?code=GA65e1601ae1f65",
+            "originallink": "http://www.gameshot.net/common/con_view.php?code=GA65e1601ae1f65",
+            "pubDate": "Fri, 01 Mar 2024 14:02:00 +0900",
+            "title": "LCK, 막장으로 치닫는 <b>디도스</b> 사건의 여파"
+        },
+        {
+            "description": "(LCK)가 <b>디도스</b>(DDoS, Distrivuted Denial of Service) 공격으로 정상적인 리그 진행 불가를 선언했다. 다만 사전 징후가 있었음에도 조치를 취하지 않은 것은 아쉬움으로 남는다. ⓒLCK LCK는 지난달 29일 &quot;계속되는 <b>디도스</b>... ",
+            "link": "https://sports.hankooki.com/news/articleView.html?idxno=6855743",
+            "originallink": "https://sports.hankooki.com/news/articleView.html?idxno=6855743",
+            "pubDate": "Fri, 01 Mar 2024 05:32:00 +0900",
+            "title": "초유의 '<b>디도스</b>' 사태… LCK, 대비할 시간은 없었나[초점]"
+        },
+        {
+            "description": "<b>디도스</b> 공격으로 무관중 비공개 녹화 중계라는 초유의 사태에 직면했지만, 팀들간의 경쟁은 여전했다. 소위 약팀끼리 멸망전의 승자는 디알엑스였다. 디알엑스가 농심에 짜릿한 패승승 역스윕 승리로 끔찍했던... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=109&aid=0005027363",
+            "originallink": "http://www.osen.co.kr/article/G1112285140",
+            "pubDate": "Fri, 01 Mar 2024 02:27:00 +0900",
+            "title": "[LCK] '탈꼴찌 성공' 디알엑스, 농심에 짜릿한 역스윕 6연패 탈출...T1 PO '확..."
+        },
+        {
+            "description": "공교롭게도 <b>디도스</b> 공격으로 피해를 본 두 팀이 맞붙었다. 지연 사태의 한 가운데 서 있던 디플러스 기아(DK)와 그로 인해 8시 가까이 대기하다 숙소로 돌아간 브리온의 맞대결에서 웃는 팀은 DK였다. DK가 3연승을... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=109&aid=0005027351",
+            "originallink": "http://www.osen.co.kr/article/G1112285136",
+            "pubDate": "Thu, 29 Feb 2024 23:19:00 +0900",
+            "title": "[LCK] '쇼메이커 14번째 500전 달성' DK, 연승의 브리온 잡고 4연승 행진"
+        },
+        {
+            "description": "'리그 오브 레전드 챔피언스 코리아(LCK)'가 계속되는 <b>디도스</b>(DDoS) 공격에 잔여 경기 녹화 중계 송출을 결정하고 시즌을 강행한다. 크리에이터 및 프로게이머 개인 방송을 대상으로 시작된 <b>디도스</b> 공격이 국내 대표... ",
+            "link": "https://www.gameple.co.kr/news/articleView.html?idxno=208808",
+            "originallink": "https://www.gameple.co.kr/news/articleView.html?idxno=208808",
+            "pubDate": "Thu, 29 Feb 2024 23:06:00 +0900",
+            "title": "LCK 초유의 녹방 진행... &quot;강력한 대응책과 추적 필요&quot; 한 목소리"
+        },
+        {
+            "description": "정규시즌이 <b>디도스</b>(DDoS·분산서비스거부) 공격으로 인해 중단되면서 비공개 경기 후 녹화 방송으로 전환된다. LoL 챔피언스 코리아(LCK) 사무국은 29일 공지를 통해 &quot;계속되는 <b>디도스</b> 공격으로부터 받는 영향을... ",
+            "link": "https://www.etoday.co.kr/news/view/2336112",
+            "originallink": "https://www.etoday.co.kr/news/view/2336112",
+            "pubDate": "Thu, 29 Feb 2024 22:06:00 +0900",
+            "title": "LCK, <b>디도스</b> 공격에 비공개 녹화방송 전환…팬들 &quot;중계시스템 투자해야&quot; 쓴소..."
+        },
+        {
+            "description": "<b>디도스</b> 공격으로 중단된 LCK가 비공개 경기 후 녹화 방송으로 전환되어 진행된다. 당장 오늘 예정되었던... 25일에 이어 28일까지 두 차례에 걸처 <b>디도스</b> 공격으로 발생한 게임 내 경기 진행 불가 현상으로 결국 LCK는... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=236&aid=0000241090",
+            "originallink": "https://www.fomos.kr/redirect/news_view?news_cate_id=39&entry_id=129939",
+            "pubDate": "Thu, 29 Feb 2024 19:16:00 +0900",
+            "title": "비공개 진행되는 LCK 경기, 구체적 녹화 방송 시간은 경기가 모두 종료된 후 ..."
+        },
+        {
+            "description": "<b>디도스</b> 공격이라는 초유의 사태가 LCK까지 번졌다. 28일 진행된 T1과 피어엑스와의 경기가 <b>디도스</b> 공격으로 중단된 가운데, LCK는 이번 주 잔여 경기부터 비공개 녹화 방송으로 전환한다고 밝혔다. <b>디도스</b> 공격에 대한... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=439&aid=0000028041",
+            "originallink": "https://www.thisisgame.com/webzine/news/nboard/4/?n=185389",
+            "pubDate": "Thu, 29 Feb 2024 18:49:00 +0900",
+            "title": "집요한 <b>디도스</b> 공격에 멍든 LCK... 경찰 수사까지 의뢰"
+        },
+        {
+            "description": "극심한 <b>디도스</b> 공격에 이를 피하고자 비공개 녹화 방송으로 전환된 LCK가 방송 일정마저 밝히지 않으며... 이유는 연이은 <b>디도스</b> 공격으로부터 경기가 받는 영향을 최대한 줄이기 위해서다. 실제로 25일은 물론 28일... ",
+            "link": "https://sports.news.naver.com/news.nhn?oid=356&aid=0000065319",
+            "originallink": "https://www.gamemeca.com/mv.php?inflow=naver_s&gid=1746351",
+            "pubDate": "Thu, 29 Feb 2024 18:44:00 +0900",
+            "title": "녹화로 바뀐 LCK, <b>디도스</b>에 방송 일정도 비공개"
+        },
+        {
+            "description": "최근 <b>디도스</b> 공격으로 몸살을 앓던 LCK가 결국 시즌 잔여 경기의 비공개 녹화 중계를 결정했다. 이와 관련해 LCK는 공식 SNS를 통해 &quot;계속되는 <b>디도스</b> 공격으로부터 받는 영향을 최소화하고자 이번 주 잔여 경기부터... ",
+            "link": "https://www.khgames.co.kr/news/articleView.html?idxno=225206",
+            "originallink": "https://www.khgames.co.kr/news/articleView.html?idxno=225206",
+            "pubDate": "Thu, 29 Feb 2024 18:26:00 +0900",
+            "title": "<b>디도스</b> 막지 못한 LCK, 스프링 잔여 경기 녹화 중계 결정"
+        },
+        {
+            "description": "국내 대표 e스포츠 리그 리그오브레전드 챔피언스 코리아(LCK)가 계속되는 <b>디도스</b>(분산 서비스 거부) 공격에 시달리고 있다. <b>디도스</b> 공격이란 특정 인터넷 사이트가 소화할 수 없는 규모의 접속 통신량(트래픽)을... ",
+            "link": "https://n.news.naver.com/mnews/article/014/0005149753?sid=105",
+            "originallink": "http://www.fnnews.com/news/202402291821534119",
+            "pubDate": "Thu, 29 Feb 2024 18:22:00 +0900",
+            "title": "<b>디도스</b> 공격에 시달린 e스포츠 &quot;생방송 중단&quot;"
+        }
+    ],
+    "lastBuildDate": "Thu, 07 Mar 2024 16:02:37 +0900",
+    "start": 1,
+    "total": 56115
+}
