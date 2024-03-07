@@ -94,6 +94,7 @@ if __name__ == "__main__":
     "api_url": "https://openapi.naver.com/v1/datalab/search",
     "name" : "name"
     }
+
     import time
     start=time.time()
     clients=get_secret("clients")
@@ -104,3 +105,7 @@ if __name__ == "__main__":
         print(df)
     print(type(params))
     print(time.time()-start)
+    print('type(params["search_keywords"]):', type(params["search_keywords"]) )
+    print('type(params["id"]):', type(params["id"]) )
+    print('type(params["pw"]):', type(params["pw"]) )
+    print('type(params["api_url"]):', type(params["api_url"]) )
