@@ -2,18 +2,361 @@
     "display": 100,
     "items": [
         {
+            "description": "공급 기업과 매칭된 수요 기업을 대상으로 최대 9,600만원의 금융 <b>클라우드</b> 서비스 이용 요금과 이관·구축 및 <b>보안</b> 컨설팅, 모의 해킹 및 취약점 분석 서비스 등을 지원한다. NHN<b>클라우드</b>는 이번 사업에 신청한 수요... ",
+            "link": "http://www.worktoday.co.kr/news/articleView.html?idxno=49671",
+            "originallink": "http://www.worktoday.co.kr/news/articleView.html?idxno=49671",
+            "pubDate": "Fri, 08 Mar 2024 07:42:00 +0900",
+            "title": "NHN<b>클라우드</b>, '금융 <b>클라우드</b> 지원 사업' 참여"
+        },
+        {
+            "description": "콘텐츠 전송 네트워크(CDN) 및 <b>보안</b> 업체 <b>클라우드</b>플레이어도 최근 AI용 방화벽을 선보였다. 회사 측에 따르면 AI용 방화벽은 사용자가 제출한 프롬프트(prompts)를 스캔하고 평가해 모델을 악용하고 데이터를... ",
+            "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=508696",
+            "originallink": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=508696",
+            "pubDate": "Fri, 08 Mar 2024 07:22:00 +0900",
+            "title": "판 커지는 생성형 AI <b>보안</b> 시장...대형 테크기업 본격 가세"
+        },
+        {
+            "description": "AI·<b>클라우드</b>·슈퍼앱 구축 (24년 3월 6일) 네이버, 사우디 지능형 교통 시스템 구축 (24년 3월 7일) 네이버가... 로봇이 물류와 <b>보안</b>, 가사 노동을 담당하는 등 도시가 AI를 바탕으로 돌아가게 하겠다는 계획입니다. 규모만... ",
+            "link": "https://n.news.naver.com/mnews/article/079/0003871501?sid=105",
+            "originallink": "https://www.nocutnews.co.kr/news/6107760",
+            "pubDate": "Fri, 08 Mar 2024 05:03:00 +0900",
+            "title": "[딥뉴스]네이버, 사우디 향한 큰 그림…1784에서 '네옴시티'까지"
+        },
+        {
+            "description": "바이오스(BIOS)와 펌웨어를 복구하는 '종단 간 <b>보안</b> 컨트롤러 설루션'도 강화해 악성 소프트웨어는 물론... GPU <b>클라우드</b>(NGC)의 데이터와 사전 훈련 모델을 연계했다. 워크스테이션의 사내 구축(온프레미스) 환경에... ",
+            "link": "https://n.news.naver.com/mnews/article/001/0014550037?sid=105",
+            "originallink": "https://www.yna.co.kr/view/AKR20240307132300017?input=1195m",
+            "pubDate": "Fri, 08 Mar 2024 01:50:00 +0900",
+            "title": "HP, 하이브리드 업무 특화 AI PC 라인업 공개"
+        },
+        {
+            "description": "또 이번 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 이날 진행된... ",
+            "link": "https://www.newscj.com/news/articleView.html?idxno=3115903",
+            "originallink": "https://www.newscj.com/news/articleView.html?idxno=3115903",
+            "pubDate": "Fri, 08 Mar 2024 01:20:00 +0900",
+            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전"
+        },
+        {
+            "description": "금융 <b>클라우드</b> 서비스 이용 요금과 이관·구축 및 <b>보안</b> 컨설팅, 모의 해킹 및 취약점 분석 서비스 등을 지원한다. NHN<b>클라우드</b>는 수요 기업이 합리적 비용으로 자사 금융 <b>클라우드</b> 서비스를 이용할 수 있도록 오는... ",
+            "link": "https://www.thedailypost.kr/news/articleView.html?idxno=103843",
+            "originallink": "https://www.thedailypost.kr/news/articleView.html?idxno=103843",
+            "pubDate": "Fri, 08 Mar 2024 00:14:00 +0900",
+            "title": "NHN<b>클라우드</b>, 4년 연속 '금융 <b>클라우드</b> 지원 사업' 공급 기업 선정"
+        },
+        {
+            "description": "글로벌 퍼블릭 <b>클라우드</b>, 엣지 컴퓨팅 기업 지코어는  엣지 <b>클라우드</b> 컴퓨팅 플랫폼 기업 스택패스... 지코어는 WAAP 솔루션 인수를 통해 웹 애플리케이션 방화벽(WAF), API <b>보안</b>, 봇 방어, 엣지레이어 7 DDoS 완화... ",
+            "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=508690",
+            "originallink": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=508690",
+            "pubDate": "Thu, 07 Mar 2024 22:24:00 +0900",
+            "title": "지코어, 스택패스 웹 애플리케이션·API <b>보안</b> 사업 인수"
+        },
+        {
+            "description": "정답: 텔레그램(Telegram)설명: 텔레그램은 비영리를 추구하는 <b>클라우드</b> 기반 인터넷 메신저이다. 본사에서는 그 어떤 데이터도 축적하지 않으며 어떤 통제도 없이 서비스를 제공하고 있다. 이렇듯 철저한 <b>보안</b>성과... ",
+            "link": "http://www.boannews.com/media/view.asp?idx=127460&kind=",
+            "originallink": "http://www.boannews.com/media/view.asp?idx=127460&kind=",
+            "pubDate": "Thu, 07 Mar 2024 22:22:00 +0900",
+            "title": "[퀴즈 이·보·소] 물리<b>보안</b>과 사이버<b>보안</b>을 모두 아우르는 아시아 최대 규모..."
+        },
+        {
+            "description": "대상으로 ▲전력, ▲냉방, ▲구조, ▲통신, ▲물리<b>보안</b> 등 인프라를 종합적으로 진단한다. 에너지 비용 절감, 유지보수 비용 최적화 등 효과적인 데이터센터 운용을 위한 맞춤형 컨설팅도 제공한다. KT<b>클라우드</b>는 최대 4주... ",
+            "link": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=508684",
+            "originallink": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=508684",
+            "pubDate": "Thu, 07 Mar 2024 22:06:00 +0900",
+            "title": "KT<b>클라우드</b>, 고객 데이터센터 대상 인프라 진단 서비스 출시"
+        },
+        {
+            "description": "조직이 AI 세대의 잠재력을 활용하려면 복잡한 하이브리드 및 멀티<b>클라우드</b> 환경에 분산되어 있는 데이터에 대한 고성능 <b>보안</b> 액세스가 필요하다. 넷앱은 데이터가 있는 어느 곳에서나 관리 간소화를... ",
+            "link": "https://www.aitimes.kr/news/articleView.html?idxno=30551",
+            "originallink": "https://www.aitimes.kr/news/articleView.html?idxno=30551",
+            "pubDate": "Thu, 07 Mar 2024 21:10:00 +0900",
+            "title": "넷앱, 엔비디아와 협업 통해 지능형 데이터 인프라 통한 생성 인공지능 혁신 ..."
+        },
+        {
+            "description": "스패로우 <b>클라우드</b>는 애플리케이션의 <b>보안</b> 취약점을 분석하는 <b>클라우드</b> 서비스다. 컴포넌트 분석을 통해 사용 중인 오픈소스 소프트웨어를 식별하고 라이선스와 취약점 정보를 제공한다. 특히 소프트웨어 공급망... ",
+            "link": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2099119",
+            "originallink": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2099119",
+            "pubDate": "Thu, 07 Mar 2024 21:00:00 +0900",
+            "title": "스패로우, 디지털서비스 이용지원시스템에 '스패로우 <b>클라우드</b>' 등록"
+        },
+        {
+            "description": "개발, <b>클라우드</b> 가상화 등의 융합 기술을 바탕으로 이뤄졌다. 특히 틸론이 국제스포츠대회에 개발한... 및 <b>보안</b> 솔루션이다. 메타버스 내에서도 그 가치를 입증하고 있다. 이 기술을 통해 메타버스 내에서 발생하는... ",
+            "link": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2099136",
+            "originallink": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2099136",
+            "pubDate": "Thu, 07 Mar 2024 19:15:00 +0900",
+            "title": "틸론, NFT와 블록체인 기술 융합"
+        },
+        {
+            "description": "델의 글로벌 <b>보안</b> 운영 전문 팀의 역량과 선제적으로 위협을 탐지하는 팔콘 플랫폼을 결합해 기업과 기관들은 멀티 <b>클라우드</b> 및 IT 환경 전반에서의 사이버 위협에 효과적으로 대응할 수 있다.",
+            "link": "http://www.lawissue.co.kr/view.php?ud=202403071905436274204ead0791_12",
+            "originallink": "http://www.lawissue.co.kr/view.php?ud=202403071905436274204ead0791_12",
+            "pubDate": "Thu, 07 Mar 2024 19:08:00 +0900",
+            "title": "[IT이슈] 플레이투게더’ ‘게임하기’ 시스템 전면 개편 外"
+        },
+        {
+            "description": "개발, <b>클라우드</b> 가상화 등의 융합 기술을 바탕으로 이루어졌다. 특히 틸론이 국제스포츠대회에 개발한... 및 <b>보안</b> 솔루션으로, 메타버스 내에서도 그 가치를 입증하고 있다. 틸론이 현재 구현한 메타버스 및 NFT 기술은... ",
+            "link": "https://www.nspna.com/news/?mode=view&newsid=686598",
+            "originallink": "https://www.nspna.com/news/?mode=view&newsid=686598",
+            "pubDate": "Thu, 07 Mar 2024 19:00:00 +0900",
+            "title": "틸론, NFT와 블록체인 기술 융합 통한 새로운 디지털 경험 제공"
+        },
+        {
+            "description": "▲<b>보안</b> 인증 획득 ▲<b>보안</b> 체계 구축·관리 ▲<b>클라우드</b> 환경에서의 IT 개발 및 운영 체계 구축 ▲서비스 확장 관리 ▲애플리케이션 현대화 등 다양한 요구에 효과적으로 대응할 수 있도록 설계됐다. 합리적인... ",
+            "link": "http://www.nextdaily.co.kr/news/articleView.html?idxno=226638",
+            "originallink": "http://www.nextdaily.co.kr/news/articleView.html?idxno=226638",
+            "pubDate": "Thu, 07 Mar 2024 18:40:00 +0900",
+            "title": "베스핀글로벌, 'Control Tower with Bespin Global' 상품 출시"
+        },
+        {
+            "description": "• 오탐 및 대응 시간: 응답자의 48%가 자신이 받는 경보의 25% 이상이 오탐이라고 밝혔고 이메일 보안 경보/피싱, 트래픽 급증 경보, <b>클라우드 보안</b> 경보가 가장 큰 원인이라고 답했다. 이는 오탐의 문제가 여전히... ",
+            "link": "https://www.cctvnews.co.kr/news/articleView.html?idxno=236938",
+            "originallink": "https://www.cctvnews.co.kr/news/articleView.html?idxno=236938",
+            "pubDate": "Thu, 07 Mar 2024 18:36:00 +0900",
+            "title": "포티넷, 한국에서 가장 많이 발생하는 사이버 위협은 피싱과 랜섬웨어"
+        },
+        {
+            "description": "온프레미스와 <b>클라우드</b> 간 데이터 애플리케이션을 효율적으로 관리할 수 있다. 기업 전체적으로 보면... 금융기관은 <b>보안</b>과 거버넌스 기능이 내장된 하이브리드 데이터 플랫폼을 구축해 안전하고 공인된 적절한 데이터... ",
+            "link": "https://n.news.naver.com/mnews/article/138/0002168415?sid=004",
+            "originallink": "https://www.ddaily.co.kr/page/view/2024030718015510745",
+            "pubDate": "Thu, 07 Mar 2024 18:10:00 +0900",
+            "title": "[전문가기고] 금융기관 ‘필수’ 데이터 거버넌스"
+        },
+        {
+            "description": "(스마트<b>클라우드</b>포탈)' 글로벌 버젼을 업계 최초 출시하여 호평을 받았으며, 지난해 8월 미국 오스틴 현지... 유지하고 있으며, 멀티 IT 가상화 서비스 제공을 위해 <b>보안</b>, 인프라 부분의 신규 비즈니스까지 확대하고 있다.",
+            "link": "http://www.it-b.co.kr/news/articleView.html?idxno=74142",
+            "originallink": "http://www.it-b.co.kr/news/articleView.html?idxno=74142",
+            "pubDate": "Thu, 07 Mar 2024 18:02:00 +0900",
+            "title": "필라웨어, 모범납세자 선정…서울지방국세청장 표창 수상"
+        },
+        {
+            "description": "공급 기업과 매칭된 수요 기업을 대상으로 최대 9,600만원의 금융 <b>클라우드</b> 서비스 이용 요금과 이관·구축 및 <b>보안</b> 컨설팅, 모의 해킹 및 취약점 분석 서비스 등을 지원한다.NHN<b>클라우드</b>는 이번 사업에 신청한 수요... ",
+            "link": "http://www.sentv.co.kr/news/view/681132",
+            "originallink": "http://www.sentv.co.kr/news/view/681132",
+            "pubDate": "Thu, 07 Mar 2024 18:00:00 +0900",
+            "title": "NHN<b>클라우드</b> “핀테크 기업에 <b>클라우드</b> 활용 지원”"
+        },
+        {
+            "description": "아인슈타인 코파일럿은 아인슈타인 트러스트 레이어에서 제공하는 개인정보보호 및 <b>보안</b> 조치를 통해 신뢰할 수 있는 환경에서 AI와의 상호작용을 지원하며, 데이터 <b>클라우드</b>의 데이터를 근거로 한 컨텍스트를... ",
+            "link": "http://www.itdaily.kr/news/articleView.html?idxno=221064",
+            "originallink": "http://www.itdaily.kr/news/articleView.html?idxno=221064",
+            "pubDate": "Thu, 07 Mar 2024 17:54:00 +0900",
+            "title": "세일즈포스, 생성형 AI 기반 CRM '아인슈타인1 스튜디오' 공개"
+        },
+        {
+            "description": "네트워크, <b>클라우드</b> &amp; 빅데이터 등 ICT Convergence △디지털 트윈 &amp; 메타버스 △스마트 리빙 및 헬스케어 △로보틱스 △자율주행과 친환경 모빌리티, UAM 등 Intelligent Mobility △블록체인 및 <b>보안</b> △양자정보기술... ",
+            "link": "https://kr.aving.net/news/articleView.html?idxno=1788739",
+            "originallink": "https://kr.aving.net/news/articleView.html?idxno=1788739",
+            "pubDate": "Thu, 07 Mar 2024 17:48:00 +0900",
+            "title": "아스타, 2024 월드IT쇼서 감성 카피라이팅 생성 AI 'AVICA' &amp; 'ASTARMIZE' 알..."
+        },
+        {
+            "description": "이 사업은 공급 기업과 매칭된 수요 기업을 대상으로 최대 9600만원의 금융 <b>클라우드</b> 서비스 이용 요금과 이관·구축 및 <b>보안</b> 컨설팅, 모의 해킹 및 취약점 분석 서비스 등을 지원한다. NHN<b>클라우드</b>는 이번 사업에 신청한... ",
+            "link": "http://www.goodkyung.com/news/articleView.html?idxno=231184",
+            "originallink": "http://www.goodkyung.com/news/articleView.html?idxno=231184",
+            "pubDate": "Thu, 07 Mar 2024 17:36:00 +0900",
+            "title": "NHN<b>클라우드</b>, '금융 <b>클라우드</b> 지원 사업' 4년 연속 참여"
+        },
+        {
+            "description": "구병춘 이사는 &quot;탈레스는 데이터 보호를 위한 모든 기능을 단일 플랫폼에 통합시켜 복잡한 멀티 <b>클라우드</b> 데이터 보호 요건을 단순하게 충족시킨다. <b>보안</b>성과 효율성을 높이는 사이퍼트러스트 플랫폼을 통해 데이터... ",
+            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191548",
+            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191548",
+            "pubDate": "Thu, 07 Mar 2024 17:22:00 +0900",
+            "title": "[NGSV2024] 탈레스 &quot;<b>클라우드</b> 주권, 강력한 데이터 보호에서 시작&quot;"
+        },
+        {
+            "description": "또 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 신한DS 관계자는 &quot;금융권 최초의... ",
+            "link": "https://www.nbntv.kr/news/articleView.html?idxno=88706",
+            "originallink": "https://www.nbntv.kr/news/articleView.html?idxno=88706",
+            "pubDate": "Thu, 07 Mar 2024 17:22:00 +0900",
+            "title": "신한DS, 신한금융그룹 통합<b>보안</b>관제센터 죽전 데이터센터→서울 본사' 확장 이..."
+        },
+        {
+            "description": "이어 &quot;과거에는 특정 <b>보안</b> 기능을 확보하기 위해 장비 혹은 장치를 구매해야 했지만, <b>클라우드</b>플레어는 <b>보안</b> 서비스를 확장 가능한 방식으로 제공 중&quot;이라고 말했다. 핵심이 되는 요소는 SASE 및 <b>보안</b>서비스엣지(SSE)... ",
+            "link": "https://n.news.naver.com/mnews/article/138/0002168410?sid=105",
+            "originallink": "https://www.ddaily.co.kr/page/view/2024030716312807795",
+            "pubDate": "Thu, 07 Mar 2024 17:22:00 +0900",
+            "title": "[인터뷰] AI 시대, 예상치 못한 공격 등장한다…<b>클라우드</b>플레어의 대응법은?"
+        },
+        {
+            "description": "기 구축된 <b>보안</b> 투자를 보호할 수 있으며, 특정 벤더 종속성 없이 공급업체 통합의 이점을 가질 수 있다. 왕정석 스텔라사이버코리아 지사장은 &quot;오픈XDR은 서버, 네트워크, 엔드포인트, 애플리케이션, 방화벽, <b>클라우드</b> 등... ",
+            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191549",
+            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191549",
+            "pubDate": "Thu, 07 Mar 2024 17:22:00 +0900",
+            "title": "[NGSV2024] 스텔라사이버 &quot;진정한 개방형 플랫폼으로 <b>보안</b> 투자 보호&quot;"
+        },
+        {
+            "description": "지난해 'S-개발자 1기'에서는 51명의 최정예 <b>보안</b>SW 개발인력이 배출됐다. 특허 출원 3건을 지원했고 신규 정보보호 스타트업 1개(이닛<b>클라우드</b>) 기업이 창업해 지난 1월 부터 판교 정보보호클러스터에 입주했다. 올해... ",
+            "link": "http://www.koit.co.kr/news/articleView.html?idxno=121068",
+            "originallink": "http://www.koit.co.kr/news/articleView.html?idxno=121068",
+            "pubDate": "Thu, 07 Mar 2024 17:22:00 +0900",
+            "title": "KISIA, 'S-개발자' 2기 발대식·개발<b>보안</b> 세미나 개최"
+        },
+        {
+            "description": "체크초인트는 네트워크 보안 '퀀텀', <b>클라우드 보안</b> 플랫폼 '클라우드가드', 사용자 환경 보안 '하모니'로 이뤄진 제품군을 인피니티 코어 서비스를 기반으로 제공한다. 인피니티는 보안 운영과 서비스의 강력한 협업을... ",
+            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191553",
+            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191553",
+            "pubDate": "Thu, 07 Mar 2024 17:22:00 +0900",
+            "title": "[NGSV2042] 체크포인트 &quot;AI 시대 위한 <b>보안</b> 전문 역량 제공&quot;"
+        },
+        {
+            "description": "국내 금융사 B사는 차세대 시스템을 프라이빗 <b>클라우드</b>로 구축하면서 AGS를 이용해 제로 트러스트를 적용, <b>클라우드</b> 전반의 <b>보안</b>을 강화했다. 권 상무는 &quot;경제위기를 돌파하기 위해 거시적인 경제 정책과 함께 '핀셋 정책... ",
+            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191552",
+            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191552",
+            "pubDate": "Thu, 07 Mar 2024 17:22:00 +0900",
+            "title": "[NGSV2024] 굿모닝아이텍 &quot;마이크로 세그멘테이션, 99.93% 공격표면 감소&quot;"
+        },
+        {
+            "description": "시스템은 '<b>클라우드</b>전환 지원' 내역 사업에 부합하는 경우 예산 범위내에서 지원한다. 원격강의와 교육·연구 활동 지원을 위한 노후 전산망 장비 교체 및 <b>보안</b>장비 구축 지원이 핵심인 '고속 전산망 구축'도 눈길을... ",
+            "link": "http://www.koit.co.kr/news/articleView.html?idxno=121035",
+            "originallink": "http://www.koit.co.kr/news/articleView.html?idxno=121035",
+            "pubDate": "Thu, 07 Mar 2024 17:22:00 +0900",
+            "title": "100억대 국립대 ICT 고도화 사업 '눈길'"
+        },
+        {
+            "description": "공급 기업과 매칭된 수요 기업을 대상으로 최대 9,600만원의 금융 <b>클라우드</b> 서비스 이용 요금과 이관ㆍ구축 및 <b>보안</b> 컨설팅, 모의 해킹 및 취약점 분석 서비스 등을 지원한다. NHN<b>클라우드</b>는 이번 사업에 신청한 수요... ",
+            "link": "http://www.gamevu.co.kr/news/articleView.html?idxno=31560",
+            "originallink": "http://www.gamevu.co.kr/news/articleView.html?idxno=31560",
+            "pubDate": "Thu, 07 Mar 2024 17:18:00 +0900",
+            "title": "[ICT 종합] NHN링크 및 유니티 소식 외"
+        },
+        {
+            "description": "뉴스토마토 = 박준형 기자 | <b>클라우드</b> 가상화 및 메타버스 오피스 전문기업 틸론은 지난 1월 열린 대규모... 및 <b>보안</b> 솔루션입니다. 이 기술을 통해 메타버스 내에서 발생하는 모든 거래의 무결성과 변조 여부를... ",
+            "link": "http://www.newstomato.com/ReadNews.aspx?no=1222370&inflow=N",
+            "originallink": "http://www.newstomato.com/ReadNews.aspx?no=1222370&inflow=N",
+            "pubDate": "Thu, 07 Mar 2024 17:16:00 +0900",
+            "title": "틸론, NFT와 블록체인 기술 융합"
+        },
+        {
+            "description": "대상으로 ▲전력, ▲냉방, ▲구조, ▲통신, ▲물리<b>보안</b> 등 인프라를 종합적으로 진단한다. 에너지 비용 절감, 유지보수 비용 최적화 등 효과적인 데이터센터 운용을 위한 맞춤형 컨설팅도 제공한다. kt<b>클라우드</b>는 이번... ",
+            "link": "https://www.nspna.com/news/?mode=view&newsid=686609",
+            "originallink": "https://www.nspna.com/news/?mode=view&newsid=686609",
+            "pubDate": "Thu, 07 Mar 2024 17:16:00 +0900",
+            "title": "kt<b>클라우드</b>, 고객 데이터센터 대상 ‘인프라 진단 서비스’ 출시"
+        },
+        {
+            "description": "또한 이번 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 이날 진행된... ",
+            "link": "https://www.koreaittimes.com/news/articleView.html?idxno=129539",
+            "originallink": "https://www.koreaittimes.com/news/articleView.html?idxno=129539",
+            "pubDate": "Thu, 07 Mar 2024 17:10:00 +0900",
+            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전"
+        },
+        {
+            "description": "<b>클라우드</b> 및 서버 담당자들의 할 일이 늘어나고 있다.[<b>보안</b>뉴스 문가용 기자] <b>클라우드</b> 서버들을 겨냥한 대규모 사이버 캠페인이 발견됐다. 취약하거나 설정이 잘못된 아파치 하둡(Apache Hadoop), 아틀라시안 컨플루언스... ",
+            "link": "http://www.boannews.com/media/view.asp?idx=127518&kind=",
+            "originallink": "http://www.boannews.com/media/view.asp?idx=127518&kind=",
+            "pubDate": "Thu, 07 Mar 2024 17:06:00 +0900",
+            "title": "아파치, 도커, 레디스, 컨플루언스 기반 서버들 노리는 공격 급증"
+        },
+        {
+            "description": "공급 기업과 매칭된 수요 기업을 대상으로 최대 9600만원의 금융 <b>클라우드</b> 서비스 이용 요금과 이관ㆍ구축 및 <b>보안</b> 컨설팅, 모의 해킹 및 취약점 분석 서비스 등을 지원한다. NHN<b>클라우드</b>는 이번 사업에 신청한 수요... ",
+            "link": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202403071646217500247",
+            "originallink": "https://www.dnews.co.kr/uhtml/view.jsp?idxno=202403071646217500247",
+            "pubDate": "Thu, 07 Mar 2024 17:02:00 +0900",
+            "title": "NHN<b>클라우드</b>, ‘금융 <b>클라우드</b> 지원 사업’ 참여… 금융 서비스 개발 등 지원"
+        },
+        {
+            "description": "스패로우 <b>클라우드</b>는 애플리케이션의 <b>보안</b> 취약점을 분석하는 <b>클라우드</b> 서비스로, 컴포넌트 분석을 통해 사용 중인 오픈소스 소프트웨어를 식별하고 라이선스와 취약점 정보를 제공한다. 특히, 소프트웨어 공급망... ",
+            "link": "https://www.techm.kr/news/articleView.html?idxno=121319",
+            "originallink": "https://www.techm.kr/news/articleView.html?idxno=121319",
+            "pubDate": "Thu, 07 Mar 2024 16:52:00 +0900",
+            "title": "스패로우, 디지털서비스 이용지원시스템에 '스패로우 <b>클라우드</b>' 등록…공공 시..."
+        },
+        {
+            "description": "<b>클라우드 보안</b>인증(CSAP) 등급제가 도입되면서 공공 클라우드 활성화에 대한 기대감이 높아지고 있지만 정작 공공기관 수요가 낮은 것으로 알려졌다. 정부와 공공 기관에서 클라우드 전환을 적극 나서고 있지 않아... ",
+            "link": "https://n.news.naver.com/mnews/article/031/0000818550?sid=105",
+            "originallink": "http://www.inews24.com/view/1694847",
+            "pubDate": "Thu, 07 Mar 2024 16:48:00 +0900",
+            "title": "[<b>클라우드</b>+] &quot;무용지물 CSAP 인증 받아야 하나&quot; 업계 불만...정부 &quot;대책 마련..."
+        },
+        {
+            "description": "또한 이번 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 이날 진행된... ",
+            "link": "https://www.ekn.kr/web/view.php?key=20240307029291145",
+            "originallink": "https://www.ekn.kr/web/view.php?key=20240307029291145",
+            "pubDate": "Thu, 07 Mar 2024 16:42:00 +0900",
+            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울 본사로 확장이전"
+        },
+        {
+            "description": "AWS의 <b>클라우드 보안</b> 진단 프로그램인 ECSA 인증과 함께 다양한 프로젝트를 통해 검증된 전문 인력 역시 확보하고 있다. 베스핀글로벌의 유형준 상품 기획 총괄 실장은 &quot;새롭게 선보이는 Control Tower with Bespin Global은... ",
+            "link": "https://www.epnc.co.kr/news/articleView.html?idxno=241198",
+            "originallink": "https://www.epnc.co.kr/news/articleView.html?idxno=241198",
+            "pubDate": "Thu, 07 Mar 2024 16:40:00 +0900",
+            "title": "베스핀글로벌, AWS 컨트롤타워 도입 지원 상품 출시"
+        },
+        {
+            "description": "또한 이번 확장 이전과 함께 △그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 △<b>클라우드 보안</b>관제 및 탐지 범위 확대 △클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 이날 진행된... ",
+            "link": "https://www.ebn.co.kr/news/view/1615235/?sc=Naver",
+            "originallink": "https://www.ebn.co.kr/news/view/1615235/?sc=Naver",
+            "pubDate": "Thu, 07 Mar 2024 16:40:00 +0900",
+            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 확장 이전"
+        },
+        {
+            "description": "IPO를 통해 조달한 공모자금으로 인공지능(AI) 기반의 지능형 하이브리드 클라우드 솔루션을 고도화하고, 클라우드 기반의 데이터센터 사업과 <b>클라우드 보안</b> 인증(CSAP) 공공 퍼블릭 서비스존·운영센터를 구축한다는... ",
+            "link": "https://n.news.naver.com/mnews/article/003/0012413640?sid=105",
+            "originallink": "http://www.newsis.com/view/?id=NISX20240304_0002647526&cID=10406&pID=13100",
+            "pubDate": "Thu, 07 Mar 2024 16:38:00 +0900",
+            "title": "<b>클라우드</b> 업계 IPO 러시…몸값 제대로 인정받을까"
+        },
+        {
+            "description": "또한 이번 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 이날 진행된... ",
+            "link": "http://www.lkp.news/news/articleView.html?idxno=44955",
+            "originallink": "http://www.lkp.news/news/articleView.html?idxno=44955",
+            "pubDate": "Thu, 07 Mar 2024 16:34:00 +0900",
+            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전"
+        },
+        {
+            "description": "이번 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 이날 진행된... ",
+            "link": "http://www.goodkyung.com/news/articleView.html?idxno=231169",
+            "originallink": "http://www.goodkyung.com/news/articleView.html?idxno=231169",
+            "pubDate": "Thu, 07 Mar 2024 16:32:00 +0900",
+            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전"
+        },
+        {
+            "description": "(스마트<b>클라우드</b>포탈)’ 글로벌 버젼을 업계 처음으로 출시하여 호평받았으며, 지난해 8월 미국 오스틴... 유지하고 있으며, 멀티 IT 가상화 서비스 제공을 위해 <b>보안</b>, 인프라 부분의 신규 비즈니스까지 확대하고 있다.",
+            "link": "https://n.news.naver.com/mnews/article/009/0005268880?sid=101",
+            "originallink": "https://www.mk.co.kr/article/10958843",
+            "pubDate": "Thu, 07 Mar 2024 16:31:00 +0900",
+            "title": "㈜필라웨어, 모범납세자 선정…서울지방국세청장 표창 수상"
+        },
+        {
+            "description": "또한 이번 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 이날 진행된... ",
+            "link": "http://www.dailypop.kr/news/articleView.html?idxno=75537",
+            "originallink": "http://www.dailypop.kr/news/articleView.html?idxno=75537",
+            "pubDate": "Thu, 07 Mar 2024 16:28:00 +0900",
+            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전"
+        },
+        {
+            "description": "또한 이번 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 신한DS 조경선... ",
+            "link": "https://www.sportsw.kr/news/newsview.php?ncode=1065592415573718",
+            "originallink": "https://www.sportsw.kr/news/newsview.php?ncode=1065592415573718",
+            "pubDate": "Thu, 07 Mar 2024 16:26:00 +0900",
+            "title": "신한DS, 그룹 '통합<b>보안</b>관제센터' 서울로 확장 이전"
+        },
+        {
+            "description": "킵 터코 스택패스 CEO는 &quot;스택패스는 <b>클라우드 보안</b>에 대해 높은 완성도를 추구하며 구축한 WAAP에 자부심을 가지고 있다&quot;며, &quot;우리가 엣지 컴퓨팅 플랫폼에 더욱 집중하기로 결정했을 때, 지코어가 차세대 WAAP의... ",
+            "link": "http://www.thebigdata.co.kr/view.php?ud=2024030716192451406cf2d78c68_23",
+            "originallink": "http://www.thebigdata.co.kr/view.php?ud=2024030716192451406cf2d78c68_23",
+            "pubDate": "Thu, 07 Mar 2024 16:22:00 +0900",
+            "title": "지코어, WAAP 솔루션 인수로 <b>보안</b> 포트폴리오 강화"
+        },
+        {
+            "description": "또한 이번 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 이날 진행된... ",
+            "link": "http://www.bigtanews.co.kr/article/view/big202403070018",
+            "originallink": "http://www.bigtanews.co.kr/article/view/big202403070018",
+            "pubDate": "Thu, 07 Mar 2024 16:12:00 +0900",
+            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전"
+        },
+        {
+            "description": "지난해 S개발자 1기에서 51명의 최정예 <b>보안</b>SW 개발인력이 배출됐고 특허출원 3건이 지원됐다. 신규 정보보호 스타트업 1개(이닛<b>클라우드</b>)가 창업해 지난 1월부터 판교 정보보호클러스터에 입주했다. 올해 S개발자... ",
+            "link": "https://www.etoday.co.kr/news/view/2338082",
+            "originallink": "https://www.etoday.co.kr/news/view/2338082",
+            "pubDate": "Thu, 07 Mar 2024 16:06:00 +0900",
+            "title": "KISIA, ‘S-개발자’ 2기 발대식 및 개발<b>보안</b> 세미나 개최"
+        },
+        {
             "description": "△<b>보안</b> 인증 획득 △<b>보안</b> 체계 구축·관리 △<b>클라우드</b> 환경에서의 IT 개발 및 운영 체계 구축 △서비스 확장 관리 △애플리케이션 현대화 등 다양한 요구에 대응할 수 있도록 설계됐다. 합리적인 도입 비용을 제시하여... ",
             "link": "https://www.etoday.co.kr/news/view/2338072",
             "originallink": "https://www.etoday.co.kr/news/view/2338072",
             "pubDate": "Thu, 07 Mar 2024 15:54:00 +0900",
             "title": "베스핀글로벌, AWS 컨트롤타워 구축 지원하는 상품 출시"
-        },
-        {
-            "description": "변화 많은 <b>클라우드</b> 지원 기술 필요 최장락 이사는 '제23회 차세대 <b>보안</b> 비전 2024'의 '차세대 IT 특권 권한 관리 전략' 세션에서 전통적인 시스템 접근제어 솔루션이 멀티·하이브리드 환경에 제한적인지 설명한 후... ",
-            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191545",
-            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191545",
-            "pubDate": "Thu, 07 Mar 2024 15:52:00 +0900",
-            "title": "[NGSV2024] 사이버아크 &quot;시스템 접근제어, 차세대 시스템 진화 시급&quot;"
         },
         {
             "description": "아인슈타인 코파일럿은 아인슈타인 트러스트 레이어에서 제공하는 개인정보보호 및 <b>보안</b>조치를 통해 신뢰할 수 있는 환경에서 AI와 상호작용을 지원한다. 데이터 <b>클라우드</b>의 데이터를 근거로 한 컨텍스트를 활용해... ",
@@ -28,6 +371,13 @@
             "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191547",
             "pubDate": "Thu, 07 Mar 2024 15:52:00 +0900",
             "title": "[NGSV2024] 모니터랩 &quot;<b>클라우드</b> 맞는 <b>보안</b> 방법 필요하다&quot;"
+        },
+        {
+            "description": "변화 많은 <b>클라우드</b> 지원 기술 필요 최장락 이사는 '제23회 차세대 <b>보안</b> 비전 2024'의 '차세대 IT 특권 권한 관리 전략' 세션에서 전통적인 시스템 접근제어 솔루션이 멀티·하이브리드 환경에 제한적인지 설명한 후... ",
+            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191545",
+            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191545",
+            "pubDate": "Thu, 07 Mar 2024 15:52:00 +0900",
+            "title": "[NGSV2024] 사이버아크 &quot;시스템 접근제어, 차세대 시스템 진화 시급&quot;"
         },
         {
             "description": "<b>클라우드 보안</b>을 위해서는 많은 기술이 필요하다. 특히 최근에는 AI/ML을 활용해 방대한 보안 이벤트를 분석하고 위협을 효과적으로 탐지하며, 상황인지 기술을 이용해 오·미탐을 줄이면서 원활한 데이터 활용과 분석을... ",
@@ -86,18 +436,25 @@
             "title": "델 MDR 서비스에 크라우드스트라이크 XDR 플랫폼 통합"
         },
         {
-            "description": "그러면서 &quot;'핀테크 금융 <b>클라우드</b> 지원 사업'은 금융 전문 MSP 기업인 제노솔루션이 <b>클라우드</b> 구축 ,이관, <b>보안</b> 관련 컨설팅을 지원한다. 선정된 핀테크 기업은 ▶취약점 컨설팅▶ AI Serv + HAC PoC 3개월 지원 ▶모의 해킹... ",
-            "link": "http://www.sisunnews.co.kr/news/articleView.html?idxno=207866",
-            "originallink": "http://www.sisunnews.co.kr/news/articleView.html?idxno=207866",
-            "pubDate": "Thu, 07 Mar 2024 15:28:00 +0900",
-            "title": "제노솔루션, 24년 금융 <b>클라우드</b> 지원사업 kt cloud 파트너로 선정"
-        },
-        {
             "description": "또한 이번 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 이날 진행된... ",
             "link": "http://www.choicenews.co.kr/news/articleView.html?idxno=127712",
             "originallink": "http://www.choicenews.co.kr/news/articleView.html?idxno=127712",
             "pubDate": "Thu, 07 Mar 2024 15:28:00 +0900",
             "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전"
+        },
+        {
+            "description": "정부가 주도하는 <b>클라우드</b>-<b>보안</b>인증제도도 클라우드의 보급을 더욱 증진시키고 있으며, IT마이그레이션 분야에 훈풍을 불어넣고 있다. IT 마이그레이션은 다양한 데이터와 소프트웨어 및 DB를 한 시스템에서 다른... ",
+            "link": "https://www.ekoreanews.co.kr/news/articleView.html?idxno=72156",
+            "originallink": "https://www.ekoreanews.co.kr/news/articleView.html?idxno=72156",
+            "pubDate": "Thu, 07 Mar 2024 15:28:00 +0900",
+            "title": "불시에 찾아오는 데이터재난 그 대비책은?"
+        },
+        {
+            "description": "그러면서 &quot;'핀테크 금융 <b>클라우드</b> 지원 사업'은 금융 전문 MSP 기업인 제노솔루션이 <b>클라우드</b> 구축 ,이관, <b>보안</b> 관련 컨설팅을 지원한다. 선정된 핀테크 기업은 ▶취약점 컨설팅▶ AI Serv + HAC PoC 3개월 지원 ▶모의 해킹... ",
+            "link": "http://www.sisunnews.co.kr/news/articleView.html?idxno=207866",
+            "originallink": "http://www.sisunnews.co.kr/news/articleView.html?idxno=207866",
+            "pubDate": "Thu, 07 Mar 2024 15:28:00 +0900",
+            "title": "제노솔루션, 24년 금융 <b>클라우드</b> 지원사업 kt cloud 파트너로 선정"
         },
         {
             "description": "'핀테크 금융 <b>클라우드</b> 지원 사업'은 금융 전문 MSP 기업인 제노솔루션이 <b>클라우드</b> 구축 ,이관, <b>보안</b> 관련 컨설팅을 지원한다. 선정된 핀테크 기업은 ▶취약점 컨설팅▶ AI Serv + HAC PoC 3개월 지원 ▶모의 해킹 1+1 의... ",
@@ -112,13 +469,6 @@
             "originallink": "https://www.greened.kr/news/articleView.html?idxno=312022",
             "pubDate": "Thu, 07 Mar 2024 15:28:00 +0900",
             "title": "[산업이모저모]삼성,'S24 Hours 무비 시리즈' 공개...갤럭시 S24와 배우 고민..."
-        },
-        {
-            "description": "정부가 주도하는 <b>클라우드</b>-<b>보안</b>인증제도도 클라우드의 보급을 더욱 증진시키고 있으며, IT마이그레이션 분야에 훈풍을 불어넣고 있다. IT 마이그레이션은 다양한 데이터와 소프트웨어 및 DB를 한 시스템에서 다른... ",
-            "link": "https://www.ekoreanews.co.kr/news/articleView.html?idxno=72156",
-            "originallink": "https://www.ekoreanews.co.kr/news/articleView.html?idxno=72156",
-            "pubDate": "Thu, 07 Mar 2024 15:28:00 +0900",
-            "title": "불시에 찾아오는 데이터재난 그 대비책은?"
         },
         {
             "description": "태니엄의 실시간 데이터 가시성과 제어 기능 및 컴플라이언스, 서비스나우의 워크플로우와 협업 최적화, 마이크로소프트의 <b>클라우드</b>와 <b>보안</b> 및 생산성 플랫폼을 결합해 한층 더 강화된 <b>보안</b>과 생산성을 제공한다. 또한... ",
@@ -219,20 +569,6 @@
             "title": "정보보호산업협회 'S개발자' 2기 발대식 및 세미나 개최"
         },
         {
-            "description": "또한, 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 방침이다. 조경선 신한DS... ",
-            "link": "https://www.cnbnews.com/news/article.html?no=647268",
-            "originallink": "https://www.cnbnews.com/news/article.html?no=647268",
-            "pubDate": "Thu, 07 Mar 2024 14:50:00 +0900",
-            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전"
-        },
-        {
-            "description": "AWS의 <b>클라우드 보안</b> 진단 프로그램 ‘ECSA’ 인증과 함께 다양한 프로젝트를 통해 검증된 전문 인력 역시 확보하고 있다. 유형준 베스핀글로벌 상품 기획 총괄 실장은 “새롭게 선보이는 컨트롤 타워 위드... ",
-            "link": "https://www.viva100.com/main/view.php?key=20240307010002008",
-            "originallink": "https://www.viva100.com/main/view.php?key=20240307010002008",
-            "pubDate": "Thu, 07 Mar 2024 14:50:00 +0900",
-            "title": "베스핀글로벌, '컨트롤 타워 위드 베스핀글로벌' 출시"
-        },
-        {
             "description": "공급 기업과 매칭된 수요 기업을 대상으로 최대 9,600만원의 금융 <b>클라우드</b> 서비스 이용 요금과 이관·구축 및 <b>보안</b> 컨설팅, 모의 해킹 및 취약점 분석 서비스 등을 지원한다. 이번 사업에서 NHN<b>클라우드</b>는 신한투자증권... ",
             "link": "https://n.news.naver.com/mnews/article/014/0005152772?sid=105",
             "originallink": "http://www.fnnews.com/news/202403071448064248",
@@ -254,6 +590,20 @@
             "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전한다"
         },
         {
+            "description": "또한, 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 방침이다. 조경선 신한DS... ",
+            "link": "https://www.cnbnews.com/news/article.html?no=647268",
+            "originallink": "https://www.cnbnews.com/news/article.html?no=647268",
+            "pubDate": "Thu, 07 Mar 2024 14:50:00 +0900",
+            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전"
+        },
+        {
+            "description": "AWS의 <b>클라우드 보안</b> 진단 프로그램 ‘ECSA’ 인증과 함께 다양한 프로젝트를 통해 검증된 전문 인력 역시 확보하고 있다. 유형준 베스핀글로벌 상품 기획 총괄 실장은 “새롭게 선보이는 컨트롤 타워 위드... ",
+            "link": "https://www.viva100.com/main/view.php?key=20240307010002008",
+            "originallink": "https://www.viva100.com/main/view.php?key=20240307010002008",
+            "pubDate": "Thu, 07 Mar 2024 14:50:00 +0900",
+            "title": "베스핀글로벌, '컨트롤 타워 위드 베스핀글로벌' 출시"
+        },
+        {
             "description": "또한 이번 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 이날 진행된... ",
             "link": "http://www.startuptoday.co.kr/news/articleView.html?idxno=180670",
             "originallink": "http://www.startuptoday.co.kr/news/articleView.html?idxno=180670",
@@ -268,18 +618,18 @@
             "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전"
         },
         {
-            "description": "'핀테크 금융 <b>클라우드</b> 지원 사업'은 금융 전문 MSP 기업인 제노솔루션이 <b>클라우드</b> 구축 ,이관, <b>보안</b> 관련 컨설팅을 지원한다. 선정된 핀테크 기업은 ▶취약점 컨설팅▶ AI Serv + HAC PoC 3개월 지원 ▶모의 해킹 1+1 의... ",
-            "link": "http://www.kihoilbo.co.kr/news/articleView.html?idxno=1076643",
-            "originallink": "http://www.kihoilbo.co.kr/news/articleView.html?idxno=1076643",
-            "pubDate": "Thu, 07 Mar 2024 14:46:00 +0900",
-            "title": "제노솔루션, 24년 금융 <b>클라우드</b> 지원사업 kt cloud 파트너로 선정"
-        },
-        {
             "description": "'핀테크 금융 <b>클라우드</b> 지원 사업'은 금융 전문 MSP 기업인 제노솔루션이 <b>클라우드</b> 구축 ,이관, <b>보안</b> 관련 컨설팅을 지원한다. 선정된 핀테크 기업은 취약점 컨설팅, AI Serv + HAC PoC 3개월 지원, 모의 해킹 1+1 의 혜택을... ",
             "link": "https://www.dailysecu.com/news/articleView.html?idxno=154132",
             "originallink": "https://www.dailysecu.com/news/articleView.html?idxno=154132",
             "pubDate": "Thu, 07 Mar 2024 14:46:00 +0900",
             "title": "제노솔루션, 24년 금융 <b>클라우드</b> 지원사업 kt cloud 파트너 선정"
+        },
+        {
+            "description": "'핀테크 금융 <b>클라우드</b> 지원 사업'은 금융 전문 MSP 기업인 제노솔루션이 <b>클라우드</b> 구축 ,이관, <b>보안</b> 관련 컨설팅을 지원한다. 선정된 핀테크 기업은 ▶취약점 컨설팅▶ AI Serv + HAC PoC 3개월 지원 ▶모의 해킹 1+1 의... ",
+            "link": "http://www.kihoilbo.co.kr/news/articleView.html?idxno=1076643",
+            "originallink": "http://www.kihoilbo.co.kr/news/articleView.html?idxno=1076643",
+            "pubDate": "Thu, 07 Mar 2024 14:46:00 +0900",
+            "title": "제노솔루션, 24년 금융 <b>클라우드</b> 지원사업 kt cloud 파트너로 선정"
         },
         {
             "description": "아인슈타인 코파일럿은 아인슈타인 트러스트 레이어에서 제공하는 개인정보보호 및 <b>보안</b>조치를 통해 신뢰할 수 있는 환경에서 AI와의 상호작용을 지원하며, 데이터 <b>클라우드</b>의 데이터를 근거로 한 콘텍스트를 활용해... ",
@@ -350,359 +700,9 @@
             "originallink": "https://www.ddaily.co.kr/page/view/2024030714101419736",
             "pubDate": "Thu, 07 Mar 2024 14:17:00 +0900",
             "title": "<b>보안</b>SW 인재 양성…'S-개발자 2기' 발대식 개최"
-        },
-        {
-            "description": "신한DS는 이번 확장 이전과 함께 △그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 △<b>클라우드 보안</b>관제 및 탐지 범위 확대 △클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 조경선... ",
-            "link": "https://n.news.naver.com/mnews/article/029/0002859650?sid=101",
-            "originallink": "https://www.dt.co.kr/contents.html?article_no=2024030702109963076004&ref=naver",
-            "pubDate": "Thu, 07 Mar 2024 14:16:00 +0900",
-            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 이전"
-        },
-        {
-            "description": "또 이번 확장 이전과 함께 △그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 △<b>클라우드 보안</b>관제 및 탐지 범위 확대 △클라우드 특화 대응 프로세스 고도화 등을 추진한다. 조경선 신한DS 사장은... ",
-            "link": "https://www.etoday.co.kr/news/view/2337995",
-            "originallink": "https://www.etoday.co.kr/news/view/2337995",
-            "pubDate": "Thu, 07 Mar 2024 14:16:00 +0900",
-            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전...정보보호 스캔들 '제로'"
-        },
-        {
-            "description": "또한 이번 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 신한DS 조경선... ",
-            "link": "http://www.smedaily.co.kr/news/articleView.html?idxno=283674",
-            "originallink": "http://www.smedaily.co.kr/news/articleView.html?idxno=283674",
-            "pubDate": "Thu, 07 Mar 2024 14:14:00 +0900",
-            "title": "신한DS, 그룹 '통합<b>보안</b>관제센터' 서울로 확장 이전"
-        },
-        {
-            "description": "<b>클라우드</b> 가상화 및 메타버스 오피스 전문기업 틸론은 지난 1월 개최된 대규모 국제스포츠대회에서 자사가... 및 <b>보안</b> 솔루션으로, 메타버스 내에서도 구현됐다. 해당 기술을 통해 메타버스 내에서 발생하는 모든... ",
-            "link": "http://www.itdaily.kr/news/articleView.html?idxno=221050",
-            "originallink": "http://www.itdaily.kr/news/articleView.html?idxno=221050",
-            "pubDate": "Thu, 07 Mar 2024 14:14:00 +0900",
-            "title": "틸론, NFT·블록체인 기술 융합 서비스 개발"
-        },
-        {
-            "description": "걸쳐 <b>보안</b>전문화 집체교육·기업참여형 정보보호 개발 프로젝트를 수행하는 전문교육과정이다. 지난해 1기에선 총 51명을 배출했으며, 특허 출원 3건을 지원했다. 또 정보보호 스타트업 1개사(이닛<b>클라우드</b>)가 창업해... ",
-            "link": "https://n.news.naver.com/mnews/article/030/0003187252?sid=105",
-            "originallink": "https://www.etnews.com/20240307000242",
-            "pubDate": "Thu, 07 Mar 2024 14:13:00 +0900",
-            "title": "“최정예 <b>보안</b>SW 개발자 양성”…KISIA, 'S-개발자' 2기 발대식 개최"
-        },
-        {
-            "description": "또한 이번 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 이날 진행된... ",
-            "link": "https://n.news.naver.com/mnews/article/015/0004957040?sid=101",
-            "originallink": "https://www.hankyung.com/article/202403074169i",
-            "pubDate": "Thu, 07 Mar 2024 14:11:00 +0900",
-            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전"
-        },
-        {
-            "description": "아울러 ▲<b>보안</b> 인증 획득 ▲<b>보안</b> 체계 구축·관리 ▲<b>클라우드</b> 환경에서의 IT 개발 및 운영 체계 구축 ▲서비스 확장 관리 ▲애플리케이션 현대화 등 다양한 요구에 효과적으로 대응할 수 있도록 설계됐다. 유형준... ",
-            "link": "http://www.metroseoul.co.kr/article/20240307500343",
-            "originallink": "http://www.metroseoul.co.kr/article/20240307500343",
-            "pubDate": "Thu, 07 Mar 2024 14:10:00 +0900",
-            "title": "베스핀글로벌, AWS 신속 도입 돕는 상품 출시…최대 60% 빨라"
-        },
-        {
-            "description": "또한 이번 확장 이전과 함께 ▲그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 ▲<b>클라우드 보안</b>관제 및 탐지 범위 확대 ▲클라우드 특화 대응 프로세스 고도화 등을 추진할 계획이다. 이날 진행된... ",
-            "link": "https://www.businesskorea.co.kr/news/articleView.html?idxno=212586",
-            "originallink": "https://www.businesskorea.co.kr/news/articleView.html?idxno=212586",
-            "pubDate": "Thu, 07 Mar 2024 14:10:00 +0900",
-            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전"
-        },
-        {
-            "description": "스패로우 <b>클라우드</b>는 애플리케이션의 <b>보안</b> 취약점을 분석하는 <b>클라우드</b> 서비스로, 컴포넌트 분석을 통해 사용 중인 오픈소스 소프트웨어를 식별하고 라이선스와 취약점 정보를 제공한다. 특히, 소프트웨어 공급망... ",
-            "link": "https://www.dailysecu.com/news/articleView.html?idxno=154125",
-            "originallink": "https://www.dailysecu.com/news/articleView.html?idxno=154125",
-            "pubDate": "Thu, 07 Mar 2024 14:04:00 +0900",
-            "title": "스패로우, 디지털서비스 이용지원시스템에 '스패로우 <b>클라우드</b>' 등록"
-        },
-        {
-            "description": "델의 글로벌 <b>보안</b> 운영 전문 팀의 역량과 선제적으로 위협을 탐지하는 팔콘 플랫폼을 결합해 기업과 기관들은 멀티 <b>클라우드</b> 및 IT 환경 전반에서의 사이버 위협에 효과적으로 대응할 수 있다. 대니얼 버나드... ",
-            "link": "https://www.hellot.net/news/article.html?no=87487",
-            "originallink": "https://www.hellot.net/news/article.html?no=87487",
-            "pubDate": "Thu, 07 Mar 2024 14:04:00 +0900",
-            "title": "델, MDR 서비스에 크라우드스트라이크 ‘팔콘 XDR’ 플랫폼 결합"
-        },
-        {
-            "description": "공급 기업과 매칭된 수요 기업을 대상으로 최대 9,600만원의 금융 <b>클라우드</b> 서비스 이용 요금과 이관·구축 및 <b>보안</b> 컨설팅, 모의 해킹 및 취약점 분석 서비스 등을 지원한다. NHN<b>클라우드</b>는 이번 사업에 신청한 수요... ",
-            "link": "http://gamefocus.co.kr/detail.php?number=150042",
-            "originallink": "http://gamefocus.co.kr/detail.php?number=150042",
-            "pubDate": "Thu, 07 Mar 2024 13:58:00 +0900",
-            "title": "NHN<b>클라우드</b> '금융 <b>클라우드</b> 지원 사업' 참여"
-        },
-        {
-            "description": "공급기업과 매칭된 수요기업을 대상으로 최대 9600만원의 금융 <b>클라우드</b> 서비스 이용요금과 이관·구축 및 <b>보안</b> 컨설팅, 모의해킹과 취약점 분석 서비스 등을 지원한다. NHN<b>클라우드</b>는 이번 사업에 신청한 수요기업이... ",
-            "link": "https://n.news.naver.com/mnews/article/029/0002859637?sid=105",
-            "originallink": "https://www.dt.co.kr/contents.html?article_no=2024030702109931081005&ref=naver",
-            "pubDate": "Thu, 07 Mar 2024 13:49:00 +0900",
-            "title": "NHN<b>클라우드</b>, 한국핀테크지원센터 `금융 <b>클라우드</b> 지원 사업` 4년 연속 참여"
-        },
-        {
-            "description": "델의 글로벌 <b>보안</b> 운영 전문 팀 역량과 선제적으로 위협을 탐지하는 팔콘 플랫폼의 결합으로, 기업과 기관은 멀티 <b>클라우드</b> 및 정보기술(IT) 환경 전반에서의 사이버 위협에 효과적으로 대응할 수 있을 것으로 기대된다.... ",
-            "link": "https://n.news.naver.com/mnews/article/030/0003187232?sid=105",
-            "originallink": "https://www.etnews.com/20240307000221",
-            "pubDate": "Thu, 07 Mar 2024 13:48:00 +0900",
-            "title": "델, 크라우드스트라이크와 MDR 서비스 강화"
-        },
-        {
-            "description": "LGU+ SaferZone <b>클라우드</b> 네이티브 플랫폼은 랜섬웨어 <b>보안</b>, 백신, 백업, 악성 / 유해 / 비업무 사이트 차단 그리고 정보 유출 방지, 문서 <b>보안</b>, 출력물 <b>보안</b>, 개인정보 보호, 매체 제어, <b>보안</b> USB, PC <b>보안</b> 솔루션들을... ",
-            "link": "https://www.gokorea.kr/news/articleView.html?idxno=751349",
-            "originallink": "https://www.gokorea.kr/news/articleView.html?idxno=751349",
-            "pubDate": "Thu, 07 Mar 2024 13:48:00 +0900",
-            "title": "세이퍼존, LGU+ 올인원 상품 통해 매출 100억 달성"
-        },
-        {
-            "description": "KT<b>클라우드</b>는 고객 데이터센터를 대상으로 하는 '인프라 진단 서비스'를 출시했다고 7일 밝혔다. 인프라 진단 서비스는 기관·기업의 데이터센터를 대상으로 △전력 △냉방 △구조 △통신 △물리<b>보안</b> 등 인프라를... ",
-            "link": "https://n.news.naver.com/mnews/article/031/0000818427?sid=105",
-            "originallink": "http://www.inews24.com/view/1694645",
-            "pubDate": "Thu, 07 Mar 2024 13:46:00 +0900",
-            "title": "KT<b>클라우드</b>, 고객 데이터센터 대상 '인프라 진단 서비스' 출시"
-        },
-        {
-            "description": "LGU+ SaferZone <b>클라우드</b> 네이티브 플랫폼은 랜섬웨어 <b>보안</b>, 백신, 백업, 악성 /유해 / 비업무 사이트 차단 그리고 정보 유출 방지, 문서 <b>보안</b>, 출력물 <b>보안</b>, 개인정보 보호, 매체 제어, <b>보안</b> USB, PC <b>보안</b> 솔루션들을... ",
-            "link": "https://www.nbntv.co.kr/news/articleView.html?idxno=3012150",
-            "originallink": "https://www.nbntv.co.kr/news/articleView.html?idxno=3012150",
-            "pubDate": "Thu, 07 Mar 2024 13:46:00 +0900",
-            "title": "세이퍼존, LGU+ 올인원 <b>보안</b> 상품으로 매출 성장"
-        },
-        {
-            "description": "공급 기업과 매칭된 수요 기업을 대상으로 최대 9600만원의 금융 <b>클라우드</b> 서비스 이용 요금과 이관·구축 및 <b>보안</b> 컨설팅, 모의 해킹 및 취약점 분석 서비스 등을 지원한다. NHN<b>클라우드</b>는 이번 사업에 신청한 수요... ",
-            "link": "https://n.news.naver.com/mnews/article/031/0000818426?sid=105",
-            "originallink": "http://www.inews24.com/view/1694661",
-            "pubDate": "Thu, 07 Mar 2024 13:45:00 +0900",
-            "title": "NHN<b>클라우드</b>, '금융 <b>클라우드</b> 지원 사업' 참여"
-        },
-        {
-            "description": "KT<b>클라우드</b>가 고객 데이터센터를 대상으로 하는 인프라 진단 서비스를 출시했다.(사진=KT<b>클라우드</b>) KT<b>클라우드</b> 인프라 진단 서비스는 기관·기업의 데이터센터를 대상으로 △전력 △냉방 △구조 △통신 △물리<b>보안</b> 등... ",
-            "link": "https://n.news.naver.com/mnews/article/018/0005687410?sid=105",
-            "originallink": "http://www.edaily.co.kr/news/newspath.asp?newsid=02673206638821024",
-            "pubDate": "Thu, 07 Mar 2024 13:43:00 +0900",
-            "title": "KT<b>클라우드</b>, 고객 데이터센터 인프라 진단 서비스 출시"
-        },
-        {
-            "description": "또 이번 확장 이전과 함께 △그룹사 정보보호조직 및 자사 클라우드 통합운영센터 간 협업 강화 △<b>클라우드 보안</b>관제 및 탐지 범위 확대 △클라우드 특화 대응 프로세스 고도화 등을 추진한다. 조경선 신한DS 사장은... ",
-            "link": "https://n.news.naver.com/mnews/article/030/0003187209?sid=101",
-            "originallink": "https://www.etnews.com/20240307000197",
-            "pubDate": "Thu, 07 Mar 2024 13:25:00 +0900",
-            "title": "신한DS, 그룹 통합<b>보안</b>관제센터 서울로 확장 이전"
-        },
-        {
-            "description": "AWS의 <b>클라우드 보안</b> 진단 프로그램인 ECSA(Enhanced Cloud Security Assessment) 인증과 함께 다양한 프로젝트를 통해 검증된 전문 인력 역시 확보하고 있다. 컨트롤 타워 위드 베스핀글로벌의 출시를 담당한 베스핀글로벌의... ",
-            "link": "https://www.hellot.net/news/article.html?no=87486",
-            "originallink": "https://www.hellot.net/news/article.html?no=87486",
-            "pubDate": "Thu, 07 Mar 2024 13:16:00 +0900",
-            "title": "베스핀글로벌, AWS 컨트롤 타워 구축 지원하는 서비스 출시"
-        },
-        {
-            "description": "스택패스의 WAAP는 독립 <b>보안</b> 솔루션 평가 기관인 시큐어IQ랩으로부터 <b>클라우드</b> WAF 리더로 인정받은 <b>보안</b> 제품이다. 지코어는 WAAP 솔루션 인수를 통해 고객에게 웹 애플리케이션 방화벽(WAF), API <b>보안</b>, 봇 방어... ",
-            "link": "https://n.news.naver.com/mnews/article/092/0002323737?sid=105",
-            "originallink": "https://zdnet.co.kr/view/?no=20240307123553",
-            "pubDate": "Thu, 07 Mar 2024 12:37:00 +0900",
-            "title": "지코어, 스택패스 WAAP 솔루션 인수"
-        },
-        {
-            "description": "아인슈타인 코파일럿은 아인슈타인 트러스트 레이어에서 제공하는 개인정보보호 및 <b>보안</b>조치를 통해 신뢰할 수 있는 환경에서 AI와의 상호작용을 지원하며, 데이터 <b>클라우드</b>의 데이터를 근거로 한 컨텍스트를 활용해... ",
-            "link": "https://n.news.naver.com/mnews/article/092/0002323736?sid=105",
-            "originallink": "https://zdnet.co.kr/view/?no=20240307123213",
-            "pubDate": "Thu, 07 Mar 2024 12:33:00 +0900",
-            "title": "세일즈포스, 생성형 AI CRM ‘아인슈타인1 스튜디오’ 공개"
-        },
-        {
-            "description": "델의 글로벌 <b>보안</b> 운영 전문 팀의 역량과 선제적으로 위협을 탐지하는 팔콘 플랫폼을 결합해 기업과 기관들은 멀티 <b>클라우드</b> 및 IT 환경 전반에서의 사이버 위협에 효과적으로 대응할 수 있다. 델테크놀로지스... ",
-            "link": "https://n.news.naver.com/mnews/article/092/0002323735?sid=105",
-            "originallink": "https://zdnet.co.kr/view/?no=20240307122741",
-            "pubDate": "Thu, 07 Mar 2024 12:29:00 +0900",
-            "title": "델테크놀로지스, 크라우드스트라이크와 MDR 서비스 강화"
-        },
-        {
-            "description": "공급 기업과 매칭된 수요 기업을 대상으로 최대 9600만원의 금융 <b>클라우드</b> 서비스 이용 요금과 이관·구축 및 <b>보안</b> 컨설팅, 모의 해킹 및 취약점 분석 서비스 등을 지원한다. NHN<b>클라우드</b>는 이번 사업에 신청한 수요... ",
-            "link": "https://n.news.naver.com/mnews/article/009/0005268728?sid=105",
-            "originallink": "https://www.mk.co.kr/article/10958459",
-            "pubDate": "Thu, 07 Mar 2024 12:17:00 +0900",
-            "title": "[G-브리핑] 카카오게임즈, 지역사회 상생 도모 활동"
-        },
-        {
-            "description": "아인슈타인 코파일럿 아인슈타인 코파일럿은 아인슈타인 트러스트 레이어에서 제공하는 개인정보보호 및 <b>보안</b>조치를 통해 신뢰할 수 있는 환경에서AI와의 상호작용을 지원하며,데이터 <b>클라우드</b>의 데이터를... ",
-            "link": "https://ditoday.com/%ec%84%b8%ec%9d%bc%ec%a6%88%ed%8f%ac%ec%8a%a4-tdx-2024%ec%84%9c-ai-%ea%b8%b0%eb%b0%98-%eb%8c%80%ed%99%94%ed%98%95-%ec%96%b4%ec%8b%9c%ec%8a%a4%ed%84%b4%ed%8a%b8-%ea%b3%b5%ea%b0%9c/",
-            "originallink": "https://ditoday.com/%ec%84%b8%ec%9d%bc%ec%a6%88%ed%8f%ac%ec%8a%a4-tdx-2024%ec%84%9c-ai-%ea%b8%b0%eb%b0%98-%eb%8c%80%ed%99%94%ed%98%95-%ec%96%b4%ec%8b%9c%ec%8a%a4%ed%84%b4%ed%8a%b8-%ea%b3%b5%ea%b0%9c/",
-            "pubDate": "Thu, 07 Mar 2024 12:12:00 +0900",
-            "title": "세일즈포스, TDX 2024서 AI기반 대화형 어시스턴트 공개"
-        },
-        {
-            "description": "손 매니저는 &quot;기술이 발전하면서 AI/ML과 <b>클라우드</b> 기반 <b>보안</b>도 다양하게 등장하고 있으므로, 메일과 APT 공격 방어를 위한 최적의 기술 활용 방안을 고민해야 한다. 더불어 이메일을 통한 업무 수행에 불편함이 없도록 <b>보안</b>... ",
-            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191531",
-            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191531",
-            "pubDate": "Thu, 07 Mar 2024 12:02:00 +0900",
-            "title": "[NGSV2024] 리얼시큐 &quot;메일<b>보안</b>에도 제로 트러스트 필수&quot;"
-        },
-        {
-            "description": "공급 기업과 매칭된 수요 기업을 대상으로 최대 9600만원의 금융 <b>클라우드</b> 서비스 이용 요금과 이관·구축 및 <b>보안</b> 컨설팅, 모의 해킹 및 취약점 분석 서비스 등을 지원한다.NHN<b>클라우드</b>는 이번 사업에 신청한 수요... ",
-            "link": "https://www.viva100.com/main/view.php?key=20240307010001924",
-            "originallink": "https://www.viva100.com/main/view.php?key=20240307010001924",
-            "pubDate": "Thu, 07 Mar 2024 12:02:00 +0900",
-            "title": "NHN<b>클라우드</b>, '2024 금융 <b>클라우드</b> 지원 사업' 참여"
-        },
-        {
-            "description": "문제와 <b>보안</b>조직의 당면과제를 설명했다. 오래된 방식으로도 효과적인 공격 가능 디지털 전환과 <b>클라우드</b>, 하이브리드 근무, IT·OT 시스템 통합 등의 변화로 인해 IT 환경은 극심한 복잡성을 안게 됐는데, 랜섬웨어... ",
-            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191532",
-            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191532",
-            "pubDate": "Thu, 07 Mar 2024 12:02:00 +0900",
-            "title": "[NGSV2024] 포티넷 &quot;쏟아지는 <b>보안</b> 경보, AI로 해결한다&quot;"
-        },
-        {
-            "description": "KT<b>클라우드</b>는 고객 데이터센터를 대상으로 하는 '인프라 진단 서비스'를 출시했다고 7일 밝혔다. 이 서비스는 기관·기업 데이터센터를 대상으로 △전력 △냉방 △구조 △통신 △물리<b>보안</b> 등 인프라를 종합적으로... ",
-            "link": "https://n.news.naver.com/mnews/article/029/0002859618?sid=105",
-            "originallink": "https://www.dt.co.kr/contents.html?article_no=2024030702109931081004&ref=naver",
-            "pubDate": "Thu, 07 Mar 2024 12:00:00 +0900",
-            "title": "KT<b>클라우드</b>, 고객 데이터센터 대상 `인프라 진단 서비스` 출시"
-        },
-        {
-            "description": "AWS의 <b>클라우드 보안</b> 진단 프로그램인 ECSA(Enhanced Cloud Security Assessment) 인증과 함께 다양한 프로젝트를 통해 검증된 전문 인력 역시 확보하고 있다. ‘Control Tower with Bespin Global’’의 출시를 담당한... ",
-            "link": "https://seoultimes.news/%eb%b2%a0%ec%8a%a4%ed%95%80%ea%b8%80%eb%a1%9c%eb%b2%8c-control-tower-with-bespin-global-%ec%83%81%ed%92%88-%ec%b6%9c%ec%8b%9c-%ec%b5%9c%eb%8c%80-60-%eb%b9%a0%eb%a5%b4/",
-            "originallink": "https://seoultimes.news/%eb%b2%a0%ec%8a%a4%ed%95%80%ea%b8%80%eb%a1%9c%eb%b2%8c-control-tower-with-bespin-global-%ec%83%81%ed%92%88-%ec%b6%9c%ec%8b%9c-%ec%b5%9c%eb%8c%80-60-%eb%b9%a0%eb%a5%b4/",
-            "pubDate": "Thu, 07 Mar 2024 11:57:00 +0900",
-            "title": "베스핀글로벌, ‘Control Tower with Bespin Global’ 상품 출시… 최대 60% ..."
-        },
-        {
-            "description": "요약 : <b>보안</b> 외신 해커뉴스에 의하면 공격자들이 아파치 하둡 얀(Apache Hadoop YARN), 도커(Docker)... 그러면서 <b>클라우드</b> 환경도 위험에 노출되어 있고요.” -카도시큐리티-[국제부 문가용 기자(globoan@boannews.com)]www.... ",
-            "link": "http://www.boannews.com/media/view.asp?idx=127500&kind=",
-            "originallink": "http://www.boannews.com/media/view.asp?idx=127500&kind=",
-            "pubDate": "Thu, 07 Mar 2024 11:48:00 +0900",
-            "title": "각종 서버 설정 오류와 취약점 노리는 공격자들, 암호화폐 채굴"
-        },
-        {
-            "description": "구축과 <b>클라우드</b> 서비스의 가치를 입증하는 사례”라며, “디노도의 고객들은 디노도 플랫폼(Denodo Platform)... 일관된 <b>보안</b> 및 거버넌스 지원 비즈니스 실무자들이 스스로 데이터를 검색, 액세스 및 준비할 수 있도록... ",
-            "link": "https://www.venturesquare.net/916230",
-            "originallink": "https://www.venturesquare.net/916230",
-            "pubDate": "Thu, 07 Mar 2024 11:47:00 +0900",
-            "title": "디노도, ‘엔터프라이즈 데이터 패브릭’ 부문 리더 선정"
-        },
-        {
-            "description": "AWS <b>클라우드 보안</b> 진단 프로그램 ECSA 인증과 함께 다양한 프로젝트를 통해 검증된 전문인력도 확보하고 있다. 유형준 베스핀글로벌 상품기획 총괄 실장 &quot;'컨트롤타워 위드 베스핀글로벌'은 클라우드 환경의 복잡성... ",
-            "link": "https://n.news.naver.com/mnews/article/029/0002859608?sid=105",
-            "originallink": "https://www.dt.co.kr/contents.html?article_no=2024030702109931081003&ref=naver",
-            "pubDate": "Thu, 07 Mar 2024 11:29:00 +0900",
-            "title": "베스핀글로벌, AWS 컨트롤타워 도입 지원 상품 출시"
-        },
-        {
-            "description": "MWC 현장 교류 계기로 양자 <b>클라우드</b> 및 응용 프로그램 개발 위한 글로벌 협력 본격화[<b>보안</b>뉴스 이소미 기자] 양자 <b>보안</b>·양자 컴퓨팅 전문기업 노르마(대표 정현철)가 ‘MWC 2024’ 참가를 계기로 양자 <b>클라우드</b>... ",
-            "link": "http://www.boannews.com/media/view.asp?idx=127496&kind=",
-            "originallink": "http://www.boannews.com/media/view.asp?idx=127496&kind=",
-            "pubDate": "Thu, 07 Mar 2024 11:26:00 +0900",
-            "title": "노르마, ‘MWC 2024’ 참가... 양자 기술 글로벌 경쟁력 확인"
-        },
-        {
-            "description": "kt<b>클라우드</b>(대표 황태현)가 고객 데이터센터를 대상으로 하는 '인프라 진단 서비스'를 출시했다고 7일 밝혔다. 인프라 진단 서비스는 기관·기업의 데이터센터를 대상으로 ▲전력 ▲냉방 ▲구조 ▲통신 ▲물리<b>보안</b> 등... ",
-            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191534",
-            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191534",
-            "pubDate": "Thu, 07 Mar 2024 11:22:00 +0900",
-            "title": "kt<b>클라우드</b>, 고객 데이터센터 대상 '인프라 진단 서비스' 출시"
-        },
-        {
-            "description": "<b>보안</b>업체 파수(150900)는 자회사 스패로우의 애플리케이션(앱) <b>보안</b> 설루션 '스패로우 <b>클라우드</b>'가 디지털서비스 이용지원시스템에 등록됐다고 7일 밝혔다. 디지털서비스 이용지원시스템은 정부가 공공기관의... ",
-            "link": "https://n.news.naver.com/mnews/article/421/0007395978?sid=105",
-            "originallink": "https://www.news1.kr/articles/5342814",
-            "pubDate": "Thu, 07 Mar 2024 11:21:00 +0900",
-            "title": "스패로우 &quot;공공기관용 앱 <b>보안</b> 설루션 구독하세요&quot;"
-        },
-        {
-            "description": "베스핀글로벌은 &quot;소요 시간을 기존보다 최대 60% 이상 절감해 2개월 내에 AWS 컨트롤 타워를 도입할 수 있다&quot;며 &quot;<b>보안</b>인증 획득, <b>보안</b>체계 구축관리, <b>클라우드</b> 환경에서의 IT개발 및 운영체계 구축, 서비스 확장관리... ",
-            "link": "https://n.news.naver.com/mnews/article/008/0005008648?sid=105",
-            "originallink": "http://news.mt.co.kr/mtview.php?no=2024030711163374953",
-            "pubDate": "Thu, 07 Mar 2024 11:17:00 +0900",
-            "title": "베스핀글로벌, AWS 컨트롤타워 구축·운용 상품 출시"
-        },
-        {
-            "description": "스패로우 <b>클라우드</b>는 애플리케이션의 <b>보안</b> 취약점을 분석하는 <b>클라우드</b> 서비스로, 컴포넌트 분석을 통해 사용 중인 오픈소스 소프트웨어를 식별하고 라이선스와 취약점 정보를 제공한다. 특히, 소프트웨어 공급망 공격의... ",
-            "link": "https://n.news.naver.com/mnews/article/008/0005008636?sid=105",
-            "originallink": "http://news.mt.co.kr/mtview.php?no=2024030711051513492",
-            "pubDate": "Thu, 07 Mar 2024 11:05:00 +0900",
-            "title": "스패로우 SaaS형 <b>보안</b> 솔루션 '스패로우 <b>클라우드</b>' 공공마켓 등록"
-        },
-        {
-            "description": "양자 <b>보안</b>과 양자 컴퓨팅 전문 기업 노르마(대표 정현철)가 MWC 2024 참가를 계기로 양자 <b>클라우드</b> 서비스와 응용 프로그램 개발을 위한 글로벌 협력을 본격화한다. 노르마는 MWC 2024에서 핀란드 VTT와 양자 <b>클라우드</b>... ",
-            "link": "https://www.dailysecu.com/news/articleView.html?idxno=154118",
-            "originallink": "https://www.dailysecu.com/news/articleView.html?idxno=154118",
-            "pubDate": "Thu, 07 Mar 2024 11:04:00 +0900",
-            "title": "양자 컴퓨팅 기업 노르마, MWC 바르셀로나 참가해 Q 플랫폼 공개‧시연"
-        },
-        {
-            "description": "AI 악용 공격과 AI를 이용한 <b>보안</b> 강화, 차세대 <b>보안</b> 패러다임인 제로 트러스트, 이제는 대세가 된 <b>클라우드</b>를 보호하는 기술과 <b>클라우드</b>를 이용한 <b>보안</b> 서비스. 전통적인 IT 뿐만 아니라 OT/IoT 및 사이버 물리 시스템(CPS)과... ",
-            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191526",
-            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191526",
-            "pubDate": "Thu, 07 Mar 2024 11:02:00 +0900",
-            "title": "[NGSV2024] '23회 차세대 <b>보안</b> 비전' 성황리 개막"
-        },
-        {
-            "description": "공급 기업과 매칭된 수요 기업을 대상으로 최대 9600만원의 금융 <b>클라우드</b> 서비스 이용 요금과 이관·구축 및 <b>보안</b> 컨설팅, 모의 해킹 및 취약점 분석 서비스 등을 지원한다. NHN<b>클라우드</b>는 이번 사업에 신청한 수요... ",
-            "link": "https://n.news.naver.com/mnews/article/008/0005008631?sid=105",
-            "originallink": "http://news.mt.co.kr/mtview.php?no=2024030711014076492",
-            "pubDate": "Thu, 07 Mar 2024 11:02:00 +0900",
-            "title": "NHN<b>클라우드</b> '금융 <b>클라우드</b>' 사업 참여… &quot;핀테크 기업 지원&quot;"
-        },
-        {
-            "description": "그러나 규제와 <b>보안</b>의 문제로 <b>클라우드</b>를 사용하지 못해 혁신의 기회를 갖지 못하는 조직이 많다. &quot;국가와 기업의 핵심 기술을 해외 <b>클라우드</b>에 저장하지 못한다. 중요정보·개인정보는 외부 통신과 분리된 안전한... ",
-            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191528",
-            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191528",
-            "pubDate": "Thu, 07 Mar 2024 11:02:00 +0900",
-            "title": "[NGSV2024] 소프트캠프 &quot;<b>클라우드</b> 통한 업무 혁신 이룬다&quot;"
-        },
-        {
-            "description": "또한 대화형 AI 기술 '코어텍스 코파일럿'을 지원해 <b>보안</b> 분석가의 작업을 한층 수월하게 한다. 장성민 상무는 &quot;팔로알토 네트웍스는 네트워크, <b>클라우드</b>, 엔드포인트에서 생성되는 모든 데이터를 통합하고, AI/ML로... ",
-            "link": "https://www.datanet.co.kr/news/articleView.html?idxno=191527",
-            "originallink": "https://www.datanet.co.kr/news/articleView.html?idxno=191527",
-            "pubDate": "Thu, 07 Mar 2024 11:02:00 +0900",
-            "title": "[NGSV2024] 팔로알토 &quot;빠르게 진행되는 AI 공격···AI로 방어하라&quot;"
-        },
-        {
-            "description": "이 행사는 파이오링크 주최로 안랩, NHN클라우드, 빔(Veeam), 오케스트로, 수세코리아(SUSE Korea) 등 국내외 <b>클라우드</b>·<b>보안</b> 전문기업이 함께 한다. 클라우드 네이티브에 대한 최신 동향과 전략, 퍼블릭·프라이빗 클라우드... ",
-            "link": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2098664",
-            "originallink": "http://www.enewstoday.co.kr/news/articleView.html?idxno=2098664",
-            "pubDate": "Thu, 07 Mar 2024 11:00:00 +0900",
-            "title": "파이오링크, '<b>클라우드</b> 시큐리티 플랫폼' 전국투어 콘퍼런스 개최"
-        },
-        {
-            "description": "KT<b>클라우드</b>는 고객 데이터센터를 대상으로 하는 '인프라 진단 서비스'를 출시했다. 이 서비스는 기관·기업의 데이터센터를 대상으로 △전력 △냉방 △구조 △통신 △물리<b>보안</b> 등 인프라를 종합적으로 진단한다. 에너지... ",
-            "link": "https://n.news.naver.com/mnews/article/008/0005008620?sid=105",
-            "originallink": "http://news.mt.co.kr/mtview.php?no=2024030710572615152",
-            "pubDate": "Thu, 07 Mar 2024 10:58:00 +0900",
-            "title": "KT<b>클라우드</b>, 고객 데이터센터 대상 인프라 진단 서비스"
-        },
-        {
-            "description": "아인슈타인 코파일럿은 아인슈타인 트러스트 레이어에서 제공하는 개인정보보호 및 <b>보안</b>조치를 통해 신뢰할 수 있는 환경에서 AI와의 상호작용을 지원하며, 데이터 <b>클라우드</b>의 데이터를 근거로 한 컨텍스트를... ",
-            "link": "http://digitalchosun.dizzo.com/site/data/html_dir/2024/03/07/2024030780073.html",
-            "originallink": "http://digitalchosun.dizzo.com/site/data/html_dir/2024/03/07/2024030780073.html",
-            "pubDate": "Thu, 07 Mar 2024 10:54:00 +0900",
-            "title": "세일즈포스, 로우코드로 고객 접점 AI 실질적 지원"
-        },
-        {
-            "description": "아인슈타인 코파일럿은 아인슈타인 트러스트 레이어에서 제공하는 개인정보보호 및 <b>보안</b>조치를 통해 신뢰할 수 있는 환경에서 AI와의 상호작용을 지원하며, 데이터 <b>클라우드</b>의 데이터를 근거로 한 컨텍스트를... ",
-            "link": "https://www.kmaeil.com/news/articleView.html?idxno=442666",
-            "originallink": "https://www.kmaeil.com/news/articleView.html?idxno=442666",
-            "pubDate": "Thu, 07 Mar 2024 10:52:00 +0900",
-            "title": "세일즈포스, TDX 2024서 '아인슈타인1 스튜디오'·생성형 AI 기반 대화형 어시..."
-        },
-        {
-            "description": "(사진=스패로우) 스패로우 <b>클라우드</b>는 애플리케이션의 <b>보안</b> 취약점을 분석하는 <b>클라우드</b> 서비스로, 컴포넌트 분석을 통해 사용 중인 오픈소스 소프트웨어를 식별하고 라이선스와 취약점 정보를 제공한다. 특히... ",
-            "link": "https://n.news.naver.com/mnews/article/092/0002323709?sid=105",
-            "originallink": "https://zdnet.co.kr/view/?no=20240307104804",
-            "pubDate": "Thu, 07 Mar 2024 10:51:00 +0900",
-            "title": "&quot;과기부·NIA 심사 모두 통과&quot;…스패로우, 공공 SW 공급망 <b>보안</b> 강화 나선다"
-        },
-        {
-            "description": "AWS의 <b>클라우드 보안</b> 진단 프로그램인 발전된 <b>클라우드 보안</b> 평가(ECSA) 인증과 함께 다양한 프로젝트를 통해 검증된 전문 인력을 확보하고 있다. 베스핀글로벌의 유형준 상품 기획 총괄 실장은 “신규 서비스는 클라우드... ",
-            "link": "https://n.news.naver.com/mnews/article/092/0002323703?sid=105",
-            "originallink": "https://zdnet.co.kr/view/?no=20240307104021",
-            "pubDate": "Thu, 07 Mar 2024 10:41:00 +0900",
-            "title": "베스핀글로벌, AWS 컨트롤타워 구축 기간 60%↓"
-        },
-        {
-            "description": "공급 기업과 매칭된 수요 기업을 대상으로 최대 9600만원의 금융 <b>클라우드</b> 서비스 이용 요금과 이관·구축 및 <b>보안</b> 컨설팅, 모의 해킹 및 취약점 분석 서비스 등을 지원한다. NHN<b>클라우드</b>는 이번 사업에 신청한 수요... ",
-            "link": "https://n.news.naver.com/mnews/article/119/0002806792?sid=101",
-            "originallink": "https://www.dailian.co.kr/news/view/1336321/?sc=Naver",
-            "pubDate": "Thu, 07 Mar 2024 10:40:00 +0900",
-            "title": "NHN<b>클라우드</b>, '금융 <b>클라우드</b> 지원 사업' 4년 연속 참여"
         }
     ],
-    "lastBuildDate": "Thu, 07 Mar 2024 16:02:38 +0900",
+    "lastBuildDate": "Fri, 08 Mar 2024 08:17:17 +0900",
     "start": 1,
-    "total": 251447
+    "total": 251497
 }

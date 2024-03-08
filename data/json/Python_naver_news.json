@@ -2,6 +2,13 @@
     "display": 100,
     "items": [
         {
+            "description": "알고리즘은 파이선(<b>Python</b>) 같은 코딩 언어로 표현되는데, 이 언어들은 인간 언어와 유사하다. 하지만 GPU 같은 반도체는 ‘1′과 ‘0′으로 이뤄진 2진수 언어인 ‘기계어’만 이해한다. 쿠다는 이렇게 인간... ",
+            "link": "https://n.news.naver.com/mnews/article/023/0003820832?sid=101",
+            "originallink": "https://www.chosun.com/economy/weeklybiz/2024/03/07/VW7TMYJ5KRFQHIPTWB44VYML5M/?utm_source=naver&utm_medium=referral&utm_campaign=naver-news",
+            "pubDate": "Thu, 07 Mar 2024 18:43:00 +0900",
+            "title": "[김정호의 반도체 특강] 1억원짜리라고? 엔비디아 반도체 경쟁력의 비밀은"
+        },
+        {
             "description": "강여울 조선에듀 기자 | 디지털 기술의 중요성이 증가하면서 국내 기업들도 C, C++, C#, 자바(JAVA), 파이선(<b>Python</b>) 등 컴퓨터 언어를 활용한 프로그래밍 '코딩(Coding)’ 시험을 채용∙승진 과정에 적극 활용하고 있다.... ",
             "link": "https://edu.chosun.com/site/data/html_dir/2024/03/06/2024030680042.html",
             "originallink": "https://edu.chosun.com/site/data/html_dir/2024/03/06/2024030680042.html",
@@ -693,16 +700,9 @@
             "originallink": "https://www.news1.kr/articles/5294693",
             "pubDate": "Thu, 18 Jan 2024 16:14:00 +0900",
             "title": "&quot;파이썬 1급 자격증 따세요&quot;…세종대, 취업실무과정 운영"
-        },
-        {
-            "description": "과정 세부 내용은 △<b>python</b>(파이썬) 소개 △기초문법 △함수와 모듈 △파일 관리 △데이터분석 및 시각화 △라이브러리 △Panda s△데이터 분석 등으로 구성된다. 수업 종료 후에 자격 인증 시험을 거처 필기·실기 각... ",
-            "link": "https://www.onews.tv/news/articleView.html?idxno=195017",
-            "originallink": "https://www.onews.tv/news/articleView.html?idxno=195017",
-            "pubDate": "Thu, 18 Jan 2024 16:12:00 +0900",
-            "title": "세종대 대학일자리플러스센터, 동계방학 파이썬 중급 취업실무과정 운영"
         }
     ],
-    "lastBuildDate": "Thu, 07 Mar 2024 16:02:36 +0900",
+    "lastBuildDate": "Fri, 08 Mar 2024 08:17:16 +0900",
     "start": 1,
-    "total": 8534
+    "total": 8535
 }

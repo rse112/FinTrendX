@@ -62,8 +62,8 @@ async def trend_maincode(params, clients, api_url):
     results = []
     for keyword in search_keywords:
         for client_key, client_info in clients.items():
-            client_id = client_info['client_id']
-            client_secret = client_info['client_secret']
+            client_id = params['id']
+            client_secret = params['pw']
 
             try:
                 df_search_trend = await trend_load_async(standard_time, keyword, client_id, client_secret, api_url)
