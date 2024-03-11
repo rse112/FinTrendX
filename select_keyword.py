@@ -339,38 +339,32 @@ def rising_keyword_analysis(table, today, mode):
 
 def month_check(table):
     up_month_list = []
-    
+
+    # 검색일자를 datetime 형태로 변환하고, 이를 인덱스로 설정합니다.
     table['검색일자'] = pd.to_datetime(table['검색일자'])
-    table_tmp = table.set_index('검색일자')
+    table = table.set_index('검색일자')
     
-    table_tmp['year'] = table_tmp.index.year
-    table_tmp['month'] = table_tmp.index.month
+    # 연도와 월을 추출합니다.
+    table['year'] = table.index.year
+    table['month'] = table.index.month
     
-    sum_table = table_tmp.groupby(['year', 'month'])[['검색량']].sum()
+    # 월별 검색량 합계를 계산합니다.
+    sum_table = table.groupby(['year', 'month'])[['검색량']].sum()
     sum_table.reset_index(inplace=True)
-    sum_table['검색량'] = sum_table['검색량'] / sum_table['검색량'].max() * 100
+    sum_table['normalized_search_volume'] = sum_table['검색량'] / sum_table['검색량'].max() * 100
 
-    for month in range(1, 13):
-        current_month_data = sum_table[(sum_table['month'] == month)]
+    # 다음 달과 비교하여 검색량이 증가하는 월을 찾습니다.
+    for idx in range(len(sum_table)-1):
+        current_month_volume = sum_table.loc[idx, 'normalized_search_volume']
+        next_month_volume = sum_table.loc[idx+1, 'normalized_search_volume']
         
-        if month == 12:
-            next_month = 1
-            next_year = current_month_data['year'].values[0] + 1 if not current_month_data.empty else 0
-        else:
-            next_month = month + 1
-            next_year = current_month_data['year'].values[0] if not current_month_data.empty else 0
+        # '검색량'이 상승하는 경우, 현재 월을 결과 리스트에 추가합니다.
+        if next_month_volume > current_month_volume:
+            up_month_list.append(sum_table.loc[idx, 'month'])
+    # 중복을 제거하고, 결과를 정렬합니다.
+    unique_sorted_up_month_list = sorted(set(up_month_list))
 
-        next_month_data = sum_table[(sum_table['month'] == next_month) & (sum_table['year'] == next_year)]
-        
-        if not current_month_data.empty and not next_month_data.empty:
-            sub_result = current_month_data['검색량'].values[0] - next_month_data['검색량'].values[0]
-            if sub_result > 0:
-                up_month_list.append(month)
-        else:
-            pass
-
-    return up_month_list
-
+    return unique_sorted_up_month_list
 
 
 
@@ -435,7 +429,7 @@ def monthly_rule(table, today, mode) :
             table_tmp_2 = result_tmp.copy()
             # 상승하는 달
             rising_month = month_check(result_graph)
-
+            print(rising_month)
             return table_tmp_2 , result_graph, similarity_rt, rising_month
 
         ### 2번 조건 : 거리가 150보다 하나만 크고, 2년씩 비교한 거리가 300보다 작음
@@ -444,7 +438,7 @@ def monthly_rule(table, today, mode) :
             table_tmp_2 = result_tmp.copy()
             # 상승하는 달
             rising_month = month_check(result_graph)
-
+            print(rising_month)
             return table_tmp_2 , result_graph, similarity_rt, rising_month
         else :
 
@@ -472,7 +466,7 @@ if __name__ == "__main__":
     # 검색 기준일
     standard_time = datetime.now()
     params = {
-    "search_keywords": ["디도스", "클라우드 보안", "사이버 공격", "주식", "비트코인", "테슬라", "삼성전자", "네이버", "배당주"],
+    "search_keywords": ["자동차보험"],
     "id": utils.get_secret("clients")["id_1"]["client_id"],
     "pw": utils.get_secret("clients")["id_1"]["client_secret"],
     "api_url": "https://openapi.naver.com/v1/datalab/search",
@@ -494,11 +488,11 @@ if __name__ == "__main__":
         month_a,month_b,month_c,month_d=monthly_rule(df,day,kk)
 
 
-    #     a,b,c,d=monthly_rule(df,day,kk)
-        d,e,f=rising_keyword_analysis(df, day, kk)
+    # #     a,b,c,d=monthly_rule(df,day,kk)
+    #     d,e,f=rising_keyword_analysis(df, day, kk)
 
         
-        a,b,c=select_keyword(df,day,kk)
+    #     a,b,c=select_keyword(df,day,kk)
 
     print(time.time()-start)
     #0.94

@@ -83,7 +83,7 @@ def load_list_from_text(file_path):
     with open(file_path, 'r') as file:
         return [line.strip() for line in file]
 
-target_keywords = load_list_from_text('keywords.txt')
+target_keywords = load_list_from_text('target_keywords.txt')
 
 if __name__ == "__main__":
 
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     client_secret = "2x7yByvNSN"    
     # types = ["신용카드발급", "파이썬"]  # 검색하고자 하는 키워드 목록
     std_time = datetime.now()  # 기준 시간 설정
-
+    # target_keywords=['파이썬','망고']
     # 비동기 메인 함수 실행
     results = asyncio.run(blog_result_async(target_keywords, std_time, client_id, client_secret))
     df_results = pd.DataFrame(results, columns=['Keyword', 'Activity Rate'])
