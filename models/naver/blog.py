@@ -5,17 +5,29 @@ import pandas as pd
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import urllib.parse
+sem = asyncio.Semaphore(10)  # 동시 요청 수를 10으로 제한
+async def fetch_blog(session, url, headers, retries=3):
+    async with sem:  # 세마포어를 사용하여 동시 요청 수 제한
+        try:
+            async with session.get(url, headers=headers) as response:
+                rescode = response.status
+                if rescode == 200:
+                    response_body = await response.text()
+                    response_json = json.loads(response_body)
+                    print(f"Successfully fetched data for URL: {url}")  # 성공 메시지 출력
+                    return pd.DataFrame(response_json['items'])
+                else:
+                    print(f"Error Code: {rescode} for URL: {url}")  # 에러 메시지 출력
+                    return pd.DataFrame()
+        except Exception as e:
+            print(f"Request failed, {retries} retries left. Error: {e} for URL: {url}")
+            if retries > 0:
+                await asyncio.sleep(1)  # 잠시 대기 후 재시도
+                return await fetch_blog(session, url, headers, retries-1)
+            else:
+                print(f"All retries failed for URL: {url}")
+                return pd.DataFrame()
 
-async def fetch_blog(session, url, headers):
-    async with session.get(url, headers=headers) as response:
-        rescode = response.status
-        if rescode == 200:
-            response_body = await response.text()
-            response_json = json.loads(response_body)
-            return pd.DataFrame(response_json['items'])
-        else:
-            print("Error Code:", rescode)
-            return pd.DataFrame()
 
 async def blog_async(client_id, client_secret, query, display, start, sort):
     encText = urllib.parse.quote(query)
@@ -45,19 +57,46 @@ async def blog_result_async(types, std_time, client_id, client_secret):
             tasks.append(blog_async(client_id, client_secret, query, display, start, sort))
 
     results = await asyncio.gather(*tasks)
-    # 결과 처리 및 활동성 계산 로직을 여기에 구현
+    
+    # 결과 데이터프레임을 합치고 활동성 지표를 계산
+    all_results = pd.DataFrame()
+    for result in results:
+        all_results = pd.concat([all_results, result], ignore_index=True)
+        
+    # 'postdate' 열을 datetime 객체로 변환
+    all_results['postdate'] = pd.to_datetime(all_results['postdate'], format='%Y%m%d')
+    
+    blog_active = []
+    for type_ in types:
+        filtered_results = all_results[all_results['title'].str.contains(type_)]
+        recent_posts_count = filtered_results[
+            (filtered_results['postdate'] >= pd.to_datetime(start_time)) & 
+            (filtered_results['postdate'] <= pd.to_datetime(end_time))
+        ].shape[0]
+        
+        # 활동성 지표 계산: 최근 일주일 동안 블로그 발간 비율
+        activity_rate = round((recent_posts_count / 1000) * 100, 3)
+        blog_active.append((type_, activity_rate))
+    
+    return blog_active
+def load_list_from_text(file_path):
+    with open(file_path, 'r') as file:
+        return [line.strip() for line in file]
 
-    return results  # 이 예제에서는 단순히 결과를 반환합니다.
+target_keywords = load_list_from_text('keywords.txt')
 
 if __name__ == "__main__":
+
+
     # 테스트를 위한 변수 정의
     client_id = "ByXmMvAqMIxyVUY_h17L"
     client_secret = "2x7yByvNSN"    
-    types = ["비트코인", "파이썬"]  # 검색하고자 하는 키워드 목록
+    # types = ["신용카드발급", "파이썬"]  # 검색하고자 하는 키워드 목록
     std_time = datetime.now()  # 기준 시간 설정
 
     # 비동기 메인 함수 실행
-    results = asyncio.run(blog_result_async(types, std_time, client_id, client_secret))
-    
+    results = asyncio.run(blog_result_async(target_keywords, std_time, client_id, client_secret))
+    df_results = pd.DataFrame(results, columns=['Keyword', 'Activity Rate'])
+    df_results.to_csv('keyword_activity_rates.csv', index=False)
     # 결과 출력 (테스트 목적)
     print(results)
