@@ -319,7 +319,7 @@ def rising_keyword_analysis(table, today, mode):
     result_graph = pd.DataFrame()
     result_graph['검색일자'] = result_tmp_gph.index
     result_graph['기준일자'] = formatted_today
-    result_graph['유형'] = f'{mode}급상승'
+    result_graph['유형'] = f'{period_str}지속상승'
     result_graph['연관검색어'] = result_tmp_gph.columns[0]
     result_graph['검색량'] = result_tmp_gph.values
     
@@ -488,12 +488,22 @@ if __name__ == "__main__":
         month_a,month_b,month_c,month_d=monthly_rule(df,day,kk)
 
 
-    # #     a,b,c,d=monthly_rule(df,day,kk)
-    #     d,e,f=rising_keyword_analysis(df, day, kk)
+        a,b,c,d=monthly_rule(df,day,kk)
+        print(a)
+        print(b)
+        print(c)
+        print(d)
+        d,e,f=rising_keyword_analysis(df, day, kk)
+        print(d)
+        print(e)
+        print(f)
 
         
-    #     a,b,c=select_keyword(df,day,kk)
-
+        a,b,c=select_keyword(df,day,kk)
+        print(a)
+        print(b)
+        print(c)
+        print('#############################################')
     print(time.time()-start)
     #0.94
     #a,b,c=select_keyword(trend_data,day,a)
