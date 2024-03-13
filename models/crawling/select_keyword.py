@@ -9,9 +9,10 @@ import pandas as pd
 import numpy as np
 import utils
 from api_set import APIClient
-from datetime import datetime
 import statsmodels.api as sm
 import asyncio
+from models.crawling.trend import trend_maincode 
+import time
 
 formatted_today, day=utils.get_today_date()
 
@@ -459,9 +460,7 @@ def monthly_rule(table, today, mode) :
 
 
 
-import asyncio
-from trend import trend_maincode 
-import time
+
 if __name__ == "__main__":
 
     BASE_URL = utils.get_secret("BASE_URL")
