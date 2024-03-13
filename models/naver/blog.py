@@ -88,11 +88,11 @@ def load_list_from_text(file_path):
     with open(file_path, 'r') as file:
         return [line.strip() for line in file]
 
-target_keywords = load_list_from_text('target_keywords.txt')
+
 
 if __name__ == "__main__":
 
-
+    target_keywords = load_list_from_text('./data/target_keywords/240313/target_keywords.txt')
     # 테스트를 위한 변수 정의
     client_id = utils.get_secret("Naver_blog_id")
     client_secret = utils.get_secret("Naver_blog_pw")
