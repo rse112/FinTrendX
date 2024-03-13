@@ -162,6 +162,62 @@ def log_progress(keyword, index, total, keywordName , request_count, request_lim
 
 # 결과 내용 저장 함수
 
+def process_data(data, condition, type_label, data_lists):
+    """
+    지정된 조건에 따라 데이터를 필터링하고, 추가 처리를 통해 최종 데이터프레임을 반환하는 함수.
+
+    Parameters:
+    - data (pd.DataFrame): 원본 데이터프레임.
+    - condition (str): 필터링할 조건의 컬럼명.
+    - type_label (str): 필터링된 데이터에 적용할 '유형'의 라벨.
+    - data_lists (list): '지표' 열에 채울 데이터를 포함하는 데이터프레임 리스트.
+
+    Returns:
+    - pd.DataFrame: 처리된 최종 데이터프레임.
+    """
+    # 조건에 맞는 데이터 필터링
+    filtered_data = data[data[condition] == 1].copy()
+    filtered_data['유형'] = type_label
+    
+    # 불필요한 열 삭제
+    columns_to_drop = ['일별급상승', '주별급상승', '월별급상승', '주별지속상승', '월별지속상승', '월별규칙성', 'id', 'pw', '검색어']
+    filtered_data.drop(columns_to_drop, axis=1, inplace=True)
+    
+    # 인덱스 재설정
+    filtered_data.reset_index(drop=True, inplace=True)
+    
+    # '지표' 열 초기화
+    filtered_data['지표'] = None  
+    
+    # '지표' 열에 데이터 채우기
+    for i, df in enumerate(data_lists):
+        if i < len(filtered_data):  
+            filtered_data.at[i, '지표'] = str(df['InfoData'].iloc[0]) + '%' 
+    # '상승월' 열 추가
+    filtered_data['상승월'] = None
+    
+    return filtered_data
+
+
+def update_keywords_flag(dataframe, data_list, flag_name):
+    """
+    주어진 데이터프레임에, 데이터 리스트에 따라 특정 플래그를 설정하는 함수.
+
+    Parameters:
+    - dataframe (pd.DataFrame): 업데이트할 데이터프레임.
+    - data_list (list of pd.DataFrame): 연관 검색어가 포함된 데이터프레임 리스트.
+    - flag_name (str): 데이터프레임에 설정할 플래그의 이름.
+
+    Returns:
+    None. 함수는 입력된 데이터프레임을 직접 수정합니다.
+    """
+    unique_associated_keywords = set()
+    for df in data_list:
+        unique_associated_keywords.update(df['연관검색어'].unique())
+    for index, row in dataframe.iterrows():
+        if row['연관키워드'] in unique_associated_keywords:
+            dataframe.at[index, flag_name] = 1
+
 
 
 if __name__ == '__main__':
