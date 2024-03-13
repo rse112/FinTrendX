@@ -286,8 +286,6 @@ def select_keyword(table, today, mode):
         # 검색량 기준
         last = result_tmp.iloc[-1,0]  # 가장 최근 일자 상대적 검색량
         last_2 = result_tmp.iloc[-2,0]  # 바로 그 전 일자 상대적 검색량
-        if last_2==0:
-            print(result_tmp)
         # 분산 기준
         var = np.var(result_tmp.iloc[:,0])
 

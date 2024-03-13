@@ -1,12 +1,10 @@
 import time
-import requests
 import os
 import hmac
 import hashlib
 import base64
-import aiohttp
 import asyncio
-import time
+import aiohttp
 from utils import get_secret
 class APIClient:
     def __init__(self, base_url, customer_id, api_key, secret_key, uri, method):
@@ -44,7 +42,7 @@ class APIClient:
     @staticmethod
     def make_directory(path):
         os.makedirs(path, exist_ok=True)
-from utils import get_secret
+
 
 async def main():
     # 이 부분은 실제 환경에 맞게 조정 (환경 변수 또는 구성 파일 사용 권장)

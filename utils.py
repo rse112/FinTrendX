@@ -1,10 +1,9 @@
-from collections import defaultdict
+\
 import os
 import shutil
 from datetime import datetime
 from pytz import timezone
 import json
-from pathlib import Path
 from typing import Optional
 import pandas as pd
 
