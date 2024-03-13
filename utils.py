@@ -1,4 +1,3 @@
-\
 import os
 import shutil
 from datetime import datetime
@@ -18,12 +17,12 @@ def merge_and_mark_duplicates_limited(df_list):
     Returns:
     - DataFrame: 병합 및 처리된 데이터프레임의 처음 50개 행
     """
+    df_combined=pd.DataFrame()
     # 각 DataFrame의 처음 50개 행만 사용
     limited_dfs = [df.head(50) for df in df_list]
     
     # 제한된 DataFrame들을 합침
     df_combined = pd.concat(limited_dfs)
-    
     # '연관키워드'로 그룹화 후, 각 그룹의 '검색어'를 합쳐서 '중복검색어' 컬럼 생성
     df_combined['중복검색어'] = df_combined.groupby('연관키워드')['검색어'].transform(lambda x: ','.join(x.unique()))
     
