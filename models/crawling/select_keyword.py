@@ -50,6 +50,7 @@ def check_surge_conditions(last, last_2, var, result_tmp, result_tmp_gph,table_g
     """
     급상승 조건을 확인하고 결과를 반환하는 함수.
     round((last - last_2)/last_2 * 100,2) : 지표(추세성, 상승률)
+    last_2 가 0이면 예외처리 -1로 할당
     """
     vars=200
     if mode == 'daily':
@@ -126,6 +127,9 @@ def set_analysis_period(table, today, days=0, year=0, years=0):
 
 # 데이터프레임의 첫 번째 열에 대해 선형 회귀를 수행하고 기울기를 반환함.
 def sloop(dataframe) :
+    '''
+    
+    '''
     df = dataframe.copy()
     df['time'] = range(1,len(df)+1)
     y = df.iloc[:,0]

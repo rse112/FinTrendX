@@ -1,3 +1,4 @@
+from collections import defaultdict
 import os
 import shutil
 from datetime import datetime
@@ -6,10 +7,6 @@ import json
 from pathlib import Path
 from typing import Optional
 import pandas as pd
-BASE_DIR = Path(__file__).resolve().parent
-from typing import Optional
-
-from collections import defaultdict
 
 def merge_and_mark_duplicates_limited(df_list):
     """
@@ -79,6 +76,8 @@ def load_keywords(filename):
     반환된 객체는 일반적으로 문자열의 리스트이며, 이 리스트는 JSON 파일 내에 정의된 키워드들을 포함합니다.
 
     :param filename: 읽을 JSON 파일의 경로와 파일명을 포함하는 문자열
+
+
     :return: JSON 파일 내용을 담고 있는 Python 객체 (보통 리스트)
     """
     with open(filename, 'r', encoding='utf-8') as file:
@@ -125,42 +124,6 @@ def get_today_date():
     day = today.strftime("%y%m%d")
     return formatted_today, day
 
-
-def save_state(state):
-    with open('progress_state.json', 'w') as f:
-        json.dump(state, f)
-
-def load_state():
-    try:
-        with open('progress_state.json', 'r') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return {'keyword_index': 0, 'currentRequestCount_index': 0, 'current_client_index': 0, 'api_request_count': 1}
-    
-def get_client_info(clients, client_index):
-    # 클라이언트 키 목록
-    client_keys = list(clients.keys())
-    # 순환 로직 적용
-    client_key = client_keys[client_index % len(client_keys)]
-    # 현재 클라이언트 정보 추출
-    client_info = clients[client_key]
-    # 개인정보 보호를 위해 일반화된 클라이언트 ID 반환
-    generalized_client_id = f'id_{client_index + 1}'
-    return generalized_client_id, client_info['client_secret'], client_index
-
-
-
-
-# 로깅 함수
-def log_progress(keyword, index, total, keywordName , request_count, request_limit=1000):
-    log_message = f'Current Client ID: {keywordName } ({request_count}/{request_limit}) , index {index} of {total}\n'
-    with open('progress_log.txt', 'a', encoding='utf-8') as f:
-        f.write(log_message)
-    # 100개 요청마다 콘솔에 메시지 출력
-    if request_count % 100 == 0:
-        print(log_message)
-
-# 결과 내용 저장 함수
 
 def process_data(data, condition, type_label, data_lists):
     """

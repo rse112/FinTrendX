@@ -1,3 +1,7 @@
+import sys
+import os
+# 현재 스크립트의 경로를 기준으로 상위 디렉토리의 절대 경로를 sys.path에 추가
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 import asyncio
 import aiohttp
 import json
@@ -5,6 +9,7 @@ import pandas as pd
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import urllib.parse
+import utils
 sem = asyncio.Semaphore(10)  # 동시 요청 수를 10으로 제한
 async def fetch_blog(session, url, headers, retries=3):
     async with sem:  # 세마포어를 사용하여 동시 요청 수 제한
@@ -14,10 +19,10 @@ async def fetch_blog(session, url, headers, retries=3):
                 if rescode == 200:
                     response_body = await response.text()
                     response_json = json.loads(response_body)
-                    print(f"Successfully fetched data for URL: {url}")  # 성공 메시지 출력
+                    
                     return pd.DataFrame(response_json['items'])
                 else:
-                    print(f"Error Code: {rescode} for URL: {url}")  # 에러 메시지 출력
+                    
                     return pd.DataFrame()
         except Exception as e:
             print(f"Request failed, {retries} retries left. Error: {e} for URL: {url}")
@@ -89,8 +94,8 @@ if __name__ == "__main__":
 
 
     # 테스트를 위한 변수 정의
-    client_id = "ByXmMvAqMIxyVUY_h17L"
-    client_secret = "2x7yByvNSN"    
+    client_id = utils.get_secret("Naver_blog_id")
+    client_secret = utils.get_secret("Naver_blog_pw")
     # types = ["신용카드발급", "파이썬"]  # 검색하고자 하는 키워드 목록
     std_time = datetime.now()  # 기준 시간 설정
     # target_keywords=['파이썬','망고']
