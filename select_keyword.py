@@ -61,9 +61,12 @@ def check_surge_conditions(last, last_2, var, result_tmp, result_tmp_gph,table_g
         period_str = "월별"
         last_Boundary=85
 
+    if last_2 != 0:
+        rate = round((last - last_2)/last_2 * 100, 2)
+    else:
+        rate = -1  # last_2가 0인 경우, 예를 들어 rate에 -1 할당
     #그림용 테이블 생성
     result_graph = create_result_graph(result_tmp, result_tmp_gph, formatted_today, mode)
-    rate=round((last - last_2)/last_2 * 100,2)
 
     
 
@@ -268,6 +271,11 @@ def select_keyword(table, today, mode):
         print("Data preparation failed, skipping keyword analysis.")
         return None, None, None
 
+    # 데이터프레임의 행 수 확인
+    if len(result_tmp) < 2:  # 최소 2개의 행이 필요함
+        print("Not enough data for keyword selection.")
+        return None, None, None
+
     try:
         # 검색량 기준
         last = result_tmp.iloc[-1,0]  # 가장 최근 일자 상대적 검색량
@@ -429,7 +437,6 @@ def monthly_rule(table, today, mode) :
             table_tmp_2 = result_tmp.copy()
             # 상승하는 달
             rising_month = month_check(result_graph)
-            print(rising_month)
             return table_tmp_2 , result_graph, similarity_rt, rising_month
 
         ### 2번 조건 : 거리가 150보다 하나만 크고, 2년씩 비교한 거리가 300보다 작음
