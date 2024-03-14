@@ -6,7 +6,6 @@ import json
 from typing import Optional
 import pandas as pd
 import asyncio
-from models.naver.blog import blog_result_async
 
 def get_secret(key: str, 
                default_value: Optional[str] = None, 
@@ -152,30 +151,6 @@ def update_keywords_flag(dataframe, data_list, flag_name):
         if row['연관키워드'] in unique_associated_keywords:
             dataframe.at[index, flag_name] = 1
 
-def main_blog_analysis(target_keywords_path):
-    # 키워드 파일에서 키워드를 로드
-    with open(target_keywords_path, 'r') as file:
-        target_keywords = [line.strip() for line in file]
-
-    client_id = get_secret("Naver_blog_id")
-    client_secret = get_secret("Naver_blog_pw")
-    std_time = datetime.now()
-    
-    # 결과 파일 경로 설정
-    today_date = datetime.now().strftime("%y%m%d")
-    directory_path = f"./data/target_keywords/{today_date}"
-    result_file_path = os.path.join(directory_path, "keyword_activity_rates.csv")
-    
-    # 결과 파일 존재 여부 확인
-    if os.path.exists(result_file_path):
-        print(f"{result_file_path} 파일이 이미 존재합니다. 작업을 건너뜁니다.")
-        return
-    
-    # 비동기 처리 및 결과 저장
-    results = asyncio.run(blog_result_async(target_keywords, std_time, client_id, client_secret))
-    df_results = pd.DataFrame(results, columns=['Keyword', 'Activity Rate'])
-    df_results.to_csv(result_file_path, index=False)
-    print(f"결과가 {result_file_path}에 저장되었습니다.")
 
 if __name__ == '__main__':
     keywords = load_keywords('secrets.json')
