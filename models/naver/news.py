@@ -57,11 +57,29 @@ async def news_result_async(names):
             
     return results_dict
 
+async def process_keywords_batch(batch):
+    """
+    키워드 배치 처리를 위한 함수
+    """
+    return await news_result_async(batch)
+
 async def main_news(keywords):
     """
     비동기 실행을 위한 메인 함수, 키워드 리스트를 분할하여 처리
     """
-    return await news_result_async(keywords)
+    batch_size = 20 # 한 번에 처리할 키워드 수 # 20 : 160
+    batches = [keywords[i:i + batch_size] for i in range(0, len(keywords), batch_size)]
+    results = []
+
+    for batch in batches:
+        results.append(await process_keywords_batch(batch))
+    
+    # 결과 병합
+    merged_results = {}
+    for batch_result in results:
+        merged_results.update(batch_result)
+
+    return merged_results
 
 if __name__ == "__main__":
     target_keywords = ["테스트", "예제"]  # 테스트 키워드
