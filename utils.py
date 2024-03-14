@@ -97,17 +97,6 @@ def make_directory(path):
     os.makedirs(path, exist_ok=True)
 
 
-def remove_directory(path):
-    """
-    주어진 경로의 디렉토리(폴더)를 삭제합니다. 디렉토리가 비어있지 않아도 모든 내용을 포함하여 삭제합니다.
-
-    :param path: 삭제할 디렉토리의 경로
-    """
-    # 경로가 실제로 존재하고 디렉토리인지 확인
-    if os.path.exists(path) and os.path.isdir(path):
-        shutil.rmtree(path)
-        print(f"디렉토리 '{path}'가 삭제되었습니다.")
-
 
 def get_today_date():
     """

@@ -57,7 +57,7 @@ async def news_result_async(names):
             
     return results_dict
 
-async def main(keywords):
+async def main_news(keywords):
     """
     비동기 실행을 위한 메인 함수, 키워드 리스트를 분할하여 처리
     """
@@ -65,5 +65,5 @@ async def main(keywords):
 
 if __name__ == "__main__":
     target_keywords = ["테스트", "예제"]  # 테스트 키워드
-    news_data = asyncio.run(main(target_keywords))
+    news_data = asyncio.run(main_news(target_keywords))
     print(news_data)
