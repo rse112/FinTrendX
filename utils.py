@@ -5,11 +5,43 @@ from pytz import timezone
 import json
 from typing import Optional
 import pandas as pd
-import asyncio
+import utils
 
-def get_secret(key: str, 
-               default_value: Optional[str] = None, 
-               json_path: str = "secrets.json") -> str:
+
+def merge_and_mark_duplicates_limited(df_list):
+    """
+    여러 DataFrame을 병합하고, '연관키워드'가 중복되는 경우 '중복검색어' 컬럼에 해당하는 모든 '검색어'를 마킹합니다.
+    이 함수는 df_list에서 제공된 모든 DataFrame의 처음 50개 행에 대해 이 작업을 수행합니다.
+
+    Parameters:
+    - df_list: DataFrame 객체의 리스트
+
+    Returns:
+    - DataFrame: 병합 및 처리된 데이터프레임의 처음 50개 행
+    """
+    df_combined = pd.DataFrame()
+    # 각 DataFrame의 처음 50개 행만 사용
+    limited_dfs = [df.head(50) for df in df_list]
+    
+    # 제한된 DataFrame들을 합침
+    df_combined = pd.concat(limited_dfs)
+    # '연관키워드'로 그룹화 후, 각 그룹의 '검색어'를 합쳐서 '중복검색어' 컬럼 생성
+    df_combined["중복검색어"] = df_combined.groupby("연관키워드")["검색어"].transform(
+        lambda x: ",".join(x.unique())
+    )
+
+    # 중복 제거 (첫 번째 등장을 제외한 동일 '연관키워드' 삭제)
+    df_combined.drop_duplicates(subset="연관키워드", inplace=True)
+
+    # 인덱스 리셋
+    df_combined.reset_index(drop=True, inplace=True)
+
+    return df_combined
+
+
+def get_secret(
+    key: str, default_value: Optional[str] = None, json_path: str = "secrets.json"
+) -> str:
     """
     지정된 JSON 파일에서 키에 해당하는 비밀 값을 검색합니다.
 
@@ -26,7 +58,7 @@ def get_secret(key: str,
     예외:
     - EnvironmentError: 주어진 키에 해당하는 비밀 값이 없고 기본 값도 제공되지 않았을 때 발생합니다.
     """
-    with open(json_path, encoding='utf-8') as f:
+    with open(json_path, encoding="utf-8") as f:
         secrets = json.loads(f.read())
     try:
         return secrets[key]
@@ -34,8 +66,6 @@ def get_secret(key: str,
         if default_value is not None:
             return default_value
         raise EnvironmentError(f"Set the {key} environment variable.")
-
-
 
 
 def load_keywords(filename):
@@ -50,7 +80,7 @@ def load_keywords(filename):
 
     :return: JSON 파일 내용을 담고 있는 Python 객체 (보통 리스트)
     """
-    with open(filename, 'r', encoding='utf-8') as file:
+    with open(filename, "r", encoding="utf-8") as file:
         data = json.load(file)
     return data
 
@@ -67,11 +97,10 @@ def make_directory(path):
     os.makedirs(path, exist_ok=True)
 
 
-
 def remove_directory(path):
     """
     주어진 경로의 디렉토리(폴더)를 삭제합니다. 디렉토리가 비어있지 않아도 모든 내용을 포함하여 삭제합니다.
-    
+
     :param path: 삭제할 디렉토리의 경로
     """
     # 경로가 실제로 존재하고 디렉토리인지 확인
@@ -80,16 +109,15 @@ def remove_directory(path):
         print(f"디렉토리 '{path}'가 삭제되었습니다.")
 
 
-
 def get_today_date():
     """
     현재 날짜와 시간을 'Asia/Seoul' 타임존 기준으로 설정하고,
     'YYYY-MM-DD' 형식의 문자열로 반환합니다. 또한,
     'YYMMDD' 형식의 문자열도 함께 반환합니다.
-    
+
     :return: 오늘 날짜('YYYY-MM-DD' 형식), 'YYMMDD' 형식의 날짜 문자열
     """
-    today = datetime.now(timezone('Asia/Seoul'))
+    today = datetime.now(timezone("Asia/Seoul"))
     formatted_today = today.strftime("%Y-%m-%d")
     day = today.strftime("%y%m%d")
     return formatted_today, day
@@ -110,25 +138,35 @@ def process_data(data, condition, type_label, data_lists):
     """
     # 조건에 맞는 데이터 필터링
     filtered_data = data[data[condition] == 1].copy()
-    filtered_data['유형'] = type_label
-    
+    filtered_data["유형"] = type_label
+
     # 불필요한 열 삭제
-    columns_to_drop = ['일별급상승', '주별급상승', '월별급상승', '주별지속상승', '월별지속상승', '월별규칙성', 'id', 'pw', '검색어']
+    columns_to_drop = [
+        "일별급상승",
+        "주별급상승",
+        "월별급상승",
+        "주별지속상승",
+        "월별지속상승",
+        "월별규칙성",
+        "id",
+        "pw",
+        "검색어",
+    ]
     filtered_data.drop(columns_to_drop, axis=1, inplace=True)
-    
+
     # 인덱스 재설정
     filtered_data.reset_index(drop=True, inplace=True)
-    
+
     # '지표' 열 초기화
-    filtered_data['지표'] = None  
-    
+    filtered_data["지표"] = None
+
     # '지표' 열에 데이터 채우기
     for i, df in enumerate(data_lists):
-        if i < len(filtered_data):  
-            filtered_data.at[i, '지표'] = str(df['InfoData'].iloc[0]) + '%' 
+        if i < len(filtered_data):
+            filtered_data.at[i, "지표"] = str(df["InfoData"].iloc[0]) + "%"
     # '상승월' 열 추가
-    filtered_data['상승월'] = None
-    
+    filtered_data["상승월"] = None
+
     return filtered_data
 
 
@@ -146,14 +184,42 @@ def update_keywords_flag(dataframe, data_list, flag_name):
     """
     unique_associated_keywords = set()
     for df in data_list:
-        unique_associated_keywords.update(df['연관검색어'].unique())
+        unique_associated_keywords.update(df["연관검색어"].unique())
     for index, row in dataframe.iterrows():
-        if row['연관키워드'] in unique_associated_keywords:
+        if row["연관키워드"] in unique_associated_keywords:
             dataframe.at[index, flag_name] = 1
 
 
-if __name__ == '__main__':
-    keywords = load_keywords('secrets.json')
-    print(keywords['clients']['id_1']['client_id'])
-    a,b=get_today_date()
+def add_client_info(collected_keywords_data, start_id_index=1):
+    clients = utils.get_secret("clients")
+    start_id_index = 1
+    clients = utils.get_secret("clients")
+    # ID와 PW 컬럼을 데이터프레임에 추가하는 로직
+    total_rows = len(collected_keywords_data)
+    ids = []
+    pws = []
+
+    for i in range(total_rows):
+        # 현재 id 인덱스 계산 (start_id_index를 기준으로)
+        current_id_index = ((i // 500) + start_id_index) % len(clients)
+        current_id_key = f"id_{current_id_index}"
+
+        # 현재 id와 pw 할당
+        current_id = clients[current_id_key]["client_id"]
+        current_pw = clients[current_id_key]["client_secret"]
+
+        ids.append(current_id)
+        pws.append(current_pw)
+
+    # ID와 PW 컬럼 추가
+    collected_keywords_data["id"] = ids
+    collected_keywords_data["pw"] = pws
+
+    return collected_keywords_data
+
+
+if __name__ == "__main__":
+    keywords = load_keywords("secrets.json")
+    print(keywords["clients"]["id_1"]["client_id"])
+    a, b = get_today_date()
     print(a)
