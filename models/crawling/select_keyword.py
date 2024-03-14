@@ -67,7 +67,7 @@ def check_surge_conditions(last, last_2, var, result_tmp, result_tmp_gph,table_g
     if last_2 != 0:
         rate = round((last - last_2)/last_2 * 100, 2)
     else:
-        rate = -1  # last_2가 0인 경우, 예를 들어 rate에 -1 할당
+        return None, None, None
     #그림용 테이블 생성
     result_graph = create_result_graph(result_tmp, result_tmp_gph, formatted_today, mode)
 
