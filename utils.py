@@ -206,6 +206,15 @@ def add_client_info(collected_keywords_data, start_id_index=1):
 
     return collected_keywords_data
 
+def process_and_concat(df_list, label):
+    # 여기서 df_list는 데이터 프레임의 리스트를 기대함
+    valid_dfs = [df for df in df_list if df is not None and isinstance(df, pd.DataFrame) and not df.empty]
+    if not valid_dfs:  # 유효한 DataFrame이 없으면 빈 DataFrame 반환
+        return pd.DataFrame()
+    for df in valid_dfs:
+        df['유형'] = label
+    return pd.concat(valid_dfs).reset_index(drop=True)
+
 
 if __name__ == "__main__":
     keywords = load_keywords("secrets.json")
