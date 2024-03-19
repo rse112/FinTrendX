@@ -332,7 +332,6 @@ def rising_keyword_analysis(table, today, mode):
     else:
         dateLimit=2
     if len(result_tmp) < dateLimit:  
-        print(result_tmp)
         print(f"{result_tmp_gph.columns[0]} is Not enough data for keyword selection.")
         return None, None, None
     # 추세 계산
