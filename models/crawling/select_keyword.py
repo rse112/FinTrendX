@@ -277,9 +277,9 @@ def select_keyword(table, today, mode):
         dateLimit=350
 
     elif mode == 'weekly':
-        dateLimit=100
+        dateLimit=2
     else:
-        dateLimit=36
+        dateLimit=2
     # prepare_data 함수의 반환 값 중 None이 있는지 확인
     if result_tmp is None or result_tmp_gph is None or table_graph is None:
         print("Data preparation failed, skipping keyword analysis.")
