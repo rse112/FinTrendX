@@ -274,7 +274,7 @@ def select_keyword(table, today, mode):
     result_tmp, result_tmp_gph, table_graph = prepare_data(table, today, mode)
 
     if mode == 'daily':
-        dateLimit=700
+        dateLimit=350
 
     elif mode == 'weekly':
         dateLimit=100
