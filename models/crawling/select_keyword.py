@@ -160,7 +160,7 @@ def preprocess_data(end_time,table_tmp, table_graph, mode, missing_data, period,
     - result_tmp_gph: DataFrame, 그래프 작성용 처리된 결과 데이터
     - error: str, 에러 메시지 (데이터 포인트 부족시)
     """
-    # 데이터 포인트 충분 여부 확인
+    #데이터 포인트 충분 여부 확인
     if len(table_tmp.index) != missing_data:
 
         return None, None
@@ -270,16 +270,25 @@ def prepare_data(table, today, mode,days=None, year=None, years=None):
 #급상승 키워드 선별 함수
 def select_keyword(table, today, mode):
     # prepare_data 함수 호출
+
     result_tmp, result_tmp_gph, table_graph = prepare_data(table, today, mode)
 
+    if mode == 'daily':
+        dateLimit=700
+
+    elif mode == 'weekly':
+        dateLimit=100
+    else:
+        dateLimit=36
     # prepare_data 함수의 반환 값 중 None이 있는지 확인
     if result_tmp is None or result_tmp_gph is None or table_graph is None:
         print("Data preparation failed, skipping keyword analysis.")
         return None, None, None
 
     # 데이터프레임의 행 수 확인
-    if len(result_tmp) < 2:  # 최소 2개의 행이 필요함
-        print(f"{result_tmp_gph.columns[0]} is Not enough data for keyword selection.")
+    if len(result_tmp) < dateLimit:  
+        # print(len(result_tmp))
+        # print(f"{result_tmp_gph.columns[0]} is Not enough data for keyword selection.")
         return None, None, None
 
     try:
@@ -314,7 +323,18 @@ def rising_keyword_analysis(table, today, mode):
     # prepare_data 함수의 결과 검사
     if result_tmp is None or result_tmp_gph is None or table_graph is None:
         return None, None, None
-    
+    if mode == 'daily':
+        dateLimit=350
+        print(result_tmp)
+
+    elif mode == 'weekly':
+        dateLimit=2
+    else:
+        dateLimit=2
+    if len(result_tmp) < dateLimit:  
+        print(result_tmp)
+        print(f"{result_tmp_gph.columns[0]} is Not enough data for keyword selection.")
+        return None, None, None
     # 추세 계산
     top =sloop(result_tmp)
     middle = sloop(result_tmp.iloc[periods[1][0]:,])
@@ -386,7 +406,15 @@ def monthly_rule(table, today, mode) :
     result_tmp, result_tmp_gph,table_graph=prepare_data(table, today, mode='month')
     if result_tmp is None or result_tmp_gph is None or table_graph is None:
         return None, None, None, None 
-    
+    if mode == 'daily':
+        dateLimit=350
+    elif mode == 'weekly':
+        dateLimit=2
+    else:
+        dateLimit=2
+    if len(result_tmp) < dateLimit:  
+        # print(f"{result_tmp_gph.columns[0]} is Not enough data for keyword selection.")
+        return None, None, None, None
     # 규칙성 검증
     ## 1년씩 확인
     year_1 = result_tmp[:12]   # 최원 1년
@@ -476,7 +504,7 @@ if __name__ == "__main__":
     # 검색 기준일
     standard_time = datetime.now()
     params = {
-    "search_keywords": ["화디즈"],
+    "search_keywords": ["보험설계사추천"],
     "id": utils.get_secret("clients")["id_1"]["client_id"],
     "pw": utils.get_secret("clients")["id_1"]["client_secret"],
     "api_url": "https://openapi.naver.com/v1/datalab/search",
@@ -491,11 +519,11 @@ if __name__ == "__main__":
     start=time.time()
     clients=utils.get_secret("clients")
     results = asyncio.run(trend_maincode(params,clients, api_url))
-    kk = 'month'
+    kk = 'daily'
 
     
     for df in results:
-        month_a,month_b,month_c,month_d=monthly_rule(df,day,kk)
+        # month_a,month_b,month_c,month_d=monthly_rule(df,day,kk)
 
 
         # a,b,c,d=monthly_rule(df,day,kk)
@@ -511,9 +539,7 @@ if __name__ == "__main__":
         
         a,b,c=select_keyword(df,day,kk)
         print(a)
-        print(b)
-        print(c)
-        print('#############################################')
+
     print(time.time()-start)
     #0.94
     #a,b,c=select_keyword(trend_data,day,a)

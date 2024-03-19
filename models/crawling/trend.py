@@ -91,7 +91,7 @@ if __name__ == "__main__":
 
     #파라미터
     params = {
-    "search_keywords": ["디도스", "클라우드 보안", "사이버 공격", "주식", "비트코인", "테슬라", "삼성전자", "네이버", "퇴직연금"],
+    "search_keywords": ["디도스"],
     "id": get_secret("clients")["id_1"]["client_id"],
     "pw": get_secret("clients")["id_1"]["client_secret"],
     "api_url": "https://openapi.naver.com/v1/datalab/search",
