@@ -21,7 +21,8 @@ def merge_and_mark_duplicates_limited(df_list):
     """
     df_combined = pd.DataFrame()
     # 각 DataFrame의 처음 50개 행만 사용
-    limited_dfs = [df.head(50) for df in df_list]
+    limited_dfs = [df.iloc[50:100] for df in df_list]
+
     
     # 제한된 DataFrame들을 합침
     df_combined = pd.concat(limited_dfs)
