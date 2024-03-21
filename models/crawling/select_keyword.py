@@ -504,7 +504,7 @@ if __name__ == "__main__":
     # 검색 기준일
     standard_time = datetime.now()
     params = {
-    "search_keywords": ["3기신도시본청약"],
+    "search_keywords": ["삼성전자주가전망"],
     "id": utils.get_secret("clients")["id_1"]["client_id"],
     "pw": utils.get_secret("clients")["id_1"]["client_secret"],
     "api_url": "https://openapi.naver.com/v1/datalab/search",

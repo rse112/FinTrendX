@@ -10,19 +10,22 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import urllib.parse
 import utils
-sem = asyncio.Semaphore(10)  # 동시 요청 수를 10으로 제한
-async def fetch_blog(session, url, headers, retries=3):
+sem = asyncio.Semaphore(1)  # 동시 요청 수를 10으로 제한
+
+async def fetch_blog(session, url, headers, retries=5):
     async with sem:  # 세마포어를 사용하여 동시 요청 수 제한
+        print(f"Fetching URL: {url} with retries left: {retries}")
         try:
             async with session.get(url, headers=headers) as response:
                 rescode = response.status
                 if rescode == 200:
+                    print("Successfully fetched URL:", url)
                     response_body = await response.text()
                     response_json = json.loads(response_body)
                     
                     return pd.DataFrame(response_json['items'])
                 else:
-                    
+                    print(f"Failed to fetch URL: {url}, Response Code: {rescode}")
                     return pd.DataFrame()
         except Exception as e:
             print(f"Request failed, {retries} retries left. Error: {e} for URL: {url}")
@@ -70,6 +73,7 @@ async def blog_result_async(types, std_time, client_id, client_secret):
         
     # 'postdate' 열을 datetime 객체로 변환
     all_results['postdate'] = pd.to_datetime(all_results['postdate'], format='%Y%m%d')
+    print(len(all_results))
     
     blog_active = []
     for type_ in types:
@@ -78,9 +82,10 @@ async def blog_result_async(types, std_time, client_id, client_secret):
             (filtered_results['postdate'] >= pd.to_datetime(start_time)) & 
             (filtered_results['postdate'] <= pd.to_datetime(end_time))
         ].shape[0]
-        
+        print("all_result",len(all_results))
+        print("recet",recent_posts_count)
         # 활동성 지표 계산: 최근 일주일 동안 블로그 발간 비율
-        activity_rate = round((recent_posts_count / 1000) * 10000, 3)
+        activity_rate = round((recent_posts_count /1000) * 100, 3)
         blog_active.append((type_, activity_rate))
     
     return blog_active
@@ -122,7 +127,7 @@ def main_blog_analysis(target_keywords_path):
 
 if __name__ == "__main__":
 
-    target_keywords = ["DEX거래소","비상금대출","해남부동산"]
+    target_keywords =load_list_from_text('./data/target_keywords/240313/target_keywords.txt')
     # 테스트를 위한 변수 정의
     client_id = utils.get_secret("Naver_blog_id")
     client_secret = utils.get_secret("Naver_blog_pw")
