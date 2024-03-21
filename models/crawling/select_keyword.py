@@ -67,6 +67,7 @@ def check_surge_conditions(last, last_2, var, result_tmp, result_tmp_gph,table_g
     if last_2 != 0:
         rate = round((last - last_2)/last_2 * 100, 2)
     else:
+        print("last_2 is 0,")
         return None, None, None
     #그림용 테이블 생성
     result_graph = create_result_graph(result_tmp, result_tmp_gph, formatted_today, mode)
@@ -503,7 +504,7 @@ if __name__ == "__main__":
     # 검색 기준일
     standard_time = datetime.now()
     params = {
-    "search_keywords": ["보험설계사추천"],
+    "search_keywords": ["3기신도시본청약"],
     "id": utils.get_secret("clients")["id_1"]["client_id"],
     "pw": utils.get_secret("clients")["id_1"]["client_secret"],
     "api_url": "https://openapi.naver.com/v1/datalab/search",

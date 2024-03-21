@@ -47,6 +47,7 @@ async def fetch_keyword_data(api_client, keyword, max_retries=3, retry_delay=5):
                 for column in columns_to_convert:
                     df[column] = df[column].astype('float64')
                 df['monthlyTotalCnt'] = df['monthlyPcQcCnt'] + df['monthlyMobileQcCnt']
+                df = df.sort_values('monthlyTotalCnt', ascending=False).reset_index(drop=True)
                 df = df[['relKeyword', 'monthlyTotalCnt']]
                 df.rename(columns={'relKeyword': '연관키워드', 'monthlyTotalCnt': '월간검색수_합계'}, inplace=True)
                 df['검색어'] = keyword
