@@ -10,7 +10,7 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import urllib.parse
 import utils
-sem = asyncio.Semaphore(1)  # 동시 요청 수를 10으로 제한
+sem = asyncio.Semaphore(10)  # 동시 요청 수를 10으로 제한
 
 async def fetch_blog(session, url, headers, retries=5):
     async with sem:  # 세마포어를 사용하여 동시 요청 수 제한
@@ -30,7 +30,7 @@ async def fetch_blog(session, url, headers, retries=5):
         except Exception as e:
             print(f"Request failed, {retries} retries left. Error: {e} for URL: {url}")
             if retries > 0:
-                await asyncio.sleep(1)  # 잠시 대기 후 재시도
+                await asyncio.sleep(3)  # 잠시 대기 후 재시도
                 return await fetch_blog(session, url, headers, retries-1)
             else:
                 print(f"All retries failed for URL: {url}")
@@ -127,7 +127,8 @@ def main_blog_analysis(target_keywords_path):
 
 if __name__ == "__main__":
 
-    target_keywords =load_list_from_text('./data/target_keywords/240313/target_keywords.txt')
+    # target_keywords =load_list_from_text('./data/target_keywords/240313/target_keywords.txt')
+    target_keywords=["비상금대출"]
     # 테스트를 위한 변수 정의
     client_id = utils.get_secret("Naver_blog_id")
     client_secret = utils.get_secret("Naver_blog_pw")
