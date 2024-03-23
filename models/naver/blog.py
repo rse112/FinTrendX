@@ -1,48 +1,126 @@
-import sys
-import os
-
-# 현재 스크립트의 경로를 기준으로 상위 디렉토리의 절대 경로를 sys.path에 추가
-sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
-import pandas as pd
-from datetime import datetime
-from dateutil.relativedelta import relativedelta
-import urllib.parse
-import utils
-from pytz import timezone
-import time
-import urllib.request
-import urllib
-from dateutil.relativedelta import relativedelta
+import aiohttp
+import asyncio
 import json
-from tqdm import tqdm
+from urllib.parse import quote
+import sys
+from datetime import datetime, timedelta
+import dateutil.parser
+import pandas as pd
+
+if sys.platform == "win32":
+    asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+from time import time
 
 
-# 검색어별 관련 블로그 수집 함수
-def blog(client_id, client_secret, query, display, start, sort):
-    encText = urllib.parse.quote(query)
-    url = (
-        "https://openapi.naver.com/v1/search/blog?query="
-        + encText
-        + "&display="
-        + str(display)
-        + "&start="
-        + str(start)
-        + "&sort="
-        + sort
-    )
+def is_recent(pub_date_str, start_day=-1, end_day=-9):
+    pub_date = dateutil.parser.parse(pub_date_str)
+    start_date = datetime.now() + timedelta(days=start_day)
+    end_date = datetime.now() + timedelta(days=end_day)
+    return start_date >= pub_date >= end_date
 
-    request = urllib.request.Request(url)
-    request.add_header("X-Naver-Client-Id", client_id)
-    request.add_header("X-Naver-Client-Secret", client_secret)
-    response = urllib.request.urlopen(request)
-    rescode = response.getcode()
-    if rescode == 200:
-        response_body = response.read()
-        response_json = json.loads(response_body)
-    else:
-        print("Error Code:" + rescode)
 
-    return pd.DataFrame(response_json["items"])
+async def fetch_blog_data(
+    session, client_id, client_secret, query, start, output_file, retries=6
+):
+    base_url = "https://openapi.naver.com/v1/search/blog"
+    params = f"?query={quote(query)}&display=100&start={start}&sort=date"
+    headers = {"X-Naver-Client-Id": client_id, "X-Naver-Client-Secret": client_secret}
+
+    for attempt in range(retries):
+        try:
+            async with session.get(base_url + params, headers=headers) as response:
+                if response.status == 200:
+                    data = await response.json()
+                    return data
+                else:
+                    pass
+        except Exception as e:
+            print(f"Request exception: {e}, attempt {attempt+1} of {retries}")
+
+        await asyncio.sleep(2 * attempt)
+    return None
+
+
+async def fetch_all_blog_data_for_keyword(
+    session, client_id, client_secret, query, output_file
+):
+    all_items = []
+
+    for start in range(1, 1001, 100):
+        data = await fetch_blog_data(
+            session, client_id, client_secret, query, start, output_file
+        )
+        if data:
+            valid_items = [
+                item for item in data["items"] if is_recent(item["postdate"])
+            ]
+            all_items.extend(valid_items)
+    return all_items
+
+
+async def process_keyword_chunk(
+    session, client_id, client_secret, keywords_chunk, output_file
+):
+    results = []
+    for query in keywords_chunk:
+        result = await fetch_all_blog_data_for_keyword(
+            session, client_id, client_secret, query, output_file
+        )
+        results.append(result)
+        print(f"Processed {len(result)} items for keyword: '{query}'")
+        await asyncio.sleep(0.1)
+    return results
+
+
+async def process_partition(partition, client_id, client_secret, output_file):
+    async with aiohttp.ClientSession() as session:
+        keyword_chunks = list(divide_chunks(partition, 1))
+        results = []
+        for chunk in keyword_chunks:
+            result = await process_keyword_chunk(
+                session, client_id, client_secret, chunk, output_file
+            )
+            results.extend(result)
+        return results
+
+
+def divide_chunks(lst, n):
+    for i in range(0, len(lst), n):
+        yield lst[i : i + n]
+
+
+async def main_blog(keywords, clients):
+    output_file = "blog_data.json"  # 여기서 직접 설정
+    total_keywords = len(keywords)
+    total_clients = len(clients)
+    keywords_per_client = (
+        total_keywords // total_clients
+    )  # 각 클라이언트당 처리할 키워드 개수
+    remainder = total_keywords % total_clients  # 남은 키워드 개수
+
+    start_index = 0
+    end_index = 0
+    tasks = []
+
+    for i, client in enumerate(clients):
+        end_index += keywords_per_client
+        if i < remainder:
+            end_index += 1  # 남은 키워드를 분배
+
+        partition = keywords[start_index:end_index]
+        start_index = end_index
+
+        tasks.append(
+            process_partition(partition, client["id"], client["secret"], output_file)
+        )
+    results = await asyncio.gather(*tasks)
+    # 결과를 DataFrame으로 변환
+    df = pd.DataFrame()
+    for result in results:
+        for keyword_data in result:
+            df = pd.concat([df, pd.DataFrame([len(keyword_data)])], ignore_index=True)
+
+    return df
 
 
 def load_list_from_text(file_path):
@@ -50,96 +128,52 @@ def load_list_from_text(file_path):
         return [line.strip() for line in file]
 
 
-# 최근 1년간 검색어와 관련된 블로그 수집
-def blog_result(types, std_time):
-    client_id = utils.get_secret("Naver_blog_id")
-    client_secret = utils.get_secret("Naver_blog_pw")
-    # 최근일자(=기준일자 하루전)
-    end_time = std_time - relativedelta(days=1)
-    # 시작일자(=2년전)
-    start_time = std_time - relativedelta(weeks=1) - relativedelta(days=1)
-    end_time = end_time.strftime("%Y-%m-%d")
-    start_time = start_time.strftime("%Y-%m-%d")
+clients = [
+    {"id": "TXYUStSiVj9St7tmCT5N", "secret": "k6bGRxUVJP"},
+    {"id": "qkG2cuWOlXzj1_Uc9eOw", "secret": "n7fTQfeIVn"},
+    {"id": "e9PnkRRKvrJC_rg1rrD7", "secret": "_PctdaTXfD"},
+    {"id": "MqeI5M7ymZsJix9plqtJ", "secret": "LRZWUFvL2S"},
+    {"id": "PnrhTaVa2YQ8ZKnaLg9G", "secret": "fQePz5kBbI"},
+    {"id": "KQm2sCylAtLmaJhusb7w", "secret": "D_ntjREaMT"},
+]
 
-    display = 100
-    start = 1
-    sort = "date"
-
-    blog_active = []
-
-    leng = len(types)
-    print()
-    for i in range(0, leng):
-        query = f"{types[i]}"
-
-        result_all = pd.DataFrame()
-        for i in range(0, 10):
-            start = 1 + 100 * i
-            time.sleep(0.1)
-            result = blog(client_id, client_secret, query, display, start, sort)
-
-            result_all = pd.concat([result_all, result])
-        result_all.reset_index(inplace=True, drop=True)
-
-        result_all["postdate"] = pd.to_datetime(result_all["postdate"])
-
-        length = len(
-            result_all[
-                (result_all["postdate"] >= start_time)
-                & ((result_all["postdate"] <= end_time))
-            ].index
-        )
-
-        # 활동성 (1000개 중 최근 일주일동안 블로그 발간 비율)
-        result = round(length / 1000 * 100, 3)
-        blog_active.append(result)
-
-    return blog_active
+today = datetime.now().strftime("%y%m%d")
+target_keywords = load_list_from_text(
+    f"./data/target_keywords/{today}/target_keywords.txt"
+)
 
 
-# 현재 시간 설정
-today = datetime.now(timezone("Asia/Seoul"))
-formatted_today = today.strftime("%y%m%d")
+def process_and_save_df(df, target_keywords, today):
+    # DataFrame에 키워드 열 추가
+    df["keyword"] = target_keywords
 
+    # 열 이름 변경
+    df = df.rename(columns={0: "Activity_Rate"})
 
-def activity_rate(keywords_path):
-    keywords = load_list_from_text(keywords_path)
-    # 각 검색어에 대한 활동성 지수를 저장할 리스트
-    activity_rates = []
+    # 활동률 계산 및 반올림
+    df["Activity_Rate"] = round(df["Activity_Rate"] / 10, 3)
 
-    # 각 검색어에 대해 blog_result 함수를 호출, tqdm으로 래핑하여 진행 상태 표시
-    for keyword in tqdm(keywords, desc="Processing Keywords"):
-
-        activity_rate = blog_result(
-            [keyword], today
-        )  # blog_result 함수는 리스트를 입력으로 받으므로, keyword를 리스트로 전달
-        activity_rates.append(
-            activity_rate[0]
-        )  # 반환값이 리스트 형태이므로, 첫 번째 요소만 추가
-
-    # 결과 데이터프레임 생성
-    df_results = pd.DataFrame({"Keyword": keywords, "Activity Rate": activity_rates})
-    # 결과 출력
+    # 열 재정렬
+    df = df.reindex(
+        columns=["keyword"] + [col for col in df.columns if col != "keyword"]
+    )
 
     # CSV 파일로 저장
-    df_results.to_csv(
-        f"./data/target_keywords/{formatted_today}/keyword_activity_rates.csv",
-        index=False,
-    )
-    print("Saved to activity_rates.csv")
+    save_path = f"./data/target_keywords/{today}/keyword_activity_rates.csv"
+    df.to_csv(save_path, index=False)
+
+    return df
 
 
 if __name__ == "__main__":
-
-    target_keywords = load_list_from_text(
-        "./data/target_keywords/240313/target_keywords.txt"
-    )
-    target_keywords = ["비상금대출", "가상자산"]
-    keywords = ["가상자산", "비상금대출"]
-    client_id = utils.get_secret("Naver_blog_id")
-    client_secret = utils.get_secret("Naver_blog_pw")
-    # types = ["신용카드발급", "파이썬"]  # 검색하고자 하는 키워드 목록
-    std_time = datetime.now()  # 기준 시간 설정
-    # target_keywords=['파이썬','망고']
-    # 비동기 메인 함수 실행
-    activity_rate(target_keywords)
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    start = time()
+    try:
+        df = loop.run_until_complete(main_blog(target_keywords, clients))
+        # 변경된 부분: 아래 코드를 process_and_save_df 함수 호출로 대체합니다.
+        df = process_and_save_df(df, target_keywords, today)
+    finally:
+        end = time()
+        print(f"Total time: {end - start}")
+    print(df)

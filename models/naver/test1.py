@@ -5,6 +5,7 @@ from urllib.parse import quote
 import sys
 from datetime import datetime, timedelta
 import dateutil.parser
+import pandas as pd
 
 if sys.platform == "win32":
     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
@@ -30,7 +31,6 @@ async def fetch_blog_data(
             async with session.get(base_url + params, headers=headers) as response:
                 if response.status == 200:
                     data = await response.json()
-                    post_dates = [item["postdate"] for item in data["items"]]
                     return data
                 else:
                     pass
@@ -55,33 +55,33 @@ async def fetch_all_blog_data_for_keyword(
                 item for item in data["items"] if is_recent(item["postdate"])
             ]
             all_items.extend(valid_items)
-
-    # 모든 데이터를 모았으면 한꺼번에 파일에 저장
-    post_dates = [item["postdate"] for item in all_items]
-
     return all_items
 
 
 async def process_keyword_chunk(
     session, client_id, client_secret, keywords_chunk, output_file
 ):
-
+    results = []
     for query in keywords_chunk:
-        results = await fetch_all_blog_data_for_keyword(
+        result = await fetch_all_blog_data_for_keyword(
             session, client_id, client_secret, query, output_file
         )
-        print(f"Processed {len(results)} items for keyword: '{query}'")
+        results.append(result)
+        print(f"Processed {len(result)} items for keyword: '{query}'")
         await asyncio.sleep(0.1)
+    return results
 
 
 async def process_partition(partition, client_id, client_secret, output_file):
-
     async with aiohttp.ClientSession() as session:
         keyword_chunks = list(divide_chunks(partition, 1))
+        results = []
         for chunk in keyword_chunks:
-            await process_keyword_chunk(
+            result = await process_keyword_chunk(
                 session, client_id, client_secret, chunk, output_file
             )
+            results.extend(result)
+        return results
 
 
 def divide_chunks(lst, n):
@@ -89,7 +89,7 @@ def divide_chunks(lst, n):
         yield lst[i : i + n]
 
 
-async def main(keywords, clients):
+async def main_blog(keywords, clients):
     output_file = "blog_data.json"  # 여기서 직접 설정
     total_keywords = len(keywords)
     total_clients = len(clients)
@@ -113,8 +113,14 @@ async def main(keywords, clients):
         tasks.append(
             process_partition(partition, client["id"], client["secret"], output_file)
         )
+    results = await asyncio.gather(*tasks)
+    # 결과를 DataFrame으로 변환
+    df = pd.DataFrame()
+    for result in results:
+        for keyword_data in result:
+            df = pd.concat([df, pd.DataFrame([len(keyword_data)])], ignore_index=True)
 
-    await asyncio.gather(*tasks)
+    return df
 
 
 def load_list_from_text(file_path):
@@ -124,7 +130,7 @@ def load_list_from_text(file_path):
 
 clients = [
     {"id": "TXYUStSiVj9St7tmCT5N", "secret": "k6bGRxUVJP"},
-    {"id": "2J0Rhxh4Ig0SVFB3Oczm", "secret": "862RL1YrSm"},
+    {"id": "qkG2cuWOlXzj1_Uc9eOw", "secret": "n7fTQfeIVn"},
     {"id": "e9PnkRRKvrJC_rg1rrD7", "secret": "_PctdaTXfD"},
     {"id": "MqeI5M7ymZsJix9plqtJ", "secret": "LRZWUFvL2S"},
     {"id": "PnrhTaVa2YQ8ZKnaLg9G", "secret": "fQePz5kBbI"},
@@ -135,24 +141,39 @@ today = datetime.now().strftime("%y%m%d")
 target_keywords = load_list_from_text(
     f"./data/target_keywords/{today}/target_keywords.txt"
 )
-# target_keywords = [
-#     "월세지원금",
-#     "해외선물",
-#     "금ETF",
-#     "일자리사이트",
-#     "재택근무직업",
-#     "한미반도체주가",
-#     "AMD주가",
-#     "하이닉스주가",
-# ]
-output_file = "blog_data.json"  # 파일명을 원하는 대로 수정하세요
+
+
+def process_and_save_df(df, target_keywords, today):
+    # DataFrame에 키워드 열 추가
+    df["keyword"] = target_keywords
+
+    # 열 이름 변경
+    df = df.rename(columns={0: "Activity_Rate"})
+
+    # 활동률 계산 및 반올림
+    df["Activity_Rate"] = round(df["Activity_Rate"] / 10, 3)
+
+    # 열 재정렬
+    df = df.reindex(
+        columns=["keyword"] + [col for col in df.columns if col != "keyword"]
+    )
+
+    # CSV 파일로 저장
+    save_path = f"./data/target_keywords/{today}/keyword_activity_rates.csv"
+    df.to_csv(save_path, index=False)
+
+    return df
+
 
 if __name__ == "__main__":
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
     start = time()
     try:
-        loop.run_until_complete(main(target_keywords, clients))
+        df = loop.run_until_complete(main_blog(target_keywords, clients))
+        # 변경된 부분: 아래 코드를 process_and_save_df 함수 호출로 대체합니다.
+        df = process_and_save_df(df, target_keywords, today)
     finally:
         end = time()
-        print(end - start)
+        print(f"Total time: {end - start}")
+    print(df)
