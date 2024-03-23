@@ -135,9 +135,14 @@ if __name__ == "__main__":
         "./data/target_keywords/240313/target_keywords.txt"
     )
     target_keywords = [
-        "가상자산",
-        "풍경그림",
-        "비상금대출",
+        "월세지원금",
+        "해외선물",
+        "금ETF",
+        "일자리사이트",
+        "재택근무직업",
+        "한미반도체주가",
+        "AMD주가",
+        "하이닉스주가",
     ]
 
     client_id = utils.get_secret("Naver_blog_id")
