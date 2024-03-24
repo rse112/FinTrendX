@@ -23,7 +23,6 @@ def merge_and_mark_duplicates_limited(df_list):
     # 각 DataFrame의 처음 50개 행만 사용
     limited_dfs = [df.iloc[50:100] for df in df_list]
 
-    
     # 제한된 DataFrame들을 합침
     df_combined = pd.concat(limited_dfs)
     # '연관키워드'로 그룹화 후, 각 그룹의 '검색어'를 합쳐서 '중복검색어' 컬럼 생성
@@ -38,13 +37,6 @@ def merge_and_mark_duplicates_limited(df_list):
     df_combined.reset_index(drop=True, inplace=True)
 
     return df_combined
-
-
-
-
-
-
-
 
 
 def get_secret(
@@ -105,7 +97,6 @@ def make_directory(path):
     os.makedirs(path, exist_ok=True)
 
 
-
 def get_today_date():
     """
     현재 날짜와 시간을 'Asia/Seoul' 타임존 기준으로 설정하고,
@@ -157,10 +148,16 @@ def process_data(data, condition, type_label, data_lists):
     # '지표' 열 초기화
     filtered_data["지표"] = None
 
-    # '지표' 열에 데이터 채우기
-    for i, df in enumerate(data_lists):
-        if i < len(filtered_data):
-            filtered_data.at[i, "지표"] = str(df["InfoData"].iloc[0]) + "%"
+    for df in data_lists:
+        for index, row in filtered_data.iterrows():
+            # 현재 행의 '연관검색어'와 일치하는 data_list의 데이터프레임 내의 '연관검색어' 찾기
+            matching_info_data = df[df["연관검색어"] == row["연관키워드"]][
+                "InfoData"
+            ].unique()
+            if len(matching_info_data) > 0:
+                # 일치하는 'InfoData' 값이 있으면, 첫 번째 값을 '지표' 열에 할당
+                filtered_data.at[index, "지표"] = str(matching_info_data[0]) + "%"
+
     # '상승월' 열 추가
     filtered_data["상승월"] = None
 
@@ -214,13 +211,18 @@ def add_client_info(collected_keywords_data, start_id_index=1):
 
     return collected_keywords_data
 
+
 def process_and_concat(df_list, label):
     # 여기서 df_list는 데이터 프레임의 리스트를 기대함
-    valid_dfs = [df for df in df_list if df is not None and isinstance(df, pd.DataFrame) and not df.empty]
+    valid_dfs = [
+        df
+        for df in df_list
+        if df is not None and isinstance(df, pd.DataFrame) and not df.empty
+    ]
     if not valid_dfs:  # 유효한 DataFrame이 없으면 빈 DataFrame 반환
         return pd.DataFrame()
     for df in valid_dfs:
-        df['유형'] = label
+        df["유형"] = label
     return pd.concat(valid_dfs).reset_index(drop=True)
 
 
