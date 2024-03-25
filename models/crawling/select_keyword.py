@@ -56,7 +56,6 @@ def check_surge_conditions(
     """
     급상승 조건을 확인하고 결과를 반환하는 함수.
     round((last - last_2)/last_2 * 100,2) : 지표(추세성, 상승률)
-    last_2 가 0이면 예외처리 -1로 할당
     """
     vars = 200
     if mode == "daily":
@@ -83,7 +82,6 @@ def check_surge_conditions(
     else:
         if last == 100:
             print(f"{period_str} 급상승 키워드 발견 : {table_graph.columns[0]}")
-            print(rate, "rate1")
             return result_graph, result_graph, rate
 
     if (last > last_2 * 2.0) & (last >= 60):
@@ -297,7 +295,17 @@ def prepare_data(table, today, mode, days=None, year=None, years=None):
 # 급상승 키워드 선별 함수
 def select_keyword(table, today, mode):
     # prepare_data 함수 호출
+    std_time = datetime.strptime(today, "%Y%m%d")  # 올바른 형식 지정자는 %Y%m%d 여야 합니다.
+    end_time = (std_time - relativedelta(days=1)).strftime("%Y-%m-%d")
 
+    # table.index[-1]가 문자열일 때, 이를 datetime 객체로 변환합니다.
+    last_day_dt = datetime.strptime(table.index[-1], "%Y-%m-%d")
+    last_day_str = last_day_dt.strftime("%Y-%m-%d")
+
+    # 이제 last_day_str와 end_time을 비교할 수 있습니다.
+    if last_day_str != end_time:
+        return None, None, None  # 어제일자가 마지막이 아닌 경우
+    
     result_tmp, result_tmp_gph, table_graph = prepare_data(table, today, mode)
 
     if mode == "daily":
@@ -311,7 +319,7 @@ def select_keyword(table, today, mode):
     if result_tmp is None or result_tmp_gph is None or table_graph is None:
         print("Data preparation failed, skipping keyword analysis.")
         return None, None, None
-
+    
     # 데이터프레임의 행 수 확인
     if len(result_tmp) < dateLimit:
         # print(len(result_tmp))
@@ -557,7 +565,7 @@ if __name__ == "__main__":
     # 검색 기준일
     standard_time = datetime.now()
     params = {
-        "search_keywords": ["와조스키"],
+        "search_keywords": ["범일동맛집"],
         "id": utils.get_secret("clients")["id_1"]["client_id"],
         "pw": utils.get_secret("clients")["id_1"]["client_secret"],
         "api_url": "https://openapi.naver.com/v1/datalab/search",
@@ -585,7 +593,7 @@ if __name__ == "__main__":
         # print(d)
         # print(e)
         # print(f)
-
+        print(22)
         a, b, c = select_keyword(df, day, kk)
         print(a)
         print(c)
