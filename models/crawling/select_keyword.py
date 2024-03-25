@@ -118,7 +118,6 @@ def set_analysis_period(table, today, days=0, year=0, years=0):
         end_time = std_time - day
         start_time = std_time - year_delta - day
         start_before = std_time - years_delta - day
-
         end_time_str = end_time.strftime("%Y-%m-%d")
         start_time_str = start_time.strftime("%Y-%m-%d")
         start_before_str = start_before.strftime("%Y-%m-%d")
@@ -175,6 +174,7 @@ def preprocess_data(end_time, table_tmp, table_graph, mode, missing_data, period
     - result_tmp_gph: DataFrame, 그래프 작성용 처리된 결과 데이터
     - error: str, 에러 메시지 (데이터 포인트 부족시)
     """
+
     # 데이터 포인트 충분 여부 확인
     if len(table_tmp.index) != missing_data:
 
@@ -254,7 +254,7 @@ def prepare_data(table, today, mode, days=None, year=None, years=None):
 
     elif mode == "weekly":
 
-        period = 104
+        period = 156
         Gap = 7
         days = 1
         year = 2
@@ -557,7 +557,7 @@ if __name__ == "__main__":
     # 검색 기준일
     standard_time = datetime.now()
     params = {
-        "search_keywords": ["비상금대출"],
+        "search_keywords": ["와조스키"],
         "id": utils.get_secret("clients")["id_1"]["client_id"],
         "pw": utils.get_secret("clients")["id_1"]["client_secret"],
         "api_url": "https://openapi.naver.com/v1/datalab/search",
@@ -571,7 +571,7 @@ if __name__ == "__main__":
     start = time.time()
     clients = utils.get_secret("clients")
     results = asyncio.run(trend_maincode(params, clients, api_url))
-    kk = "month"
+    kk = "daily"
 
     for df in results:
         # month_a,month_b,month_c,month_d=monthly_rule(df,day,kk)
@@ -581,14 +581,14 @@ if __name__ == "__main__":
         # print(b)
         # print(c)
         # print(d)
-        d, e, f = rising_keyword_analysis(df, day, kk)
-        print(d)
-        print(e)
-        print(f)
+        # d, e, f = rising_keyword_analysis(df, day, kk)
+        # print(d)
+        # print(e)
+        # print(f)
 
-        # a, b, c = select_keyword(df, day, kk)
-        # print(a)
-        # print(c)
+        a, b, c = select_keyword(df, day, kk)
+        print(a)
+        print(c)
 
     print(time.time() - start)
     # 0.94
