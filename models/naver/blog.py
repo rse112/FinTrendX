@@ -129,12 +129,12 @@ def load_list_from_text(file_path):
 
 
 clients = [
-    {"id": "TXYUStSiVj9St7tmCT5N", "secret": "k6bGRxUVJP"},
-    {"id": "qkG2cuWOlXzj1_Uc9eOw", "secret": "n7fTQfeIVn"},
-    {"id": "e9PnkRRKvrJC_rg1rrD7", "secret": "_PctdaTXfD"},
-    {"id": "MqeI5M7ymZsJix9plqtJ", "secret": "LRZWUFvL2S"},
-    {"id": "PnrhTaVa2YQ8ZKnaLg9G", "secret": "fQePz5kBbI"},
-    {"id": "KQm2sCylAtLmaJhusb7w", "secret": "D_ntjREaMT"},
+    {"id": "DSTJ9BxDk6_K36vAFdPC", "secret": "0UzqagaL2q"},
+    {"id": "e_s2bR7O0YYpfUe7HGZp", "secret": "2B9777BzQq"},
+    {"id": "ab3xh3cd6CqsZAATQ67J", "secret": "Bi6JlDK9lY"},
+    {"id": "Wt3zwLX11pd9nQcHV8Bi", "secret": "Ecg09WFoLl"},
+    {"id": "q_8iSvgm0YYZlmydrdkE", "secret": "8AFxQr8d5f"},
+    {"id": "OADb6YuUPVceLPI6GKJx", "secret": "THnY1yNehk"},
 ]
 
 today = datetime.now().strftime("%y%m%d")

@@ -57,6 +57,8 @@ def check_surge_conditions(
     급상승 조건을 확인하고 결과를 반환하는 함수.
     round((last - last_2)/last_2 * 100,2) : 지표(추세성, 상승률)
     """
+    # print(result_tmp)
+    # print(result_tmp_gph)
     vars = 200
     if mode == "daily":
         period_str = "일별"
@@ -78,20 +80,19 @@ def check_surge_conditions(
 
     if mode == "daily" or mode == "weekly":
         if var > vars:
+            # print(11)
             return None, None, None
     else:
         if last == 100:
             print(f"{period_str} 급상승 키워드 발견 : {table_graph.columns[0]}")
             return result_graph, result_graph, rate
-
+    
     if (last > last_2 * 2.0) & (last >= 60):
         print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
-        print(rate, "rate2")
         return result_graph, result_graph, rate
 
     elif (last >= 95) & (last > last_2):
         print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
-        print(rate, "rate3")
         return result_graph, result_graph, rate
     elif (
         (last_2 * 2.0 > 100)
@@ -102,6 +103,11 @@ def check_surge_conditions(
         print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
         return result_graph, result_graph, rate
     else:
+        # print(44)
+        # print("last", last)
+        # print("last_2", last_2)
+        # print("last_Boundary", last_Boundary)
+        # print("(last - last_2)",(last - last_2))
         return None, None, None
 
 
@@ -187,7 +193,7 @@ def preprocess_data(end_time, table_tmp, table_graph, mode, missing_data, period
     else:
         # 주별 또는 월별 데이터 집계
         tmp_list = []
-        for i in range(0, period, 1):
+        for i in range(0, period[0], 1):
             if i == 0:
                 days_data = table_tmp.iloc[-(Gap * (i + 1)) :]
             else:
@@ -195,11 +201,10 @@ def preprocess_data(end_time, table_tmp, table_graph, mode, missing_data, period
             tmp_list.append(days_data.sum())
 
         tmp_frame = pd.DataFrame(tmp_list).iloc[::-1].reset_index(drop=True)
-
         # 그래프 작성용 데이터 집계
         tmp_list_graph = []
         for j in range(
-            0, period, 1
+            0, period[1], 1
         ):  # 주의: 여기서 period는 그래프용 데이터 집계에 맞게 조정할 수 있습니다.
             if j == 0:
                 days_data_graph = table_graph.iloc[-(Gap * (j + 1)) :]
@@ -247,12 +252,12 @@ def prepare_data(table, today, mode, days=None, year=None, years=None):
         year = 1
         years = 3
 
-        period = 1
+        period = [1,1]
         Gap = 1
 
     elif mode == "weekly":
 
-        period = 156
+        period = [104,156]
         Gap = 7
         days = 1
         year = 2
@@ -260,7 +265,7 @@ def prepare_data(table, today, mode, days=None, year=None, years=None):
 
     elif mode == "month":
 
-        period = 36
+        period = [36,36]
         Gap = 28
         days = 1
         year = 3
@@ -272,12 +277,20 @@ def prepare_data(table, today, mode, days=None, year=None, years=None):
     end_time, table_tmp, table_graph = set_analysis_period(
         table, today, days=days, year=year, years=years
     )
+
+    # print(end_time)
+    # print("########")
+    # print("table_tmp", table_tmp)
+    # print("table_graph", table_graph)
     missing_data = len(table_tmp.index)
+
     if end_time is None or table_tmp is None or table_graph is None:
+
         print("Data processing skipped for a table due to missing or incomplete data.")
         return None, None, None
 
     else:
+
         result_tmp, result_tmp_gph = preprocess_data(
             end_time,
             table_tmp,
@@ -294,20 +307,12 @@ def prepare_data(table, today, mode, days=None, year=None, years=None):
 ################################################################################
 # 급상승 키워드 선별 함수
 def select_keyword(table, today, mode):
-    # prepare_data 함수 호출
-    std_time = datetime.strptime(today, "%Y%m%d")  # 올바른 형식 지정자는 %Y%m%d 여야 합니다.
-    end_time = (std_time - relativedelta(days=1)).strftime("%Y-%m-%d")
 
-    # table.index[-1]가 문자열일 때, 이를 datetime 객체로 변환합니다.
-    last_day_dt = datetime.strptime(table.index[-1], "%Y-%m-%d")
-    last_day_str = last_day_dt.strftime("%Y-%m-%d")
-
-    # 이제 last_day_str와 end_time을 비교할 수 있습니다.
-    if last_day_str != end_time:
-        return None, None, None  # 어제일자가 마지막이 아닌 경우
     
     result_tmp, result_tmp_gph, table_graph = prepare_data(table, today, mode)
-
+    # print("result_tmp",result_tmp)
+    # print("result_tmp_gph",result_tmp_gph)
+    # print("table_graph",table_graph)
     if mode == "daily":
         dateLimit = 350
 
@@ -317,6 +322,7 @@ def select_keyword(table, today, mode):
         dateLimit = 2
     # prepare_data 함수의 반환 값 중 None이 있는지 확인
     if result_tmp is None or result_tmp_gph is None or table_graph is None:
+
         print("Data preparation failed, skipping keyword analysis.")
         return None, None, None
     
@@ -324,6 +330,7 @@ def select_keyword(table, today, mode):
     if len(result_tmp) < dateLimit:
         # print(len(result_tmp))
         # print(f"{result_tmp_gph.columns[0]} is Not enough data for keyword selection.")
+
         return None, None, None
 
     try:
@@ -359,10 +366,11 @@ def rising_keyword_analysis(table, today, mode):
 
     # prepare_data 함수의 결과 검사
     if result_tmp is None or result_tmp_gph is None or table_graph is None:
+
         return None, None, None
     if mode == "daily":
         dateLimit = 350
-        print(result_tmp)
+        # print(result_tmp)
 
     elif mode == "weekly":
         dateLimit = 2
@@ -409,6 +417,7 @@ def rising_keyword_analysis(table, today, mode):
             last_2 < last
         ) & (0 < recent < 15) & (-3 < recent_2) & (-3 < recent_3):
             print(f"{period_str} 지속상승 키워드 발견 : {result_tmp.columns[0]}")
+            
             return result_tmp.copy(), result_graph, round(top * 100, 2)
     elif mode == "weekly":
         if result_tmp is not None and (0 < top) & (0 < middle) & (0 < bottom) & (
@@ -565,7 +574,7 @@ if __name__ == "__main__":
     # 검색 기준일
     standard_time = datetime.now()
     params = {
-        "search_keywords": ["범일동맛집"],
+        "search_keywords": ["배당금계산기"],
         "id": utils.get_secret("clients")["id_1"]["client_id"],
         "pw": utils.get_secret("clients")["id_1"]["client_secret"],
         "api_url": "https://openapi.naver.com/v1/datalab/search",
@@ -590,10 +599,10 @@ if __name__ == "__main__":
         # print(c)
         # print(d)
         # d, e, f = rising_keyword_analysis(df, day, kk)
-        # print(d)
-        # print(e)
-        # print(f)
-        print(22)
+        # print("d",d)
+        # print("e",e)
+        # print("f",f)
+        # print(22)
         a, b, c = select_keyword(df, day, kk)
         print(a)
         print(c)
