@@ -6,6 +6,11 @@ import sys
 from datetime import datetime, timedelta
 import dateutil.parser
 import pandas as pd
+import os
+
+# 현재 스크립트의 경로를 기준으로 상위 디렉토리의 절대 경로를 sys.path에 추가
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
+import utils
 
 if sys.platform == "win32":
     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
@@ -129,12 +134,30 @@ def load_list_from_text(file_path):
 
 
 clients = [
-    {"id": "DSTJ9BxDk6_K36vAFdPC", "secret": "0UzqagaL2q"},
-    {"id": "e_s2bR7O0YYpfUe7HGZp", "secret": "2B9777BzQq"},
-    {"id": "ab3xh3cd6CqsZAATQ67J", "secret": "Bi6JlDK9lY"},
-    {"id": "Wt3zwLX11pd9nQcHV8Bi", "secret": "Ecg09WFoLl"},
-    {"id": "q_8iSvgm0YYZlmydrdkE", "secret": "8AFxQr8d5f"},
-    {"id": "OADb6YuUPVceLPI6GKJx", "secret": "THnY1yNehk"},
+    {
+        "id": utils.get_secret("clients")["id_1"]["client_id"],
+        "secret": utils.get_secret("clients")["id_1"]["client_secret"],
+    },
+    {
+        "id": utils.get_secret("clients")["id_2"]["client_id"],
+        "secret": utils.get_secret("clients")["id_2"]["client_secret"],
+    },
+    {
+        "id": utils.get_secret("clients")["id_3"]["client_id"],
+        "secret": utils.get_secret("clients")["id_3"]["client_secret"],
+    },
+    {
+        "id": utils.get_secret("clients")["id_4"]["client_id"],
+        "secret": utils.get_secret("clients")["id_4"]["client_secret"],
+    },
+    {
+        "id": utils.get_secret("clients")["id_5"]["client_id"],
+        "secret": utils.get_secret("clients")["id_5"]["client_secret"],
+    },
+    {
+        "id": utils.get_secret("clients")["id_6"]["client_id"],
+        "secret": utils.get_secret("clients")["id_6"]["client_secret"],
+    },
 ]
 
 today = datetime.now().strftime("%y%m%d")

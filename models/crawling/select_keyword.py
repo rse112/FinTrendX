@@ -86,7 +86,7 @@ def check_surge_conditions(
         if last == 100:
             print(f"{period_str} 급상승 키워드 발견 : {table_graph.columns[0]}")
             return result_graph, result_graph, rate
-    
+
     if (last > last_2 * 2.0) & (last >= 60):
         print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
         return result_graph, result_graph, rate
@@ -252,12 +252,12 @@ def prepare_data(table, today, mode, days=None, year=None, years=None):
         year = 1
         years = 3
 
-        period = [1,1]
+        period = [1, 1]
         Gap = 1
 
     elif mode == "weekly":
 
-        period = [104,156]
+        period = [104, 156]
         Gap = 7
         days = 1
         year = 2
@@ -265,7 +265,7 @@ def prepare_data(table, today, mode, days=None, year=None, years=None):
 
     elif mode == "month":
 
-        period = [36,36]
+        period = [36, 36]
         Gap = 28
         days = 1
         year = 3
@@ -308,7 +308,6 @@ def prepare_data(table, today, mode, days=None, year=None, years=None):
 # 급상승 키워드 선별 함수
 def select_keyword(table, today, mode):
 
-    
     result_tmp, result_tmp_gph, table_graph = prepare_data(table, today, mode)
     # print("result_tmp",result_tmp)
     # print("result_tmp_gph",result_tmp_gph)
@@ -325,7 +324,7 @@ def select_keyword(table, today, mode):
 
         print("Data preparation failed, skipping keyword analysis.")
         return None, None, None
-    
+
     # 데이터프레임의 행 수 확인
     if len(result_tmp) < dateLimit:
         # print(len(result_tmp))
@@ -417,7 +416,7 @@ def rising_keyword_analysis(table, today, mode):
             last_2 < last
         ) & (0 < recent < 15) & (-3 < recent_2) & (-3 < recent_3):
             print(f"{period_str} 지속상승 키워드 발견 : {result_tmp.columns[0]}")
-            
+
             return result_tmp.copy(), result_graph, round(top * 100, 2)
     elif mode == "weekly":
         if result_tmp is not None and (0 < top) & (0 < middle) & (0 < bottom) & (
