@@ -77,7 +77,7 @@ def check_surge_conditions(
     result_graph = create_result_graph(
         result_tmp, result_tmp_gph, formatted_today, mode
     )
-
+    recent = sloop(result_tmp.iloc[-3:,])
     if mode == "daily" or mode == "weekly":
         if var > vars:
             # print(11)
@@ -86,6 +86,31 @@ def check_surge_conditions(
         if last == 100:
             print(f"{period_str} 급상승 키워드 발견 : {table_graph.columns[0]}")
             return result_graph, result_graph, rate
+        if last == 100 :
+            print(f'월별 급상승 키워드 발견 : {result_tmp.columns[0]}')
+
+            return result_tmp, result_graph, rate
+        else :
+            if (last >= last_2 * 2.0) & (last >= 60) & (recent >= 15) :
+
+                print(f'월별 급상승 키워드 발견 : {result_tmp.columns[0]}')
+
+                return result_tmp, result_graph, rate
+
+            elif (last >= 95) & (last > last_2)  & (recent >= 15) :
+
+                print(f'월별 급상승 키워드 발견 : {result_tmp.columns[0]}')
+
+                return result_tmp, result_graph, rate
+
+            elif (last_2 * 2.0 > 100) & (last >= 85) & (last > last_2) & ((last - last_2) > 5)  & (recent >= 15) :
+
+                print(f'월별 급상승 키워드 발견 : {result_tmp.columns[0]}')
+
+                return result_tmp, result_graph, rate
+
+            else :
+                return None, None, None
 
     if (last > last_2 * 2.0) & (last >= 60):
         print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
@@ -109,6 +134,8 @@ def check_surge_conditions(
         # print("last_Boundary", last_Boundary)
         # print("(last - last_2)",(last - last_2))
         return None, None, None
+
+
 
 
 # 주어진 날짜와 기간을 바탕으로 데이터 분석 기간을 설정하고, 해당 기간의 데이터를 필터링하여 반환함.

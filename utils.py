@@ -159,7 +159,7 @@ def process_data(data, condition, type_label, data_lists):
                 filtered_data.at[index, "지표"] = str(matching_info_data[0]) + "%"
 
     # '상승월' 열 추가
-    filtered_data["상승월"] = None
+    filtered_data["상승월"] = None  
 
     return filtered_data
 
