@@ -3,11 +3,34 @@ import asyncio
 from pytrends.request import TrendReq
 
 # 비동기 작업을 위한 ThreadPoolExecutor 인스턴스 생성
+
+from selenium import webdriver
+import time
+
+
+def get_cookie():
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")
+    driver = webdriver.Chrome(options=options)
+    driver.get("https://trends.google.com/")
+    time.sleep(5)
+    cookie = driver.get_cookie("NID")["value"]
+    driver.quit()
+    return cookie
+
+
 executor = ThreadPoolExecutor(max_workers=5)
 
+nid_cookie = f"NID={get_cookie()}"
+pytrends = TrendReq(requests_args={"headers": {"Cookie": nid_cookie}})
 
-async def fetch_rising_queries(keyword: str, max_retries: int = 1) -> dict:
-    pytrends = TrendReq(hl="ko-KR", tz=540, retries=1)
+
+async def fetch_rising_queries(keyword: str, max_retries: int = 2) -> dict:
+    nid_cookie = f"NID={get_cookie()}"
+
+    pytrends = TrendReq(
+        hl="ko-KR", tz=540, retries=3, requests_args={"headers": {"Cookie": nid_cookie}}
+    )
     kw_list = [keyword]
 
     for attempt in range(max_retries):
@@ -43,7 +66,7 @@ async def collect_rising_keywords(target_keywords: list) -> dict:
 
 if __name__ == "__main__":
     # 사용할 키워드 리스트 (예시)
-    target_keywords = ["비트코인"]
+    target_keywords = ["사과"]
 
     # 비동기 함수 실행하여 결과 수집
     rising_keywords_results = asyncio.run(collect_rising_keywords(target_keywords))
