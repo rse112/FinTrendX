@@ -78,18 +78,44 @@ def check_surge_conditions(
         result_tmp, result_tmp_gph, formatted_today, mode
     )
     recent = sloop(result_tmp.iloc[-3:,])
+
+
+
     if mode == "daily" or mode == "weekly":
         if var > vars:
-            # print(11)
+
+
             return None, None, None
+
+        if (last > last_2 * 2.0) & (last >= 60):
+            print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
+            
+            return result_graph, result_graph, rate
+
+        elif (last >= 95) & (last > last_2):
+            print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
+
+            
+
+            return result_graph, result_graph, rate
+        elif (
+            (last_2 * 2.0 > 100)
+            & (last >= last_Boundary)
+            & (last > last_2)
+            & ((last - last_2) > 5)
+        ):
+            print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
+
+            
+            return result_graph, result_graph, rate
+        else:
+            return None, None, None
+        
     else:
         if last == 100:
             print(f"{period_str} 급상승 키워드 발견 : {table_graph.columns[0]}")
-            return result_graph, result_graph, rate
-        if last == 100 :
-            print(f'월별 급상승 키워드 발견 : {result_tmp.columns[0]}')
 
-            return result_tmp, result_graph, rate
+            return result_graph, result_graph, rate
         else :
             if (last >= last_2 * 2.0) & (last >= 60) & (recent >= 15) :
 
@@ -112,42 +138,23 @@ def check_surge_conditions(
             else :
                 return None, None, None
 
-    if (last > last_2 * 2.0) & (last >= 60):
-        print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
-        return result_graph, result_graph, rate
 
-    elif (last >= 95) & (last > last_2):
-        print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
-        return result_graph, result_graph, rate
-    elif (
-        (last_2 * 2.0 > 100)
-        & (last >= last_Boundary)
-        & (last > last_2)
-        & ((last - last_2) > 5)
-    ):
-        print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
-        return result_graph, result_graph, rate
-    else:
-        # print(44)
-        # print("last", last)
-        # print("last_2", last_2)
-        # print("last_Boundary", last_Boundary)
-        # print("(last - last_2)",(last - last_2))
-        return None, None, None
 
 
 
 
 # 주어진 날짜와 기간을 바탕으로 데이터 분석 기간을 설정하고, 해당 기간의 데이터를 필터링하여 반환함.
-def set_analysis_period(table, today, days=0, year=0, years=0):
+def set_analysis_period(table, today, days=0, year=0, yearss=0,mode="weekly"):
     try:
+        #        year = 2
+        # years = 3
         std_time = datetime.strptime(today, "%y%m%d")
         day = relativedelta(days=days)
-        years_delta = relativedelta(years=years)
-        year_delta = relativedelta(years=year)
+        years_delta = relativedelta(years=yearss) #3
+        year_delta = relativedelta(years=year) #2
         # 날짜 계산
         end_time = std_time - day
-        start_time = std_time - year_delta - day
+        start_time = std_time - year_delta - day # start_time = 지금-2년
         start_before = std_time - years_delta - day
         end_time_str = end_time.strftime("%Y-%m-%d")
         start_time_str = start_time.strftime("%Y-%m-%d")
@@ -162,7 +169,16 @@ def set_analysis_period(table, today, days=0, year=0, years=0):
         table_graph = table[
             (table.index >= start_before_str) & (table.index <= end_time_str)
         ]
+        if mode == "daily":
+            dateLimit = 350
+            # print(result_tmp)
 
+        elif mode == "weekly":
+            dateLimit = 700
+        else:
+            dateLimit = 1080
+        if len(table_tmp) < dateLimit:
+            return None, None, None
         return end_time_str, table_tmp, table_graph
 
     except Exception as e:
@@ -188,7 +204,7 @@ def sloop(dataframe):
 
 
 # 데이터 전처리 및 분석 기간 설정을 위한 함수.
-def preprocess_data(end_time, table_tmp, table_graph, mode, missing_data, period, Gap):
+def preprocess_data(end_time, table_tmp, table_graph, mode, period, Gap):
     """
     데이터 전처리 및 분석 기간 설정을 위한 함수.
 
@@ -196,7 +212,6 @@ def preprocess_data(end_time, table_tmp, table_graph, mode, missing_data, period
     - table_tmp: DataFrame, 분석 대상이 되는 테이블
     - table_graph: DataFrame, 그래프 작성을 위한 테이블
     - mode: str, 분석 모드 ('daily', 'weekly', 'month')
-    - missing_data: int, 필요한 최소 데이터 포인트 수
     - period: int, 데이터 집계 주기
     - Gap: int, 데이터 집계 간격
 
@@ -206,17 +221,12 @@ def preprocess_data(end_time, table_tmp, table_graph, mode, missing_data, period
     - error: str, 에러 메시지 (데이터 포인트 부족시)
     """
 
-    # 데이터 포인트 충분 여부 확인
-    if len(table_tmp.index) != missing_data:
-
-        return None, None
-
     if mode == "daily":
         # 일별 데이터는 이미 최적화된 상태이므로 추가 처리 없이 반환
         result_tmp = table_tmp / table_tmp.max() * 100
         result_tmp_gph = table_graph / table_graph.max() * 100
         return result_tmp, result_tmp_gph
-
+    
     else:
         # 주별 또는 월별 데이터 집계
         tmp_list = []
@@ -232,11 +242,15 @@ def preprocess_data(end_time, table_tmp, table_graph, mode, missing_data, period
         tmp_list_graph = []
         for j in range(
             0, period[1], 1
-        ):  # 주의: 여기서 period는 그래프용 데이터 집계에 맞게 조정할 수 있습니다.
+        ):  
             if j == 0:
+
                 days_data_graph = table_graph.iloc[-(Gap * (j + 1)) :]
+
             else:
                 days_data_graph = table_graph.iloc[-(Gap * (j + 1)) : -(Gap * j)]
+
+                break
             tmp_list_graph.append(days_data_graph.sum())
 
         tmp_graph = pd.DataFrame(tmp_list_graph).iloc[::-1].reset_index(drop=True)
@@ -296,24 +310,21 @@ def prepare_data(table, today, mode, days=None, year=None, years=None):
         Gap = 28
         days = 1
         year = 3
-        years = 1
+        years = 3
 
     else:
         pass
+
     ##############################################
     end_time, table_tmp, table_graph = set_analysis_period(
-        table, today, days=days, year=year, years=years
+        table, today, days=days, year=year, yearss=years,mode=mode
     )
 
-    # print(end_time)
-    # print("########")
-    # print("table_tmp", table_tmp)
-    # print("table_graph", table_graph)
-    missing_data = len(table_tmp.index)
+
+
 
     if end_time is None or table_tmp is None or table_graph is None:
 
-        print("Data processing skipped for a table due to missing or incomplete data.")
         return None, None, None
 
     else:
@@ -323,7 +334,7 @@ def prepare_data(table, today, mode, days=None, year=None, years=None):
             table_tmp,
             table_graph,
             mode=mode,
-            missing_data=missing_data,
+
             period=period,
             Gap=Gap,
         )
@@ -335,34 +346,28 @@ def prepare_data(table, today, mode, days=None, year=None, years=None):
 # 급상승 키워드 선별 함수
 def select_keyword(table, today, mode):
 
+
     result_tmp, result_tmp_gph, table_graph = prepare_data(table, today, mode)
     # print("result_tmp",result_tmp)
     # print("result_tmp_gph",result_tmp_gph)
     # print("table_graph",table_graph)
-    if mode == "daily":
-        dateLimit = 350
 
-    elif mode == "weekly":
-        dateLimit = 2
-    else:
-        dateLimit = 2
     # prepare_data 함수의 반환 값 중 None이 있는지 확인
     if result_tmp is None or result_tmp_gph is None or table_graph is None:
 
-        print("Data preparation failed, skipping keyword analysis.")
+
         return None, None, None
 
     # 데이터프레임의 행 수 확인
-    if len(result_tmp) < dateLimit:
-        # print(len(result_tmp))
-        # print(f"{result_tmp_gph.columns[0]} is Not enough data for keyword selection.")
 
-        return None, None, None
 
     try:
+
+        
         # 검색량 기준
         last = result_tmp.iloc[-1, 0]  # 가장 최근 일자 상대적 검색량
         last_2 = result_tmp.iloc[-2, 0]  # 바로 그 전 일자 상대적 검색량
+
         # 분산 기준
         var = np.var(result_tmp.iloc[:, 0])
 
@@ -377,6 +382,7 @@ def select_keyword(table, today, mode):
 
 
 def rising_keyword_analysis(table, today, mode):
+
 
     # 모드에 따른 설정값 초기화
     if mode == "daily":
@@ -394,18 +400,8 @@ def rising_keyword_analysis(table, today, mode):
     if result_tmp is None or result_tmp_gph is None or table_graph is None:
 
         return None, None, None
-    if mode == "daily":
-        dateLimit = 350
-        # print(result_tmp)
 
-    elif mode == "weekly":
-        dateLimit = 2
-    else:
-        dateLimit = 2
-    if len(result_tmp) < dateLimit:
-        print(f"{result_tmp_gph.columns[0]} is Not enough data for keyword selection.")
-        return None, None, None
-    # 추세 계산
+    # 추세 계산 
     top = sloop(result_tmp)
     middle = sloop(result_tmp.iloc[periods[1][0] :,])
     bottom = sloop(result_tmp.iloc[periods[2][0] :,])
@@ -442,6 +438,7 @@ def rising_keyword_analysis(table, today, mode):
         if result_tmp is not None and (0 < top) & (0 < middle) & (0 < bottom) & (
             last_2 < last
         ) & (0 < recent < 15) & (-3 < recent_2) & (-3 < recent_3):
+            
             print(f"{period_str} 지속상승 키워드 발견 : {result_tmp.columns[0]}")
 
             return result_tmp.copy(), result_graph, round(top * 100, 2)
@@ -449,6 +446,7 @@ def rising_keyword_analysis(table, today, mode):
         if result_tmp is not None and (0 < top) & (0 < middle) & (0 < bottom) & (
             last_2 < last
         ) & (0 < recent_2 < 10) & (recent < 10):
+
             print(f"{period_str} 지속상승 키워드 발견 : {table_graph.columns[0]}")
             return result_tmp.copy(), result_graph, round(top * 100, 2)
 
@@ -491,18 +489,11 @@ def month_check(table):
 
 
 def monthly_rule(table, today, mode):
+
     result_tmp, result_tmp_gph, table_graph = prepare_data(table, today, mode="month")
     if result_tmp is None or result_tmp_gph is None or table_graph is None:
         return None, None, None, None
-    if mode == "daily":
-        dateLimit = 350
-    elif mode == "weekly":
-        dateLimit = 2
-    else:
-        dateLimit = 2
-    if len(result_tmp) < dateLimit:
-        # print(f"{result_tmp_gph.columns[0]} is Not enough data for keyword selection.")
-        return None, None, None, None
+
     # 규칙성 검증
     ## 1년씩 확인
     year_1 = result_tmp[:12]  # 최원 1년
@@ -600,7 +591,10 @@ if __name__ == "__main__":
     # 검색 기준일
     standard_time = datetime.now()
     params = {
-        "search_keywords": ["배당금계산기"],
+        "search_keywords": [
+'비갱신보험', '상속등기', '상속한정승인', '오늘의주식시황', '유아보험', '주식공부방법'   
+
+],
         "id": utils.get_secret("clients")["id_1"]["client_id"],
         "pw": utils.get_secret("clients")["id_1"]["client_secret"],
         "api_url": "https://openapi.naver.com/v1/datalab/search",
@@ -614,7 +608,8 @@ if __name__ == "__main__":
     start = time.time()
     clients = utils.get_secret("clients")
     results = asyncio.run(trend_maincode(params, clients, api_url))
-    kk = "daily"
+
+    kk = "weekly"
 
     for df in results:
         # month_a,month_b,month_c,month_d=monthly_rule(df,day,kk)
@@ -624,14 +619,11 @@ if __name__ == "__main__":
         # print(b)
         # print(c)
         # print(d)
-        # d, e, f = rising_keyword_analysis(df, day, kk)
-        # print("d",d)
-        # print("e",e)
-        # print("f",f)
-        # print(22)
+        #d, e, f = rising_keyword_analysis(df, day, kk)
         a, b, c = select_keyword(df, day, kk)
-        print(a)
-        print(c)
+        # print(a)
+        # print(c)
+        # print(b)
 
     print(time.time() - start)
     # 0.94

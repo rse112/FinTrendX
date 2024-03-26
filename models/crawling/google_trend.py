@@ -6,8 +6,8 @@ from pytrends.request import TrendReq
 executor = ThreadPoolExecutor(max_workers=5)
 
 
-async def fetch_rising_queries(keyword: str, max_retries: int = 5) -> dict:
-    pytrends = TrendReq(hl="ko-KR", tz=540, retries=2)
+async def fetch_rising_queries(keyword: str, max_retries: int = 1) -> dict:
+    pytrends = TrendReq(hl="ko-KR", tz=540, retries=1)
     kw_list = [keyword]
 
     for attempt in range(max_retries):
@@ -26,9 +26,9 @@ async def fetch_rising_queries(keyword: str, max_retries: int = 5) -> dict:
             return {keyword: []}
         except Exception as e:
             print(
-                f"Error fetching data for {keyword}: 시도횟수 : {attempt+1}/{max_retries}"
+                f"Error fetching data for {keyword}: 시도횟수 : {attempt+1}/{max_retries},{e}"
             )
-            await asyncio.sleep(2**attempt)
+            await asyncio.sleep(1**attempt)
     return {keyword: []}
 
 
@@ -43,7 +43,7 @@ async def collect_rising_keywords(target_keywords: list) -> dict:
 
 if __name__ == "__main__":
     # 사용할 키워드 리스트 (예시)
-    target_keywords = ["채권채무", "채권추심", "소득세법"]
+    target_keywords = ["비트코인"]
 
     # 비동기 함수 실행하여 결과 수집
     rising_keywords_results = asyncio.run(collect_rising_keywords(target_keywords))

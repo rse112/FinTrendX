@@ -103,7 +103,7 @@ if __name__ == "__main__":
 
     # 파라미터
     params = {
-        "search_keywords": ["대부대출"],
+        "search_keywords": ["SOLETF"],
         "id": get_secret("clients")["id_1"]["client_id"],
         "pw": get_secret("clients")["id_1"]["client_secret"],
         "api_url": "https://openapi.naver.com/v1/datalab/search",
@@ -111,12 +111,14 @@ if __name__ == "__main__":
     }
 
     import time
-
+    import pandas as pd
     start = time.time()
     clients = get_secret("clients")
     api_url = "https://openapi.naver.com/v1/datalab/search"
     # 이벤트 루프 실행
     results = asyncio.run(trend_maincode(params, clients, api_url))
+
+
     for df in results:
         print(df)
     print(type(params))
