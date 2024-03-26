@@ -14,6 +14,8 @@ import statsmodels.api as sm
 import asyncio
 from models.crawling.trend import trend_maincode
 import time
+from datetime import datetime
+import pytz
 
 formatted_today, day = utils.get_today_date()
 
@@ -89,10 +91,11 @@ def check_surge_conditions(
 
         if (last > last_2 * 2.0) & (last >= 60):
             print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
-            
+            print(33)
             return result_graph, result_graph, rate
 
         elif (last >= 95) & (last > last_2):
+            print(22)
             print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
 
             
@@ -106,7 +109,7 @@ def check_surge_conditions(
         ):
             print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
 
-            
+            print(11)
             return result_graph, result_graph, rate
         else:
             return None, None, None
@@ -240,6 +243,7 @@ def preprocess_data(end_time, table_tmp, table_graph, mode, period, Gap):
         tmp_frame = pd.DataFrame(tmp_list).iloc[::-1].reset_index(drop=True)
         # 그래프 작성용 데이터 집계
         tmp_list_graph = []
+
         for j in range(
             0, period[1], 1
         ):  
@@ -250,9 +254,8 @@ def preprocess_data(end_time, table_tmp, table_graph, mode, period, Gap):
             else:
                 days_data_graph = table_graph.iloc[-(Gap * (j + 1)) : -(Gap * j)]
 
-                break
+                
             tmp_list_graph.append(days_data_graph.sum())
-
         tmp_graph = pd.DataFrame(tmp_list_graph).iloc[::-1].reset_index(drop=True)
 
         # 상대적 검색량 조정
@@ -323,6 +326,7 @@ def prepare_data(table, today, mode, days=None, year=None, years=None):
 
 
 
+
     if end_time is None or table_tmp is None or table_graph is None:
 
         return None, None, None
@@ -348,6 +352,7 @@ def select_keyword(table, today, mode):
 
 
     result_tmp, result_tmp_gph, table_graph = prepare_data(table, today, mode)
+
     # print("result_tmp",result_tmp)
     # print("result_tmp_gph",result_tmp_gph)
     # print("table_graph",table_graph)
@@ -448,136 +453,171 @@ def rising_keyword_analysis(table, today, mode):
         ) & (0 < recent_2 < 10) & (recent < 10):
 
             print(f"{period_str} 지속상승 키워드 발견 : {table_graph.columns[0]}")
+            print(11)
             return result_tmp.copy(), result_graph, round(top * 100, 2)
 
     return None, None, None
 
 
 # 상승하는 달 검토하는 함수
+# 상승하는 달 검토하는 함수
+# 상승하는 달 검토하는 함수
 
+def month_check(table) :
 
-def month_check(table):
     up_month_list = []
 
-    # 검색일자를 datetime 형태로 변환하고, 이를 인덱스로 설정합니다.
-    table["검색일자"] = pd.to_datetime(table["검색일자"])
-    table = table.set_index("검색일자")
+    table_tmp = table.copy()
 
-    # 연도와 월을 추출합니다.
-    table["year"] = table.index.year
-    table["month"] = table.index.month
-
-    # 월별 검색량 합계를 계산합니다.
-    sum_table = table.groupby(["year", "month"])[["검색량"]].sum()
+    table_tmp.loc[:,'year'] = table_tmp.index.year
+    table_tmp.loc[:,'month'] = table_tmp.index.month
+    sum_table = table_tmp.groupby(['year','month'])[[f'{table.columns[0]}']].sum() # 월별 합계
     sum_table.reset_index(inplace=True)
-    sum_table["normalized_search_volume"] = (
-        sum_table["검색량"] / sum_table["검색량"].max() * 100
-    )
-
-    # 다음 달과 비교하여 검색량이 증가하는 월을 찾습니다.
-    for idx in range(len(sum_table) - 1):
-        current_month_volume = sum_table.loc[idx, "normalized_search_volume"]
-        next_month_volume = sum_table.loc[idx + 1, "normalized_search_volume"]
-
-        # '검색량'이 상승하는 경우, 현재 월을 결과 리스트에 추가합니다.
-        if next_month_volume > current_month_volume:
-            up_month_list.append(sum_table.loc[idx, "month"])
-    # 중복을 제거하고, 결과를 정렬합니다.
-    unique_sorted_up_month_list = sorted(set(up_month_list))
-
-    return unique_sorted_up_month_list
+    sum_table.iloc[:,-1] = sum_table.iloc[:,-1]/sum_table.iloc[:,-1].max() * 100 # 상대적 검색량 변환
 
 
-def monthly_rule(table, today, mode):
+    for month in range(1,13) :
+        if month != 12 :
+            sub_result = sum_table[sum_table['month'] == month].reset_index(drop=True).iloc[:,-1] - sum_table[sum_table['month'] == month+1].reset_index(drop=True).iloc[:,-1]
+        else :
+            sub_result = sum_table[sum_table['month'] == 12].reset_index(drop=True).iloc[:,-1] - sum_table[sum_table['month'] == 1].reset_index(drop=True).iloc[:,-1]
 
-    result_tmp, result_tmp_gph, table_graph = prepare_data(table, today, mode="month")
-    if result_tmp is None or result_tmp_gph is None or table_graph is None:
+        if (sub_result[1] * sub_result[2]) > 0 :
+            if (sub_result[1]) < 0 :
+                if month != 12 :
+                    up_month_list.append(month+1)
+                else :
+                    up_month_list.append(1)
+            else :
+                pass
+        else :
+            pass
+
+    return up_month_list
+
+def monthly_rule(table, std_time,mode) :
+
+    today = datetime.now(pytz.timezone('Asia/Seoul'))
+
+    end_time = today - relativedelta(days=1)
+    end_time = end_time.strftime("%Y-%m-%d")
+    # 시작일자(=3년전)
+    start_time = today - relativedelta(years=3) - relativedelta(days=1)
+    start_time = start_time.strftime("%Y-%m-%d")
+
+    # 예측을 위한 기간 분리
+    end_pred = today
+    start_pred = end_pred - relativedelta(years=3)
+    end_pred = end_pred.strftime("%Y-%m")
+    start_pred = start_pred.strftime("%Y-%m")
+
+    # 분석 기간 설정
+    table.index = pd.to_datetime(table.index)
+    table_tmp = table[(table.index >= start_time)&(table.index <= end_time)]
+    table_pred = table[(table.index >= start_pred)&(table.index < end_pred)]
+
+
+    # 기간 내 데이터 공백 존재시
+    if len(table_tmp.index) < 1080 :
         return None, None, None, None
+
+    # 월별 데이터 테이블로 변환 (36개월)
+    tmp_list = []
+
+    for i in range(0,36,1) :
+        if i == 0 :
+            days_28 = table_tmp.iloc[-(28*(i+1)) : , ].sum()
+        else :
+            days_28 = table_tmp.iloc[-(28*(i+1)) : -(28*(i)) , ].sum()
+        tmp_list.append(days_28)
+    tmp_frame = pd.DataFrame(tmp_list)
+
+    r_idx = [i for i in range(tmp_frame.shape[0]-1,-1,-1)]
+    result_tmp = pd.DataFrame(tmp_frame, index=r_idx)
+    result_tmp.reset_index(drop=True, inplace=True)
+
+    # 기간에 맞춰 상대적 검색량 수정
+    result_tmp = result_tmp/result_tmp.max() * 100
+
+    # 인덱스 설정
+    result_tmp.index = pd.date_range(end = f'{end_time}', periods = len(result_tmp.index), freq = '28d')
 
     # 규칙성 검증
     ## 1년씩 확인
-    year_1 = result_tmp[:12]  # 최원 1년
-    year_1_new = year_1 / year_1.max() * 100  # 상대적 변환
+    year_1 = result_tmp[:12]   # 최원 1년
+    year_1_new = year_1/year_1.max() * 100 # 상대적 변환
 
     year_2 = result_tmp[12:24]  # 이전 1년
-    year_2_new = year_2 / year_2.max() * 100  # 상대적 변환
+    year_2_new = year_2/year_2.max() * 100 # 상대적 변환
 
     year_3 = result_tmp[24:36]  # 최근 1년
-    year_3_new = year_3 / year_3.max() * 100  # 상대적 변환
-    try:
-        dist_1 = dtw(year_1_new, year_2_new, keep_internals=True).distance
-    except ValueError as e:
+    year_3_new = year_3/year_3.max() * 100 # 상대적 변환
 
-        # 여기서 오류 발생 시 대체 로직이나 반환값 처리
-        return None, None, None, None
+    dist_1 = dtw(year_1_new,year_2_new,keep_internals=True).distance
+    dist_2 = dtw(year_2_new,year_3_new,keep_internals=True).distance
+    dist_3 = dtw(year_1_new,year_3_new,keep_internals=True).distance
 
-    try:
-        dist_2 = dtw(year_2_new, year_3_new, keep_internals=True).distance
-    except ValueError as e:
-
-        return None, None, None, None
-
-    try:
-        dist_3 = dtw(year_1_new, year_3_new, keep_internals=True).distance
-    except ValueError as e:
-
-        return None, None, None, None
+    var = np.var(result_tmp.iloc[:,0])
+    var_1 = np.var(year_1_new.iloc[:,0])
+    var_2 = np.var(year_2_new.iloc[:,0])
+    var_3 = np.var(year_3_new.iloc[:,0])
 
     ## 2년씩 확인
     year_4 = result_tmp[:24]
-    year_4_new = year_4 / year_4.max() * 100
+    year_4_new = year_4/year_4.max() * 100
 
     year_5 = result_tmp[12:36]
-    year_5_new = year_5 / year_5.max() * 100
+    year_5_new = year_5/year_5.max() * 100
 
-    dist_4 = dtw(year_4_new, year_5_new, keep_internals=True).distance
+    dist_4 = dtw(year_4_new,year_5_new,keep_internals=True).distance
+
     ## 1. 상승 추세 유무
     total_slop = sloop(result_tmp)
 
     or_list = [dist_1, dist_2, dist_3]
     new_list = [x for x in or_list if x < 100]
+    
+    similarity_rt = (1 - (dist_1 + dist_2)/2000) * 100
+    similarity_rt = round(similarity_rt,2)
 
-    similarity_rt = (1 - (dist_1 + dist_2) / 2000) * 100
-
-    similarity_rt = round(similarity_rt, 2)
     # 그래프용 테이블 만들기
-    result_graph = create_result_graph(
-        result_tmp, result_tmp_gph, formatted_today, mode
-    )
-    if len(new_list) >= 2:
+    result_graph = pd.DataFrame()
+    result_graph['검색일자'] = result_tmp.index
+    result_graph['기준일자'] = today.strftime("%Y-%m-%d")
+    result_graph['유형'] = '월별규칙성'
+    result_graph['연관검색어'] = result_tmp.columns[0]
+    result_graph['검색량'] = result_tmp.values
+
+    result_graph = result_graph[['기준일자','유형', '연관검색어', '검색일자', '검색량']]
+
+    if len(new_list) >= 2 :
         ### 1번 조건 : 거리가 150보다 작으며, 더 큰 거리가 작은 거리에 비해 2배 미만
-        if (
-            (max(dist_1, dist_2) < 110.0)
-            & (min(dist_1, dist_2) < 100.0)
-            & (min(dist_1, dist_2) * 2 > max(dist_1, dist_2))
-            & (dist_4 < 280.0)
-            & (-0.3 < (total_slop) < 0.5)
-        ):
-            print(f"월별 규칙성 키워드 발견 : {result_tmp.columns[0]}")
+        if (max(dist_1, dist_2) < 110.0) & (min(dist_1, dist_2) < 100.0) & (min(dist_1, dist_2) * 2 > max(dist_1, dist_2)) & (dist_4 < 280.0) & (-0.3 < (total_slop) < 0.5):
+            print(f'월별 규칙성 키워드 발견 : {result_tmp.columns[0]}')
             table_tmp_2 = result_tmp.copy()
+
             # 상승하는 달
-            rising_month = month_check(result_graph)
-            return table_tmp_2, result_graph, similarity_rt, rising_month
+            rising_month = month_check(table_pred)
+
+            return table_tmp_2 , result_graph, similarity_rt, rising_month
 
         ### 2번 조건 : 거리가 150보다 하나만 크고, 2년씩 비교한 거리가 300보다 작음
-        elif (
-            (max(dist_1, dist_2) < 150.0)
-            & (dist_4 < 220.0)
-            & (-0.3 < (total_slop) < 0.5)
-        ):
-            print(f"월별 규칙성 키워드 발견 : {result_tmp.columns[0]}")
+        elif (max(dist_1, dist_2) < 150.0) & (dist_4 < 220.0) & (-0.3 < (total_slop) < 0.5):
+            print(f'월별 규칙성 키워드 발견 : {result_tmp.columns[0]}')
             table_tmp_2 = result_tmp.copy()
+
             # 상승하는 달
-            rising_month = month_check(result_graph)
-            return table_tmp_2, result_graph, similarity_rt, rising_month
-        else:
+            rising_month = month_check(table_pred)
 
+            return table_tmp_2 , result_graph, similarity_rt, rising_month
+        else :
             return None, None, None, None
-    else:
-
+    else :
         return None, None, None, None
 
 
+
+    
 if __name__ == "__main__":
 
     BASE_URL = utils.get_secret("BASE_URL")
@@ -592,7 +632,7 @@ if __name__ == "__main__":
     standard_time = datetime.now()
     params = {
         "search_keywords": [
-'비갱신보험', '상속등기', '상속한정승인', '오늘의주식시황', '유아보험', '주식공부방법'   
+"상속포기신청","상속등기"
 
 ],
         "id": utils.get_secret("clients")["id_1"]["client_id"],
@@ -614,16 +654,14 @@ if __name__ == "__main__":
     for df in results:
         # month_a,month_b,month_c,month_d=monthly_rule(df,day,kk)
 
-        # a,b,c,d=monthly_rule(df,day,kk)
+       # a,b,c,d=monthly_rule(df,day,kk)
         # print(a)
         # print(b)
         # print(c)
-        # print(d)
-        #d, e, f = rising_keyword_analysis(df, day, kk)
+        #print(d)
+        d, e, f = rising_keyword_analysis(df, day, kk)
         a, b, c = select_keyword(df, day, kk)
-        # print(a)
-        # print(c)
-        # print(b)
+
 
     print(time.time() - start)
     # 0.94
