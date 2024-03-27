@@ -651,7 +651,8 @@ if __name__ == "__main__":
     for df in results:
         # month_a,month_b,month_c,month_d=monthly_rule(df,day,kk)
         d, e, f = rising_keyword_analysis(df, day, kk)
+        print(d, e, f)
         a, b, c = select_keyword(df, day, kk)
-
+        print(a, b, c)
 
     print(time.time() - start)

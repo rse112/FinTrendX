@@ -105,7 +105,7 @@ if __name__ == "__main__":
 
     # 파라미터
     params = {
-        "search_keywords": ["파이썬"],
+        "search_keywords": ["상속등기"],
         "id": get_secret("clients")["id_1"]["client_id"],
         "pw": get_secret("clients")["id_1"]["client_secret"],
         "api_url": "https://openapi.naver.com/v1/datalab/search",

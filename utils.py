@@ -8,35 +8,35 @@ import pandas as pd
 import utils
 
 
-def merge_and_mark_duplicates_limited(df_list):
-    """
-    여러 DataFrame을 병합하고, '연관키워드'가 중복되는 경우 '중복검색어' 컬럼에 해당하는 모든 '검색어'를 마킹합니다.
-    이 함수는 df_list에서 제공된 모든 DataFrame의 처음 50개 행에 대해 이 작업을 수행합니다.
+# def merge_and_mark_duplicates_limited(df_list):
+#     """
+#     여러 DataFrame을 병합하고, '연관키워드'가 중복되는 경우 '중복검색어' 컬럼에 해당하는 모든 '검색어'를 마킹합니다.
+#     이 함수는 df_list에서 제공된 모든 DataFrame의 처음 50개 행에 대해 이 작업을 수행합니다.
 
-    Parameters:
-    - df_list: DataFrame 객체의 리스트
+#     Parameters:
+#     - df_list: DataFrame 객체의 리스트
 
-    Returns:
-    - DataFrame: 병합 및 처리된 데이터프레임의 처음 50개 행
-    """
-    df_combined = pd.DataFrame()
-    # 각 DataFrame의 처음 50개 행만 사용
-    limited_dfs = [df.iloc[50:100] for df in df_list]
+#     Returns:
+#     - DataFrame: 병합 및 처리된 데이터프레임의 처음 50개 행
+#     """
+#     df_combined = pd.DataFrame()
+#     # 각 DataFrame의 처음 50개 행만 사용
+#     limited_dfs = [df.iloc[50:100] for df in df_list]
 
-    # 제한된 DataFrame들을 합침
-    df_combined = pd.concat(limited_dfs)
-    # '연관키워드'로 그룹화 후, 각 그룹의 '검색어'를 합쳐서 '중복검색어' 컬럼 생성
-    df_combined["중복검색어"] = df_combined.groupby("연관키워드")["검색어"].transform(
-        lambda x: ",".join(x.unique())
-    )
+#     # 제한된 DataFrame들을 합침
+#     df_combined = pd.concat(limited_dfs)
+#     # '연관키워드'로 그룹화 후, 각 그룹의 '검색어'를 합쳐서 '중복검색어' 컬럼 생성
+#     df_combined["중복검색어"] = df_combined.groupby("연관키워드")["검색어"].transform(
+#         lambda x: ",".join(x.unique())
+#     )
 
-    # 중복 제거 (첫 번째 등장을 제외한 동일 '연관키워드' 삭제)
-    df_combined.drop_duplicates(subset="연관키워드", inplace=True)
+#     # 중복 제거 (첫 번째 등장을 제외한 동일 '연관키워드' 삭제)
+#     df_combined.drop_duplicates(subset="연관키워드", inplace=True)
 
-    # 인덱스 리셋
-    df_combined.reset_index(drop=True, inplace=True)
+#     # 인덱스 리셋
+#     df_combined.reset_index(drop=True, inplace=True)
 
-    return df_combined
+#     return df_combined
 
 
 def get_secret(
@@ -185,6 +185,25 @@ def update_keywords_flag(dataframe, data_list, flag_name):
 
 
 def add_client_info(collected_keywords_data, start_id_index=1):
+    """
+    Collect keywords data에 대한 고객 정보(ID 및 비밀번호)를 추가합니다.
+    
+    이 함수는 각 행에 대해 유니크한 고객 ID와 비밀번호를 할당합니다. 할당은 'clients'에서 가져온 정보를 기반으로 하며,
+    각 500개 행마다 새로운 고객 정보를 사용합니다. ID와 비밀번호는 'id'와 'pw' 컬럼으로 추가됩니다.
+    
+    Parameters:
+    - collected_keywords_data (DataFrame): 고객 정보를 추가할 pandas DataFrame.
+      이 데이터프레임은 연관키워드 정보를 담고 있어야 합니다.
+    - start_id_index (int, optional): 고객 정보 할당을 시작할 인덱스. 기본값은 1입니다.
+    
+    Returns:
+    - DataFrame: 고객 ID와 비밀번호가 추가된 데이터프레임.
+    
+    Note:
+    - 'clients' 정보는 utils.get_secret("clients")를 통해 얻어야 합니다.
+    - ID와 PW는 각각 'id', 'pw' 컬럼으로 추가됩니다.
+    - 500개 행마다 새로운 고객 정보가 할당되며, 이는 'start_id_index'에 따라 조정됩니다.
+    """
     clients = utils.get_secret("clients")
     start_id_index = 1
     clients = utils.get_secret("clients")
@@ -213,6 +232,21 @@ def add_client_info(collected_keywords_data, start_id_index=1):
 
 
 def process_and_concat(df_list, label):
+    """
+    주어진 데이터프레임 리스트에서 유효한 데이터프레임들을 결합하고, 각 데이터프레임에 라벨을 추가합니다.
+    
+    이 함수는 입력된 데이터프레임 리스트(df_list) 중 None이 아니고, pandas DataFrame 인스턴스이며, 비어있지 않은 데이터프레임을 선별합니다.
+    선별된 각 데이터프레임에는 새로운 컬럼 '유형'이 추가되어, 함수에 전달된 라벨 값이 할당됩니다.
+    최종적으로, 모든 유효한 데이터프레임들이 단일 데이터프레임으로 결합되어 반환됩니다.
+    
+    Parameters:
+    - df_list (list): 검사하고 결합할 pandas DataFrame 객체의 리스트.
+    - label (str): 각 데이터프레임에 추가될 '유형' 컬럼의 값을 지정하는 문자열.
+    
+    Returns:
+    - DataFrame: '유형' 컬럼이 추가되고, 입력된 리스트의 유효한 데이터프레임들이 결합된 새로운 DataFrame.
+      유효한 데이터프레임이 없을 경우 빈 DataFrame 반환.
+    """
     # 여기서 df_list는 데이터 프레임의 리스트를 기대함
     valid_dfs = [
         df
@@ -228,6 +262,20 @@ def process_and_concat(df_list, label):
 
 
 def generate_unique_search_terms(collected_keywords_data):
+    """
+    주어진 데이터프레임에 대해 각 연관키워드별로 중복되지 않는 검색어 목록을 생성하고 이를 새 컬럼에 할당합니다.
+
+    이 함수는 입력된 collected_keywords_data의 복사본을 생성하고, 각 연관키워드별로 중복되지 않는 검색어를 찾아
+    '중복검색어'라는 새 컬럼에 해당 검색어들을 쉼표로 구분된 문자열로 추가합니다. 각 연관키워드에 대해 하나의 '중복검색어' 엔트리가 생성되며,
+    이는 해당 연관키워드와 관련된 모든 유니크한 검색어들을 포함합니다.
+
+    Parameters:
+    - collected_keywords_data (DataFrame): '연관키워드'와 '검색어' 컬럼을 포함한 pandas DataFrame.
+
+    Returns:
+    - DataFrame: 원본 데이터프레임에 '중복검색어' 컬럼이 추가된 새로운 DataFrame. '중복검색어' 컬럼에는
+      각 연관키워드에 해당하는 유니크한 검색어 목록(문자열)이 할당됩니다.
+    """
     # 1. collected_keywords_data의 복사본 생성
     temp_df = collected_keywords_data.copy()
 
@@ -259,6 +307,7 @@ def generate_unique_search_terms(collected_keywords_data):
 
 
 def get_top_50_unique_items(collected_keywords_dat_copy,temp_df):
+    
     dict_kind = {}  # 검색 키워드 구분자
     dict_srch = {}  # 연관검색어와 그에 해당한 연관검색어
     dict_rl = {} 
