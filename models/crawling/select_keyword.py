@@ -91,11 +91,11 @@ def check_surge_conditions(
 
         if (last > last_2 * 2.0) & (last >= 60):
             print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
-            print(33)
+
             return result_graph, result_graph, rate
 
         elif (last >= 95) & (last > last_2):
-            print(22)
+
             print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
 
             
@@ -109,7 +109,7 @@ def check_surge_conditions(
         ):
             print(f"{period_str} 급상승 키워드 발견: {table_graph.columns[0]}")
 
-            print(11)
+
             return result_graph, result_graph, rate
         else:
             return None, None, None
@@ -453,15 +453,12 @@ def rising_keyword_analysis(table, today, mode):
         ) & (0 < recent_2 < 10) & (recent < 10):
 
             print(f"{period_str} 지속상승 키워드 발견 : {table_graph.columns[0]}")
-            print(11)
+
             return result_tmp.copy(), result_graph, round(top * 100, 2)
 
     return None, None, None
 
 
-# 상승하는 달 검토하는 함수
-# 상승하는 달 검토하는 함수
-# 상승하는 달 검토하는 함수
 
 def month_check(table) :
 
@@ -653,22 +650,8 @@ if __name__ == "__main__":
 
     for df in results:
         # month_a,month_b,month_c,month_d=monthly_rule(df,day,kk)
-
-       # a,b,c,d=monthly_rule(df,day,kk)
-        # print(a)
-        # print(b)
-        # print(c)
-        #print(d)
         d, e, f = rising_keyword_analysis(df, day, kk)
         a, b, c = select_keyword(df, day, kk)
 
 
     print(time.time() - start)
-    # 0.94
-    # a,b,c=select_keyword(trend_data,day,a)
-    # d,e,f=rising_keyword_analysis(trend_data, day, a)
-    # print(d)
-    # a,b,c,d=monthly_rule(trend_data,day,kk)
-    # a,b,c=select_keyword(trend_data,day,kk)
-    # a,b,c=rising_keyword_analysis(trend_data,day,kk)
-    # print(a)

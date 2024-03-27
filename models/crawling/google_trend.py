@@ -1,9 +1,6 @@
 from concurrent.futures import ThreadPoolExecutor
 import asyncio
 from pytrends.request import TrendReq
-
-# 비동기 작업을 위한 ThreadPoolExecutor 인스턴스 생성
-
 from selenium import webdriver
 import time
 
@@ -25,11 +22,11 @@ nid_cookie = f"NID={get_cookie()}"
 pytrends = TrendReq(requests_args={"headers": {"Cookie": nid_cookie}})
 
 
-async def fetch_rising_queries(keyword: str, max_retries: int = 2) -> dict:
+async def fetch_rising_queries(keyword: str, max_retries: int = 1) -> dict:
     nid_cookie = f"NID={get_cookie()}"
 
     pytrends = TrendReq(
-        hl="ko-KR", tz=540, retries=3, requests_args={"headers": {"Cookie": nid_cookie}}
+        hl="ko-KR", tz=540, retries=1, requests_args={"headers": {"Cookie": nid_cookie}}
     )
     kw_list = [keyword]
 
