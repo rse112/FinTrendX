@@ -1,32 +1,32 @@
 from concurrent.futures import ThreadPoolExecutor
 import asyncio
 from pytrends.request import TrendReq
-from selenium import webdriver
+# from selenium import webdriver
 import time
 
 
-def get_cookie():
-    options = webdriver.ChromeOptions()
-    options.add_argument("--headless")
-    driver = webdriver.Chrome(options=options)
-    driver.get("https://trends.google.com/")
-    time.sleep(5)
-    cookie = driver.get_cookie("NID")["value"]
-    driver.quit()
-    return cookie
+# def get_cookie():
+#     options = webdriver.ChromeOptions()
+#     options.add_argument("--headless")
+#     driver = webdriver.Chrome(options=options)
+#     driver.get("https://trends.google.com/")
+#     time.sleep(5)
+#     cookie = driver.get_cookie("NID")["value"]
+#     driver.quit()
+#     return cookie
 
 
 executor = ThreadPoolExecutor(max_workers=5)
 
-nid_cookie = f"NID={get_cookie()}"
-pytrends = TrendReq(requests_args={"headers": {"Cookie": nid_cookie}})
+# nid_cookie = f"NID={get_cookie()}"
+# pytrends = TrendReq(requests_args={"headers": {"Cookie": nid_cookie}})
 
 
 async def fetch_rising_queries(keyword: str, max_retries: int = 1) -> dict:
-    nid_cookie = f"NID={get_cookie()}"
+    # nid_cookie = f"NID={get_cookie()}"
 
     pytrends = TrendReq(
-        hl="ko-KR", tz=540, retries=1, requests_args={"headers": {"Cookie": nid_cookie}}
+        hl="ko-KR", tz=540, retries=1
     )
     kw_list = [keyword]
 

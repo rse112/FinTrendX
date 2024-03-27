@@ -40,7 +40,7 @@ def set_time_range(std_time, days_before=1, years_before=4):
     start_time = (
         std_time - relativedelta(years=years_before, days=days_before)
     ).strftime("%Y-%m-%d")
-    print(end_time)
+
     return start_time, end_time
 
 
@@ -71,7 +71,7 @@ async def trend_load_async(std_time, search_keyword, client_id, client_secret, u
 
 async def trend_maincode(params, clients, api_url):
     standard_time = datetime.now()
-    print(standard_time)
+
     search_keywords = params.get("search_keywords", [])
 
     results = []
@@ -105,7 +105,7 @@ if __name__ == "__main__":
 
     # 파라미터
     params = {
-        "search_keywords": ["망고"],
+        "search_keywords": ["파이썬"],
         "id": get_secret("clients")["id_1"]["client_id"],
         "pw": get_secret("clients")["id_1"]["client_secret"],
         "api_url": "https://openapi.naver.com/v1/datalab/search",

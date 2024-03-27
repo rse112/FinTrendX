@@ -226,6 +226,85 @@ def process_and_concat(df_list, label):
     return pd.concat(valid_dfs).reset_index(drop=True)
 
 
+
+def generate_unique_search_terms(collected_keywords_data):
+    # 1. collected_keywords_data의 복사본 생성
+    temp_df = collected_keywords_data.copy()
+
+    # 2. 새로운 컬럼 '중복검색어' 추가 (초기값으로 빈 문자열 할당)
+    temp_df['중복검색어'] = ''
+
+    # 3. 연관키워드별로 해당하는 모든 검색어를 찾는 딕셔너리 생성
+    keywords_dict = {}
+    for index, row in temp_df.iterrows():
+        associated_keyword = row['연관키워드']
+        search_keyword = row['검색어']
+        if associated_keyword in keywords_dict:
+            # 이미 리스트에 있는 경우 중복을 피하기 위해 추가하지 않음
+            if search_keyword not in keywords_dict[associated_keyword]:
+                keywords_dict[associated_keyword].append(search_keyword)
+        else:
+            # 새로운 키워드인 경우 리스트 초기화
+            keywords_dict[associated_keyword] = [search_keyword]
+
+    # 4. '중복검색어' 컬럼을 채워 넣음
+    for index, row in temp_df.iterrows():
+        associated_keyword = row['연관키워드']
+        # 연관키워드에 해당하는 모든 검색어를 '중복검색어' 컬럼에 할당
+        temp_df.at[index, '중복검색어'] = ','.join(keywords_dict[associated_keyword])
+    return temp_df
+
+
+
+
+
+def get_top_50_unique_items(collected_keywords_dat_copy,temp_df):
+    dict_kind = {}  # 검색 키워드 구분자
+    dict_srch = {}  # 연관검색어와 그에 해당한 연관검색어
+    dict_rl = {} 
+    check_list=set()
+
+    keyword_final = ['주식', '금리', '금융상품', '디지털자산', '부동산', '세금', '재테크', '돈버는법', '테마주', '특징주', '외국인순매수', '신규상장', '급등주', '공모주',
+                        '배당주', '미국주식', '주가지수', 'WTI', '금값', '채권금리', '달러환율', '미국금리',
+                        'ETF', '중개형ISA', '적립식펀드', '개인연금', '퇴직연금', 'ELS', 'CMA통장', 'CMA금리비교', '채권', '신탁', 'RP', '암호화폐', '미술품', '조각투자', 
+                        '아파트청약', '리워드', '캐시백', '돈버는앱', '건강보험', '자동차보험', '의료비보험', '상속', '증여']
+    for name in keyword_final :
+
+        ceil = 50 # 최대 연관검색어 수
+
+        times = 0
+
+        df_filtered = collected_keywords_dat_copy[collected_keywords_dat_copy['검색어'] == name].reset_index(drop=True)
+        while times < 50 :
+            
+            nm = df_filtered.iloc[times]['연관키워드']
+
+            
+            # 키워드 중복 확인
+            while nm in check_list :
+
+                if nm in dict_rl.keys() :
+                    if str(name) in dict_kind :
+                        dict_kind[str(name)].append(str(nm))
+                    else :
+                        dict_kind[str(name)] = [str(nm)]
+                else :
+                    pass
+                ceil = ceil + 1
+
+                nm = df_filtered['연관키워드'][ceil]
+            
+            check_list.add(nm)
+            times = times + 1
+    # check_list에 해당하는 행을 필터링, '연관키워드' 별로 중복 제거, 인덱스 초기화
+    collected_keywords_data = temp_df[temp_df['연관키워드'].isin(check_list)] \
+                                .drop_duplicates(subset='연관키워드', keep='first') \
+                                .reset_index(drop=True)
+    return collected_keywords_data,check_list
+
+
+
+
 if __name__ == "__main__":
     keywords = load_keywords("secrets.json")
     print(keywords["clients"]["id_1"]["client_id"])
