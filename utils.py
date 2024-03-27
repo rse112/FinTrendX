@@ -159,7 +159,7 @@ def process_data(data, condition, type_label, data_lists):
                 filtered_data.at[index, "지표"] = str(matching_info_data[0]) + "%"
 
     # '상승월' 열 추가
-    filtered_data["상승월"] = None  
+    filtered_data["상승월"] = None
 
     return filtered_data
 
@@ -187,18 +187,18 @@ def update_keywords_flag(dataframe, data_list, flag_name):
 def add_client_info(collected_keywords_data, start_id_index=1):
     """
     Collect keywords data에 대한 고객 정보(ID 및 비밀번호)를 추가합니다.
-    
+
     이 함수는 각 행에 대해 유니크한 고객 ID와 비밀번호를 할당합니다. 할당은 'clients'에서 가져온 정보를 기반으로 하며,
     각 500개 행마다 새로운 고객 정보를 사용합니다. ID와 비밀번호는 'id'와 'pw' 컬럼으로 추가됩니다.
-    
+
     Parameters:
     - collected_keywords_data (DataFrame): 고객 정보를 추가할 pandas DataFrame.
       이 데이터프레임은 연관키워드 정보를 담고 있어야 합니다.
     - start_id_index (int, optional): 고객 정보 할당을 시작할 인덱스. 기본값은 1입니다.
-    
+
     Returns:
     - DataFrame: 고객 ID와 비밀번호가 추가된 데이터프레임.
-    
+
     Note:
     - 'clients' 정보는 utils.get_secret("clients")를 통해 얻어야 합니다.
     - ID와 PW는 각각 'id', 'pw' 컬럼으로 추가됩니다.
@@ -234,15 +234,15 @@ def add_client_info(collected_keywords_data, start_id_index=1):
 def process_and_concat(df_list, label):
     """
     주어진 데이터프레임 리스트에서 유효한 데이터프레임들을 결합하고, 각 데이터프레임에 라벨을 추가합니다.
-    
+
     이 함수는 입력된 데이터프레임 리스트(df_list) 중 None이 아니고, pandas DataFrame 인스턴스이며, 비어있지 않은 데이터프레임을 선별합니다.
     선별된 각 데이터프레임에는 새로운 컬럼 '유형'이 추가되어, 함수에 전달된 라벨 값이 할당됩니다.
     최종적으로, 모든 유효한 데이터프레임들이 단일 데이터프레임으로 결합되어 반환됩니다.
-    
+
     Parameters:
     - df_list (list): 검사하고 결합할 pandas DataFrame 객체의 리스트.
     - label (str): 각 데이터프레임에 추가될 '유형' 컬럼의 값을 지정하는 문자열.
-    
+
     Returns:
     - DataFrame: '유형' 컬럼이 추가되고, 입력된 리스트의 유효한 데이터프레임들이 결합된 새로운 DataFrame.
       유효한 데이터프레임이 없을 경우 빈 DataFrame 반환.
@@ -258,7 +258,6 @@ def process_and_concat(df_list, label):
     for df in valid_dfs:
         df["유형"] = label
     return pd.concat(valid_dfs).reset_index(drop=True)
-
 
 
 def generate_unique_search_terms(collected_keywords_data):
@@ -280,13 +279,13 @@ def generate_unique_search_terms(collected_keywords_data):
     temp_df = collected_keywords_data.copy()
 
     # 2. 새로운 컬럼 '중복검색어' 추가 (초기값으로 빈 문자열 할당)
-    temp_df['중복검색어'] = ''
+    temp_df["중복검색어"] = ""
 
     # 3. 연관키워드별로 해당하는 모든 검색어를 찾는 딕셔너리 생성
     keywords_dict = {}
     for index, row in temp_df.iterrows():
-        associated_keyword = row['연관키워드']
-        search_keyword = row['검색어']
+        associated_keyword = row["연관키워드"]
+        search_keyword = row["검색어"]
         if associated_keyword in keywords_dict:
             # 이미 리스트에 있는 경우 중복을 피하기 위해 추가하지 않음
             if search_keyword not in keywords_dict[associated_keyword]:
@@ -297,61 +296,159 @@ def generate_unique_search_terms(collected_keywords_data):
 
     # 4. '중복검색어' 컬럼을 채워 넣음
     for index, row in temp_df.iterrows():
-        associated_keyword = row['연관키워드']
+        associated_keyword = row["연관키워드"]
         # 연관키워드에 해당하는 모든 검색어를 '중복검색어' 컬럼에 할당
-        temp_df.at[index, '중복검색어'] = ','.join(keywords_dict[associated_keyword])
+        temp_df.at[index, "중복검색어"] = ",".join(keywords_dict[associated_keyword])
     return temp_df
 
 
+def get_top_50_unique_items(collected_keywords_dat_copy, temp_df):
 
-
-
-def get_top_50_unique_items(collected_keywords_dat_copy,temp_df):
-    
     dict_kind = {}  # 검색 키워드 구분자
     dict_srch = {}  # 연관검색어와 그에 해당한 연관검색어
-    dict_rl = {} 
-    check_list=set()
+    dict_rl = {}
+    check_list = set()
 
-    keyword_final = ['주식', '금리', '금융상품', '디지털자산', '부동산', '세금', '재테크', '돈버는법', '테마주', '특징주', '외국인순매수', '신규상장', '급등주', '공모주',
-                        '배당주', '미국주식', '주가지수', 'WTI', '금값', '채권금리', '달러환율', '미국금리',
-                        'ETF', '중개형ISA', '적립식펀드', '개인연금', '퇴직연금', 'ELS', 'CMA통장', 'CMA금리비교', '채권', '신탁', 'RP', '암호화폐', '미술품', '조각투자', 
-                        '아파트청약', '리워드', '캐시백', '돈버는앱', '건강보험', '자동차보험', '의료비보험', '상속', '증여']
-    for name in keyword_final :
+    keyword_final = [
+        "주식",
+        "금리",
+        "금융상품",
+        "디지털자산",
+        "부동산",
+        "세금",
+        "재테크",
+        "돈버는법",
+        "테마주",
+        "특징주",
+        "외국인순매수",
+        "신규상장",
+        "급등주",
+        "공모주",
+        "배당주",
+        "미국주식",
+        "주가지수",
+        "WTI",
+        "금값",
+        "채권금리",
+        "달러환율",
+        "미국금리",
+        "ETF",
+        "중개형ISA",
+        "적립식펀드",
+        "개인연금",
+        "퇴직연금",
+        "ELS",
+        "CMA통장",
+        "CMA금리비교",
+        "채권",
+        "신탁",
+        "RP",
+        "암호화폐",
+        "미술품",
+        "조각투자",
+        "아파트청약",
+        "리워드",
+        "캐시백",
+        "돈버는앱",
+        "건강보험",
+        "자동차보험",
+        "의료비보험",
+        "상속",
+        "증여",
+    ]
+    for name in keyword_final:
 
-        ceil = 50 # 최대 연관검색어 수
+        ceil = 50  # 최대 연관검색어 수
 
         times = 0
 
-        df_filtered = collected_keywords_dat_copy[collected_keywords_dat_copy['검색어'] == name].reset_index(drop=True)
-        while times < 50 :
-            
-            nm = df_filtered.iloc[times]['연관키워드']
+        df_filtered = collected_keywords_dat_copy[
+            collected_keywords_dat_copy["검색어"] == name
+        ].reset_index(drop=True)
+        while times < 50:
 
-            
+            nm = df_filtered.iloc[times]["연관키워드"]
+
             # 키워드 중복 확인
-            while nm in check_list :
+            while nm in check_list:
 
-                if nm in dict_rl.keys() :
-                    if str(name) in dict_kind :
+                if nm in dict_rl.keys():
+                    if str(name) in dict_kind:
                         dict_kind[str(name)].append(str(nm))
-                    else :
+                    else:
                         dict_kind[str(name)] = [str(nm)]
-                else :
+                else:
                     pass
                 ceil = ceil + 1
 
-                nm = df_filtered['연관키워드'][ceil]
-            
+                nm = df_filtered["연관키워드"][ceil]
+
             check_list.add(nm)
             times = times + 1
     # check_list에 해당하는 행을 필터링, '연관키워드' 별로 중복 제거, 인덱스 초기화
-    collected_keywords_data = temp_df[temp_df['연관키워드'].isin(check_list)] \
-                                .drop_duplicates(subset='연관키워드', keep='first') \
-                                .reset_index(drop=True)
-    return collected_keywords_data,check_list
+    collected_keywords_data = (
+        temp_df[temp_df["연관키워드"].isin(check_list)]
+        .drop_duplicates(subset="연관키워드", keep="first")
+        .reset_index(drop=True)
+    )
+    return collected_keywords_data, check_list
 
 
+# 전송용 결과 테이블 생성 함수
+
+
+def make_csv(table):
+
+    # 컬럼 추출
+    col_a = ""
+    col_b = ""
+
+    for col in table.columns:
+        col_a = str(col) + "|||"
+        col_b = col_b + col_a
+    col_b
+
+    # 행 추출
+    row_list = []
+
+    for j in range(0, len(table)):
+        tmp_a = ""
+        tmp_b = ""
+
+        for i in range(0, len(table.columns)):
+            tmp_a = str(table.iloc[j, i]) + "|||"
+            tmp_b = tmp_b + tmp_a
+        row_list.append(tmp_b)
+
+    row_list.insert(0, col_b)
+    df = pd.DataFrame(row_list)
+
+    return df
+
+
+def process_results_month(results, info_key="InfoData", additional_data=None):
+    processed_results = []
+    for result in results:
+        if not all(value is None for value in result):
+            result[1][info_key] = result[2]
+            result[1]["RisingMonth"] = 0
+
+            # result[3]이 리스트의 리스트인지, 단일 리스트인지 판별하여 적절히 처리
+            if result[3] and isinstance(result[3][0], list):
+                # result[3]이 리스트의 리스트라면, 각 내부 리스트를 정렬
+                sorted_lists = [sorted(months) for months in result[3]]
+            else:
+                # result[3]이 단일 리스트라면, 바로 정렬
+                sorted_lists = sorted(result[3])
+            for i, month in enumerate(
+                sorted_lists
+            ):  # 이제 sorted_lists는 정렬된 단일 리스트를 가리킴
+                if i < len(result[1]):
+                    result[1].loc[i, "RisingMonth"] = month
+                else:
+                    break
+            processed_results.append(result[1])
+    return processed_results
 
 
 if __name__ == "__main__":
