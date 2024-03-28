@@ -426,31 +426,6 @@ def make_csv(table):
     return df
 
 
-def process_results_month(results, info_key="InfoData", additional_data=None):
-    processed_results = []
-    for result in results:
-        if not all(value is None for value in result):
-            result[1][info_key] = result[2]
-            result[1]["RisingMonth"] = 0
-
-            # result[3]이 리스트의 리스트인지, 단일 리스트인지 판별하여 적절히 처리
-            if result[3] and isinstance(result[3][0], list):
-                # result[3]이 리스트의 리스트라면, 각 내부 리스트를 정렬
-                sorted_lists = [sorted(months) for months in result[3]]
-            else:
-                # result[3]이 단일 리스트라면, 바로 정렬
-                sorted_lists = sorted(result[3])
-            for i, month in enumerate(
-                sorted_lists
-            ):  # 이제 sorted_lists는 정렬된 단일 리스트를 가리킴
-                if i < len(result[1]):
-                    result[1].loc[i, "RisingMonth"] = month
-                else:
-                    break
-            processed_results.append(result[1])
-    return processed_results
-
-
 if __name__ == "__main__":
     keywords = load_keywords("secrets.json")
     print(keywords["clients"]["id_1"]["client_id"])
