@@ -1,6 +1,5 @@
 import aiohttp
 import asyncio
-import json
 from urllib.parse import quote
 import sys
 from datetime import datetime, timedelta

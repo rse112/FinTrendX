@@ -2,8 +2,6 @@ from concurrent.futures import ThreadPoolExecutor
 import asyncio
 from pytrends.request import TrendReq
 
-import time
-
 
 
 
