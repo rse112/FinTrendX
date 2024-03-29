@@ -8,8 +8,8 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 import pandas as pd
 import numpy as np
-import utils
-from api_set import APIClient
+import utils.utils as utils
+from utils.api_set import APIClient
 import statsmodels.api as sm
 import asyncio
 from models.crawling.trend import trend_maincode

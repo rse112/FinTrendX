@@ -9,7 +9,7 @@ import os
 
 # 현재 스크립트의 경로를 기준으로 상위 디렉토리의 절대 경로를 sys.path에 추가
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
-import utils
+import utils.utils as utils
 
 if sys.platform == "win32":
     asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())

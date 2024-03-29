@@ -5,7 +5,7 @@ from pytz import timezone
 import json
 from typing import Optional
 import pandas as pd
-import utils
+
 
 
 
@@ -175,9 +175,9 @@ def add_client_info(collected_keywords_data, start_id_index=1):
     - ID와 PW는 각각 'id', 'pw' 컬럼으로 추가됩니다.
     - 500개 행마다 새로운 고객 정보가 할당되며, 이는 'start_id_index'에 따라 조정됩니다.
     """
-    clients = utils.get_secret("clients")
+    clients = get_secret("clients")
     start_id_index = 1
-    clients = utils.get_secret("clients")
+    clients = get_secret("clients")
     # ID와 PW 컬럼을 데이터프레임에 추가하는 로직
     total_rows = len(collected_keywords_data)
     ids = []

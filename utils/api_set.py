@@ -1,4 +1,5 @@
 import time
+import sys
 import os
 import hmac
 import hashlib
@@ -50,7 +51,7 @@ async def main():
     CUSTOMER_ID = get_secret("CUSTOMER_ID")
     API_KEY = get_secret("API_KEY")
     SECRET_KEY = get_secret("SECRET_KEY")
-    URI = get_secret("URI")
+    URI =get_secret("URI")
     METHOD = get_secret("METHOD")
     # API 클라이언트 인스턴스 생성
     api_client = APIClient(BASE_URL, CUSTOMER_ID, API_KEY, SECRET_KEY,URI,METHOD)
@@ -68,8 +69,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-
-
-
-###
 

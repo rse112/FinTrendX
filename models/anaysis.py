@@ -4,7 +4,10 @@ from models.crawling.select_keyword import (
     rising_keyword_analysis,
     monthly_rule,
 )
-import utils
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__),  '..'))
+import utils.utils as utils
 
 formatted_today, today_date = utils.get_today_date()
 
