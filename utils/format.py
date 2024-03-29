@@ -254,7 +254,12 @@ def data_merge(news_data,collected_keywords_dat_copy,directory_path,info_result_
 
 def format_main(news_data,collected_keywords_dat_copy,directory_path,info_result_final,rising_keywords_results,graph_result):
     info_result_final,final_merged_df_copy = data_merge(news_data,collected_keywords_dat_copy,directory_path,info_result_final,rising_keywords_results)
+    print("data_merge함수가 실행완료했습니다.")
     info_result_af_copy_reordered_modified = format_info_data(info_result_final,final_merged_df_copy)
+    print("format_info_data함수가 실행완료했습니다.")
     info_result_af_copy_reordered_modified=update_rising_months(info_result_af_copy_reordered_modified, graph_result)
+    print("update_rising_months함수가 실행완료했습니다.")
     combined_df,info_data=format_result(graph_result, info_result_af_copy_reordered_modified)
+    print("format_result함수가 실행완료했습니다.")
+    print(" 형식 맞추기 완료했습니다.")
     return combined_df,info_data
