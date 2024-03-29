@@ -8,35 +8,6 @@ import pandas as pd
 import utils
 
 
-# def merge_and_mark_duplicates_limited(df_list):
-#     """
-#     여러 DataFrame을 병합하고, '연관키워드'가 중복되는 경우 '중복검색어' 컬럼에 해당하는 모든 '검색어'를 마킹합니다.
-#     이 함수는 df_list에서 제공된 모든 DataFrame의 처음 50개 행에 대해 이 작업을 수행합니다.
-
-#     Parameters:
-#     - df_list: DataFrame 객체의 리스트
-
-#     Returns:
-#     - DataFrame: 병합 및 처리된 데이터프레임의 처음 50개 행
-#     """
-#     df_combined = pd.DataFrame()
-#     # 각 DataFrame의 처음 50개 행만 사용
-#     limited_dfs = [df.iloc[50:100] for df in df_list]
-
-#     # 제한된 DataFrame들을 합침
-#     df_combined = pd.concat(limited_dfs)
-#     # '연관키워드'로 그룹화 후, 각 그룹의 '검색어'를 합쳐서 '중복검색어' 컬럼 생성
-#     df_combined["중복검색어"] = df_combined.groupby("연관키워드")["검색어"].transform(
-#         lambda x: ",".join(x.unique())
-#     )
-
-#     # 중복 제거 (첫 번째 등장을 제외한 동일 '연관키워드' 삭제)
-#     df_combined.drop_duplicates(subset="연관키워드", inplace=True)
-
-#     # 인덱스 리셋
-#     df_combined.reset_index(drop=True, inplace=True)
-
-#     return df_combined
 
 
 def get_secret(
@@ -308,54 +279,7 @@ def get_top_50_unique_items(collected_keywords_dat_copy, temp_df):
     dict_srch = {}  # 연관검색어와 그에 해당한 연관검색어
     dict_rl = {}
     check_list = set()
-
-    keyword_final = [
-        "주식",
-        "금리",
-        "금융상품",
-        "디지털자산",
-        "부동산",
-        "세금",
-        "재테크",
-        "돈버는법",
-        "테마주",
-        "특징주",
-        "외국인순매수",
-        "신규상장",
-        "급등주",
-        "공모주",
-        "배당주",
-        "미국주식",
-        "주가지수",
-        "WTI",
-        "금값",
-        "채권금리",
-        "달러환율",
-        "미국금리",
-        "ETF",
-        "중개형ISA",
-        "적립식펀드",
-        "개인연금",
-        "퇴직연금",
-        "ELS",
-        "CMA통장",
-        "CMA금리비교",
-        "채권",
-        "신탁",
-        "RP",
-        "암호화폐",
-        "미술품",
-        "조각투자",
-        "아파트청약",
-        "리워드",
-        "캐시백",
-        "돈버는앱",
-        "건강보험",
-        "자동차보험",
-        "의료비보험",
-        "상속",
-        "증여",
-    ]
+    keyword_final = load_keywords("main_keyword.json")["keyword_final"]
     for name in keyword_final:
 
         ceil = 50  # 최대 연관검색어 수
@@ -393,6 +317,79 @@ def get_top_50_unique_items(collected_keywords_dat_copy, temp_df):
     )
     return collected_keywords_data, check_list
 
+def generate_result_list(data_table, trend_mapping):
+    trend_related_words = {}
+    selected_words = []
+
+    for trend_key, trend_value in trend_mapping.items():
+        # 필터링된 데이터; 복사 최소화
+        filtered_data = data_table[data_table['유형'] == trend_value]
+        
+        if filtered_data.empty:
+            top_search_word = ''
+        else:
+            sorted_data = filtered_data.sort_values('지표', ascending=False).reset_index(drop=True)
+            top_search_word = sorted_data['연관검색어'].iloc[0]
+        
+        selected_words.append(top_search_word)
+        
+        # 중복 제거된 연관 검색어 집합
+        unique_related_words = set(filtered_data['연관검색어'])
+        trend_related_words[trend_value] = list(unique_related_words)
+        
+    # 딕셔너리에서 DataFrame 생성은 반복문 외부에서 한 번만 수행
+    result_dataframe = pd.DataFrame.from_dict(trend_related_words, orient='index').transpose()
+
+    return result_dataframe, selected_words
+
+# trend_type , recent_table,recent_word,yest_table, yest_word
+def make_diff(trend_type ,index_names, recent_table,recent_word,yest_table, yest_word):
+    
+    yesterday_counts = []
+    today_counts = []
+    absolute_differences = []
+    percentage_differences = []
+    new_keywords = []
+    lost_keywords = []
+
+    iteration_count = len(trend_type)
+
+    for iteration in range(iteration_count):
+
+        # 어제와 오늘 검색어 개수 비교
+        yesterday_count = len(yest_table.iloc[:, iteration].dropna(axis=0))
+        today_count = len(recent_table.iloc[:, iteration].dropna(axis=0))
+
+        absolute_difference = today_count - yesterday_count
+        percentage_difference = 0 if yesterday_count == 0 else round((today_count - yesterday_count) / yesterday_count * 100, 2)
+
+        yesterday_counts.append(yesterday_count)
+        today_counts.append(today_count)
+        absolute_differences.append(absolute_difference)
+        percentage_differences.append(percentage_difference)
+
+        # 검색어 변화 분석
+        keywords_yesterday = list(yest_table.iloc[:, iteration].dropna(axis=0))
+        keywords_today = list(recent_table.iloc[:, iteration].dropna(axis=0))
+
+        new_keywords_list = list(set(keywords_today) - set(keywords_yesterday))
+        lost_keywords_list = list(set(keywords_yesterday) - set(keywords_today))
+
+        new_keywords.append(new_keywords_list)
+        lost_keywords.append(lost_keywords_list)
+
+    # 결과 데이터프레임 생성
+    diff_summary = dict(zip(index_names, [yesterday_counts, today_counts, absolute_differences, percentage_differences, new_keywords, lost_keywords, recent_word]))
+    diff_table = pd.DataFrame.from_dict(diff_summary, columns=trend_type.values(), orient='index')
+
+    # 리스트를 문자열로 변환
+    for col in range(len(diff_table.columns)):
+        diff_table.iloc[4, col] = str(diff_table.iloc[4, col]).replace('[', '').replace(']', '')
+        diff_table.iloc[5, col] = str(diff_table.iloc[5, col]).replace('[', '').replace(']', '')
+    return diff_table
+
+
+
 
 # 전송용 결과 테이블 생성 함수
 
@@ -427,7 +424,7 @@ def make_csv(table):
 
 
 if __name__ == "__main__":
-    keywords = load_keywords("secrets.json")
-    print(keywords["clients"]["id_1"]["client_id"])
+    keywords = load_keywords("main_keyword.json")
+    print(type(keywords["keyword_final"]))
     a, b = get_today_date()
     print(a)

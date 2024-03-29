@@ -38,7 +38,7 @@ async def fetch_news(session, search_term, headers, params, attempts=10):
                         f"Error fetching data for {search_term}: {response.status}"
                     )
         except Exception as e:
-            print(f"Attempt {attempt + 1} failed: {str(e)}")
+
             if attempt < attempts - 1:
                 await asyncio.sleep(3 * backoff)
                 backoff *= 2
