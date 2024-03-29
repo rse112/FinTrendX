@@ -185,8 +185,32 @@ def reults_formatted(info_result_final,final_merged_df_copy,graph_result):
     monthly_pattern_dff['상승월'] = monthly_pattern_dff['상승월'].apply(lambda x: None if x == ' ' else x)
 
     result_infodf=pd.concat([df_without_monthly_pattern,monthly_pattern_dff])
-    # 형식에 맞춰서 띄어쓰기 변경
-    # '유형' 컬럼의 값을 바꾸기 위한 딕셔너리 정의
+    # 형식에 맞춰서 띄어쓰기 변
+    info_data = result_infodf.fillna(' ')
+    info_data.reset_index(inplace = True, drop = True)
+    # info_data['상승월'] = info_data['상승월'].str.replace(' ', '')
+    # 'RisingMonth' 컬럼에서 '0'을 공백 ' '으로 변경
+    info_data['상승월'] = info_data['상승월'].replace('0.0', ' ')
+    info_data['상승월'] = info_data['상승월'].astype(str)
+
+    info_data['상승월'] = info_data['상승월'].apply(lambda x: str(int(float(x))) if x.replace('.', '', 1).isdigit() else x)
+    info_data['상승월'] = info_data['상승월'].astype(str)
+
+    info_data['상승월'] = info_data['상승월'].apply(lambda x: str(int(float(x))) if x.replace('.', '', 1).isdigit() else x)
+    # info_data['상승월'] = info_data['상승월'].replace('', ' ')
+
+    combined_df=combined_df_make(graph_result)
+    return info_data,combined_df
+
+
+
+
+
+############################################
+# graph 형식에 맞추기
+############################################
+def preprocess_graph_result(graph_result):
+    # '유형' 컬럼의 값을 사전 정의된 값으로 대체
     replace_values = {
         '일별 급상승': '일별급상승',
         '주별 급상승': '주별급상승',
@@ -195,53 +219,33 @@ def reults_formatted(info_result_final,final_merged_df_copy,graph_result):
         '월별 지속상승': '월별지속상승',
         '월별 규칙성': '월별규칙성'
     }
-
-    # '유형' 컬럼 내의 값을 바꾸기
     graph_result['유형'] = graph_result['유형'].replace(replace_values)
 
+    # 검색량이 NaN인 연관검색어 필터링
+    filtered_graph_result = graph_result.dropna(subset=['검색량'])
 
-    na_related_search_terms = list(graph_result[pd.isna(graph_result['검색량'])]['연관검색어'])
-    unique_na_related_search_terms  = list(set(na_related_search_terms))
+    return filtered_graph_result
 
-    filtered_graph_result = graph_result[~graph_result['연관검색어'].isin(unique_na_related_search_terms)]
+def sort_dataframe(df):
+    # 유형별로 필터링 및 정렬
+    df_a = df[df['유형'] == '일별급상승']
+    df_b = df[df['유형'].isin(['월별급상승', '월별지속상승', '월별규칙성'])]
+    df_c = df[df['유형'].isin(['주별급상승', '주별지속상승'])]
+    
+    # 각 부분을 유형, 연관검색어, 검색일자별로 정렬
+    df_b = df_b.sort_values(by=['유형', '연관검색어', '검색일자'])
+    df_c = df_c.sort_values(by=['유형', '연관검색어', '검색일자'])
+    
+    # DataFrame 병합
+    combined_df = pd.concat([df_a, df_c, df_b], ignore_index=True)
+    
+    return combined_df
 
-
-    filtered_graph_result_updated = filtered_graph_result.iloc[:, :-2]
-    filtered_graph_result_updated_a = filtered_graph_result_updated[filtered_graph_result_updated['유형'] == '일별급상승']
-
-    # 올바른 조건을 사용하여 필터링
-    filtered_graph_result_updated_b = filtered_graph_result_updated[
-        filtered_graph_result_updated['유형'].isin(['월별급상승', '월별지속상승', '월별규칙성'])]
-    filtered_graph_result_updated_c = filtered_graph_result_updated[
-        filtered_graph_result_updated['유형'].isin(['주별급상승', '주별지속상승'])]
-    sorted_filtered_graph_result_updated_b = filtered_graph_result_updated_b.sort_values(by=['연관검색어', '유형', '검색일자'])
-    sorted_filtered_graph_result_updated_c = filtered_graph_result_updated_c.sort_values(by=['연관검색어', '유형', '검색일자'])
-    combined_df = pd.concat([filtered_graph_result_updated_a, sorted_filtered_graph_result_updated_c, sorted_filtered_graph_result_updated_b], axis=0)
-    combined_df.reset_index(inplace = True, drop = True)
-    info_data = result_infodf.fillna(' ')
-    info_data.reset_index(inplace = True, drop = True)
-    info_data['상승월'] = info_data['상승월'].str.replace(' ', '')
-    # 'RisingMonth' 컬럼에서 '0'을 공백 ' '으로 변경
-    info_data['상승월'] = info_data['상승월'].replace('0.0', ' ')
-    info_data['상승월'] = info_data['상승월'].astype(str)
-
-    info_data['상승월'] = info_data['상승월'].apply(lambda x: str(int(float(x))) if x.replace('.', '', 1).isdigit() else x)
-    today = datetime.now(timezone('Asia/Seoul'))
-    ########
-    combined_df_a = combined_df[combined_df['유형'] == '일별급상승']
-
-    # 올바른 조건을 사용하여 필터링
-    combined_df_b = combined_df[
-        combined_df['유형'].isin(['월별급상승', '월별지속상승', '월별규칙성'])]
-    combined_df_c = combined_df[
-        combined_df['유형'].isin(['주별급상승', '주별지속상승'])]
-    sorted_combined_df__b = combined_df_b.sort_values(by=['유형', '연관검색어', '검색일자'])
-    sorted_combined_df__c = combined_df_c.sort_values(by=['유형', '연관검색어', '검색일자'])
-    combined_df = pd.concat([combined_df_a, sorted_combined_df__c, sorted_combined_df__b], axis=0)
-    combined_df.reset_index(inplace = True, drop = True)
-    info_data['상승월'] = info_data['상승월'].astype(str)
-
-    info_data['상승월'] = info_data['상승월'].apply(lambda x: str(int(float(x))) if x.replace('.', '', 1).isdigit() else x)
-    info_data['상승월'] = info_data['상승월'].replace('', ' ')
-    return info_data,combined_df
-
+def combined_df_make(graph_result):
+    # 데이터 전처리
+    preprocessed_df = preprocess_graph_result(graph_result)
+    
+    # 데이터 정렬 및 최종 DataFrame 반환
+    sorted_df = sort_dataframe(preprocessed_df)
+    sorted_df = sorted_df.iloc[:, :-2]
+    return sorted_df

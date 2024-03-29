@@ -423,6 +423,37 @@ def make_csv(table):
     return df
 
 
+def find_latest_date_before_today(result_out_path):
+    '''
+    모니터링을 위한 폴더를 찾고 가장 최근 날짜를 반환합니다.
+    '''
+    # 'result_out' 폴더 내의 모든 서브폴더를 리스트로 가져오기
+    folder_names = [name for name in os.listdir(result_out_path) if os.path.isdir(os.path.join(result_out_path, name))]
+
+    # 오늘 날짜 설정 (시간 부분 제거)
+    today = datetime.now().date()
+    date_format = '%y%m%d'
+
+    # 날짜 포맷에 맞게 변환하고, 오늘 날짜 이전인 폴더만 필터링
+    valid_dates = []
+    for folder_name in folder_names:
+        try:
+            folder_date = datetime.strptime(folder_name, date_format).date()  # 시간 부분 제거
+            if folder_date < today:
+                valid_dates.append(folder_date)
+        except ValueError:
+            # 폴더 이름이 날짜 형식에 맞지 않는 경우 무시
+            continue
+
+    # 오늘 날짜 이전의 가장 최근 날짜 찾기
+    if valid_dates:
+        latest_date = max(valid_dates)
+        formatted_latest_date = latest_date.strftime(date_format)
+        return formatted_latest_date
+    else:
+        return None
+    
+
 if __name__ == "__main__":
     keywords = load_keywords("main_keyword.json")
     print(type(keywords["keyword_final"]))
