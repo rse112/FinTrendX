@@ -188,7 +188,7 @@ def reults_formatted(info_result_final,final_merged_df_copy,graph_result):
     # 형식에 맞춰서 띄어쓰기 변
     info_data = result_infodf.fillna(' ')
     info_data.reset_index(inplace = True, drop = True)
-    # info_data['상승월'] = info_data['상승월'].str.replace(' ', '')
+    info_data['상승월'] = info_data['상승월'].str.replace(' ', '')
     # 'RisingMonth' 컬럼에서 '0'을 공백 ' '으로 변경
     info_data['상승월'] = info_data['상승월'].replace('0.0', ' ')
     info_data['상승월'] = info_data['상승월'].astype(str)
@@ -197,7 +197,7 @@ def reults_formatted(info_result_final,final_merged_df_copy,graph_result):
     info_data['상승월'] = info_data['상승월'].astype(str)
 
     info_data['상승월'] = info_data['상승월'].apply(lambda x: str(int(float(x))) if x.replace('.', '', 1).isdigit() else x)
-    # info_data['상승월'] = info_data['상승월'].replace('', ' ')
+    info_data['상승월'] = info_data['상승월'].replace('', ' ')
 
     combined_df=combined_df_make(graph_result)
     return info_data,combined_df
