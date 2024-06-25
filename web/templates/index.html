@@ -11,13 +11,7 @@
     <header>
         <div class="logo">LOGO</div>
         <h1>금융 데이터 트렌드 분석</h1>
-        <nav>
-            <ul>
-                <li><a href="#">홈</a></li>
-                <li><a href="#">데이터 분석</a></li>
-                <li><a href="#">연락처</a></li>
-            </ul>
-        </nav>
+
     </header>
 
     <main>
@@ -25,7 +19,6 @@
             <label for="category">카테고리 선택:</label>
             <select id="category">
                 <option value="graph">Graph Data</option>
-                <option value="info">Info Data</option>
             </select>
 
             <label for="subcategory" style="display: none;">서브카테고리 선택:</label>
@@ -39,17 +32,32 @@
             <div id="chart-container">
                 <canvas id="chart"></canvas>
             </div>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>핵심키워드</th>
+                        <th>검색량</th>
+                        <th>지표</th>
+                        <th>뉴스제목</th>
+                        <th>뉴스링크</th>
+                        <th>활동성</th>
+                        <th>구글검색어</th>
+                        <th>검색키워드</th>
+                        <th>상승월</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 데이터 행이 여기에 삽입됩니다. -->
+                </tbody>
+            </table>
         </section>
     </main>
 
     <footer>
         <p>© 2024 금융 데이터 분석 프로젝트</p>
         <div class="social-media">
-            <a href="#">페이스북</a>
-            <a href="#">트위터</a>
-            <a href="#">링크드인</a>
         </div>
-        <p>연락처: example@example.com | 123-456-7890</p>
+        <p>연락처: chohy121212@naver.com | 010-9064-9234</p>
     </footer>
 </body>
 </html>

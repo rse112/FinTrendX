@@ -14,7 +14,6 @@ def index():
 
 @app.route("/get_data", methods=["GET"])
 def get_data():
-    category = request.args.get("category")
     subcategory = request.args.get("subcategory")
     keyword = request.args.get("keyword")
 
@@ -24,8 +23,6 @@ def get_data():
 
     # Rename columns to unify the data format
     graph_df.columns = ["Reference_Date", "Category", "Keyword", "Date", "Value"]
-
-    # Assuming the correct number of columns based on the previous output (12 columns)
     info_df.columns = [
         "Reference_Date",
         "Category",
@@ -41,18 +38,21 @@ def get_data():
         "Extra7",
     ]
 
-    # Filter data based on the selected category, subcategory, and keyword
-    if category == "graph":
-        filtered_df = graph_df[graph_df["Category"] == subcategory]
-        if keyword:
-            filtered_df = filtered_df[filtered_df["Keyword"] == keyword]
-        keywords = filtered_df["Keyword"].unique().tolist()
-        data = filtered_df[["Date", "Value"]].to_dict(orient="records")
+    # Filter data based on the selected subcategory and keyword
+    filtered_graph_df = graph_df[(graph_df["Category"] == subcategory)]
+    if keyword:
+        filtered_graph_df = filtered_graph_df[filtered_graph_df["Keyword"] == keyword]
+        filtered_info_df = info_df[info_df["Keyword"] == keyword]
     else:
-        keywords = []
-        data = info_df[["Date", "Value"]].to_dict(orient="records")
+        filtered_info_df = info_df[info_df["Category"] == subcategory]
 
-    return jsonify({"data": data, "keywords": keywords})
+    keywords = filtered_graph_df["Keyword"].unique().tolist()
+    graph_data = filtered_graph_df[["Date", "Value"]].to_dict(orient="records")
+    info_data = filtered_info_df.to_dict(orient="records")
+
+    return jsonify(
+        {"graph_data": graph_data, "info_data": info_data, "keywords": keywords}
+    )
 
 
 if __name__ == "__main__":

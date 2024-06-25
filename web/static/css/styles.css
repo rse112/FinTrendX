@@ -58,3 +58,18 @@ footer {
     width: 100% !important;
     height: auto !important;
 }
+
+#data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#data-table th, #data-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#data-table th {
+    background-color: #f2f2f2;
+}
