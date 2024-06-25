@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>금융 데이터 트렌드 분석</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">LOGO</div>
+        <h1>금융 데이터 트렌드 분석</h1>
+        <nav>
+            <ul>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">데이터 분석</a></li>
+                <li><a href="#">연락처</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="controls">
+            <label for="category">카테고리 선택:</label>
+            <select id="category">
+                <option value="graph">Graph Data</option>
+                <option value="info">Info Data</option>
+            </select>
+
+            <label for="subcategory" style="display: none;">서브카테고리 선택:</label>
+            <select id="subcategory" style="display: none;"></select>
+
+            <label for="keyword" style="display: none;">키워드 선택:</label>
+            <select id="keyword" style="display: none;"></select>
+        </section>
+
+        <section class="visualization">
+            <div id="chart-container">
+                <canvas id="chart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 금융 데이터 분석 프로젝트</p>
+        <div class="social-media">
+            <a href="#">페이스북</a>
+            <a href="#">트위터</a>
+            <a href="#">링크드인</a>
+        </div>
+        <p>연락처: example@example.com | 123-456-7890</p>
+    </footer>
+</body>
+</html>
