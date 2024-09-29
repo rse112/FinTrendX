@@ -32,6 +32,7 @@
 ## 결과물
 - 결과 페이지: [https://trendkey-7a41071967af.herokuapp.com/](https://trendkey-7a41071967af.herokuapp.com/)
 - 깃허브 저장소: [https://github.com/rse112/rse112.github.io](https://github.com/rse112/rse112.github.io)
+![image](https://github.com/user-attachments/assets/0a838bd9-6a99-4dde-b44f-eb589069535b)
 
 ## 주의사항
 1. 반드시 09시 이후에 실행할 것 (API 업데이트가 9시 정각에 이루어짐)
