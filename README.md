@@ -20,21 +20,4 @@
 
 **[그림 1]** 트렌드 분석 결과 시각화
 ## 주의사항
-1. 반드시 09시 이후에 실행할 것 (API 업데이트가 9시 정각에 이루어짐)
-2. COLAB에 `REALDATA.ZIP` 파일을 올려서 실행
-
-## 기여 방법
-1. 이 저장소를 포크합니다.
-2. 새로운 브랜치를 생성합니다:
-    ```bash
-    git checkout -b feature/new-feature
-    ```
-3. 변경 사항을 커밋합니다:
-    ```bash
-    git commit -m 'Add new feature'
-    ```
-4. 브랜치에 푸시합니다:
-    ```bash
-    git push origin feature/new-feature
-    ```
-5. 풀 리퀘스트를 생성합니다.
+반드시 09시 이후에 실행할 것 (API 업데이트가 9시 정각에 이루어짐)
