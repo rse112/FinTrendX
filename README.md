@@ -11,20 +11,6 @@
 5. 블로그데이터를 통한 활동성 데이터 집계
 6. merge
 
-## 설치 및 실행 방법
-1. 이 저장소를 클론합니다:
-    ```bash
-    git clone https://github.com/rse112/rse112.github.io.git
-    ```
-2. 필요한 의존성을 설치합니다:
-    ```bash
-    pip install -r requirements.txt
-    ```
-3. `REALDATA.ZIP` 파일을 COLAB에 업로드합니다.
-4. 프로젝트를 실행합니다 (09시 이후):
-    ```bash
-    python main.py
-    ```
 
 ## 결과물
 - 결과 페이지: [https://trendkey-7a41071967af.herokuapp.com/](https://trendkey-7a41071967af.herokuapp.com/)
