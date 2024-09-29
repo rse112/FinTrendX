@@ -26,9 +26,6 @@
     python main.py
     ```
 
-## 데이터 설명
-- `REALDATA.ZIP`: 프로젝트 실행에 필요한 실제 데이터 파일입니다. 압축 해제 후 적절한 경로에 배치합니다.
-
 ## 결과물
 - 결과 페이지: [https://trendkey-7a41071967af.herokuapp.com/](https://trendkey-7a41071967af.herokuapp.com/)
 - 깃허브 저장소: [https://github.com/rse112/rse112.github.io](https://github.com/rse112/rse112.github.io)
