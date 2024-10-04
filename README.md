@@ -1,3 +1,4 @@
+
 # 📈 FinTrendX
 
 
