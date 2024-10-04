@@ -21,6 +21,11 @@ FinTrendX는 사람들이 금융 관련 키워드를 네이버에 검색하면�
    _(비고: 구글 검색어 API는 오류가 발생할 수 있음)_
 6. 모든 데이터를 종합하여 하나의 데이터셋으로 Merge합니다.
 
+## 데이터 선별함수에서 고려된 점
+
+<img src="https://github.com/user-attachments/assets/777e5be8-51d5-403b-bca2-2d6426fc1ea2" alt="트렌드 분석 " width="600"/>
+
+
 
 ## 결과물
 - 결과 페이지: [https://trendkey-7a41071967af.herokuapp.com/](https://trendkey-7a41071967af.herokuapp.com/)
