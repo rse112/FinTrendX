@@ -24,7 +24,6 @@ FinTrendX는 사람들이 금융 관련 키워드를 네이버에 검색하면�
 
 ## 결과물
 - 결과 페이지: [https://trendkey-7a41071967af.herokuapp.com/](https://trendkey-7a41071967af.herokuapp.com/)
-- 깃허브 저장소: [https://github.com/rse112/rse112.github.io](https://github.com/rse112/rse112.github.io)
 
 <img src="https://github.com/user-attachments/assets/0a838bd9-6a99-4dde-b44f-eb589069535b" alt="트렌드 분석 결과 차트" width="600"/>
 
